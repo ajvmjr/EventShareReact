@@ -24,9 +24,6 @@ import EditarEventoAdm from './pages/EditarEventoAdm';
 import EditarEventoPerfilUsuario from './pages/EditarEventoPerfilUsuario';
 import EditarPerfilAdm from './pages/EditarEventoAdm';
 import EditarPerfilUsuario from './pages/EditarPerfilUsuario';
-import EventoAprovado from './pages/EventoAprovado';
-import EventoEditado from './pages/EventoEditado';
-import EventoRecusado from './pages/EventoRecusado';
 import FAQ from './pages/FAQ';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
@@ -52,9 +49,6 @@ const Rotas = (
                 <Route path='/EditarEventoUsuario' component={EditarEventoPerfilUsuario}/>
                 <Route path='/EditarPerfilAdm' component={EditarPerfilAdm}/>
                 <Route path='/EditarPerfilUsuario' component={EditarPerfilUsuario}/>
-                <Route path='/EventoAprovado' component={EventoAprovado}/>
-                <Route path='/EventoEditado' component={EventoEditado}/>
-                <Route path='/EventoRecusado' component={EventoRecusado}/>
                 <Route path='/FAQ' component={FAQ}/>
                 <Route path='/Login' component={Login}/>
                 <Route path='/PerfilUsuario' component={PainelEventos}/>

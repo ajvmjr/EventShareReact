@@ -11,12 +11,15 @@ class Home extends Component {
     super(props);
     this.state = {
       listaEventos: [],
+      listaFiltradaDeEventos: [],
+      ListaDataFiltrada: [],
       listaCategorias: [],
       eventoId: '',
       eventoNome: '',
       eventoData: '',
       eventoDescricao: '',
       eventoImagem: '',
+      data: '',
       loading: false,
       categoria: '',
       categoriaId: '',
@@ -30,32 +33,68 @@ class Home extends Component {
       valorA: ''
       
     }
-    this.buscarEvento = this.buscarEvento.bind(this);
-    this.buscarCategorias = this.buscarCategorias.bind(this);
+    this.buscarEvento = this.buscarEvento.bind(this)
+    this.buscarCategorias = this.buscarCategorias.bind(this)
+    this.updateStateData = this.updateStateData.bind(this)
   }
 
   toggleFiltro(event){
-    let myEvent = {
-    id: event.target.getAttribute('id')
-    };
-    this.filtrarCategorias(myEvent)
-    console.log(myEvent)
+    let id = event.target.value
+    this.filtrarCategorias(id)
+  }
+
+  filtrarCategorias(id){
+    console.log('Entramos em filtrar categoria o id é: ' + id)
+    var listaEventos = this.state.listaEventos
+  
+    var listaFiltrada = listaEventos.filter((value, index, arr) => {  
+      if(listaEventos[index].eventoCategoriaId  == id){
+        return listaEventos[index]  
+      }
+    })
+
+    this.setState({
+      listaFiltradaDeEventos: listaFiltrada
+    })
+  }
+
+  toggleFiltroData(event){
+    let data = event.target.value
+    this.filtrarData(data)
+  }
+
+  filtrarData(data){
+    // console.log('Entramos em filtrar data a data é:' + data)
+    var listaDatas = this.state.listaDatas
+
+    var listaFiltrada = listaDatas.filter((value, index, arr) => {
+      if(listaDatas[index].evento.eventoData == data){
+        return listaDatas[index]
+      }
+    })
+    this.setState({
+      ListaDataFiltrada: listaFiltrada
+    })
   }
 
   componentDidMount() {
-    this.buscarEvento();
-    this.buscarCategorias();
+    this.buscarEvento()
+    this.buscarCategorias()
   }
 
   buscarEvento() {
     fetch('http://localhost:5000/api/eventotbl')
       .then(resposta => resposta.json())
-      .then(data => this.setState({ listaEventos: data }))
-      .catch((erro) => console.log(erro));
+      .then(data => this.setState({ 
+                                  listaEventos: data,
+                                  listaFiltradaDeEventos: data,
+                                  ListaDataFiltrada: data
+                                  }))
+      .catch((erro) => console.log(erro))
   }
 
   buscarCategorias() {
-    this.setState({ loading: true });
+    this.setState({ loading: true })
 
     fetch('http://localhost:5000/api/categoria')
       .then(resposta => resposta.json())
@@ -63,30 +102,10 @@ class Home extends Component {
       .catch((erro) => console.log(erro))
   }
 
-  // filtrarPorCategoria = (categoriaId) => {
-  //   fetch('http://localhost:5000/api/eventotbl', {
-  //     method: 'GET',
-  //     headers: {
-  //       'Content-type': 'application/json'
-  //     }
-  //   })
-  //     .then(response => response.json())
-  //     .then(response => {
-  //       this.listaAtualizada();
-  //       this.state(() => ({ lista: this.state.lista }))
-  //     })
-  //     .catch(error => console.log(error))
-  //     .then(this.buscarEvento)
-  // }
-
-  
-
-
-  filtrarCategorias(){
-    
+  updateStateData(event){
+    this.setState({ data: event.target.value})
+    console.log(this.state.data)
   }
-
-
 
   render() {
 
@@ -109,7 +128,7 @@ class Home extends Component {
               <div className="filtro-caixas-home">
                 <div className="filtro-categorias-data-home">
 
-                  <select  onClick={this.toggleFiltro.bind(this)}  value='value-select' id='id-select' className="filtro-categorias-home" >
+                  <select  onChange={this.toggleFiltro.bind(this)}  value='value-select' id='id-select' className="filtro-categorias-home" >
                   <option id="value-option1" selected>Selecione uma categoria</option>
                   {
                     this.state.listaCategorias.map(function(categoria){
@@ -118,17 +137,18 @@ class Home extends Component {
                   }
                   </select>
 
-                  <input className="filtro-data-home" type="date"/>
+                  <input onChange={this.updateStateData} value={this.state.data} id='data' className="filtro-data-home" type="date"/>
                 </div>
                 </div>
                 <div className="filtro-botão-home">
-                  <button className="filtro-botão-input-home">Filtrar</button>
+                  <button type='submit' className="filtro-botão-input-home" >Filtrar</button>
                 </div>
               </div>
 
               <div className="eventos-home">
                 {
-                  this.state.listaEventos.map(function (evento) {
+                  this.state.listaFiltradaDeEventos ?
+                  this.state.listaFiltradaDeEventos.map( evento => {
                     return(
                     <a href="#">
                       <div key={evento.eventoId} className="evento-1-home">
@@ -157,9 +177,7 @@ class Home extends Component {
                             </div>
                           </div>
                         </div>
-                    </a>
-                  )
-                  })
+                    </a> ) } ) : null
                   }
                 </div>
 

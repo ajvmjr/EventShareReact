@@ -10,62 +10,62 @@ class CriarEvento4 extends Component {
             <div className='CriarEvento4'>
                 <Cabecalho />
                 <main>
-                    <div class="banner-criar-evento-4">
+                    <div className="banner-criar-evento-4">
                     </div>
 
-                    <div class="titulo-criar-evento-4">
+                    <div className="titulo-criar-evento-4">
                         <h1>PREENCHA O FORMULÁRIO</h1>
                     </div>
 
-                    <div class='container-sub6'>
+                    <div className='container-sub6'>
                         <form id="formulario-sub6">
 
-                            <div class="criar-evento-4-pai-input">
-                                <input class="criar-evento-4-input" type="text" name="Nome" id="" placeholder="Nome do evento"/>
-                                <input class="criar-evento-4-input" type="text" name="Nome" id="" placeholder="Link para formulário de inscrição (opcional)"/>
-                                <div class="criar-evento-4-div-texto">
-                                    <textarea class="criar-evento-4-texto" cols="35" rows="5" placeholder="Descrição do evento para o site"></textarea>
+                            <div className="criar-evento-4-pai-input">
+                                <input className="criar-evento-4-input" type="text" name="Nome" id="" placeholder="Nome do evento"/>
+                                <input className="criar-evento-4-input" type="text" name="Nome" id="" placeholder="Link para formulário de inscrição (opcional)"/>
+                                <div className="criar-evento-4-div-texto">
+                                    <textarea className="criar-evento-4-texto" cols="35" rows="5" placeholder="Descrição do evento para o site"></textarea>
                                 </div>
                             </div>{/* fim criar-evento-4-pai-input */}
 
-                            <div class="radiogeral-sub6">
+                            <div className="radiogeral-sub6">
 
                                 <p>Número de participantes:</p>
-                                <div class="radio-sub6">
+                                <div className="radio-sub6">
                                     <div>
-                                        <input type="radio" name="25" value=""> 0 - 25</input>
+                                        <input type="radio" name="#" value=""/> 0 - 25
        
                                     </div>
                                     <div>
-                                        <input type="radio" name="40" value=""> 26 - 40</input>
+                                        <input type="radio" name="#" value=""/> 26 - 40
                                     </div>
                                     <div>
-                                        <input type="radio" name="60" value=""> 41 - 60</input>   
+                                        <input type="radio" name="#" value=""/> 41 - 60   
                                     </div>
                                 </div>{/* fim radio-sub6 */}
                             </div>{/* fim radiogeral-sub6 */}
 
 
-                            <div class="acesso-sub6">
+                            <div className="acesso-sub6">
 
-                                <div class="plu-priv">
+                                <div className="plu-priv">
                                     <p>Se você for um funcionário da ThoughtWorks, seu evento será público ou privado?*</p>
                                 </div>
 
-                                <div class="radio2-sub6">
+                                <div className="radio2-sub6">
                                     <div>
-                                        <input type="radio" name="25" value="male">Sim</input>
+                                        <input type="radio" name="1" value="male"/>Sim
                                     </div>
                                     <div>
-                                        <input type="radio" name="25" value="male">Não</input>
+                                        <input type="radio" name="1" value="male"/>Não
                                     </div>
                                 </div>
 
-                                <div class="obs">
+                                <div className="obs">
                                     <p>*Essa pergunta só será válida se você for um funcionário da ThoughtWorks</p>
                                 </div>
 
-                                <div class="categorias-sub6">
+                                <div className="categorias-sub6">
                                         <p>Selecione a categoria que o seu evento se encaixa:</p>
                                     <select name="categoria">
                                         <option value="valor0" selected>Selecione</option>
@@ -82,33 +82,33 @@ class CriarEvento4 extends Component {
                             </div>{/* fim acesso-sub6 */}
 
 
-                        <div class="diversidade-sub6">
+                        <div className="diversidade-sub6">
                             <p>Seu evento tem foco em diversidade?</p>
-                            <div class="radio2-sub6">
+                            <div className="radio2-sub6">
                                 <div>
-                                    <input type="radio" name="25" value="male">Sim</input>
+                                    <input type="radio" name="25" value="male"/>Sim
                                 </div>
                                 <div>
-                                    <input type="radio" name="25" value="male">Não</input>
+                                    <input type="radio" name="25" value="male"/>Não
                                 </div>
                             </div>
-                            <div class="criar-evento-4-pai-input">
-                                <input class="criar-evento-4-input" type="text" name="Nome" id="" placeholder="Se sim, qual?"/>
+                            <div className="criar-evento-4-pai-input">
+                                <input className="criar-evento-4-input" type="text" name="Nome" id="" placeholder="Se sim, qual?"/>
                             </div>
                         </div>
                     
 
 
-                        <div class="coffe-sub6">
+                        <div className="coffe-sub6">
                             <p>Coffe?</p>
                             <div>
-                                <input type="radio" name="s" value="male"> Sim</input>
+                                <input type="radio" name="s" value="male"/> Sim
                             </div>
                             <div>
-                                <input type="radio" name="n" value="male"> Não</input>
+                                <input type="radio" name="s" value="male"/> Não
                             </div>
-                            <div class="criar-evento-4-pai-input">
-                                <input class="criar-evento-4-input" type="text" name="Nome" id=""
+                            <div className="criar-evento-4-pai-input">
+                                <input className="criar-evento-4-input" type="text" name="Nome" id=""
                                     placeholder="Se sim, qual?"/>
                             </div>
                         </div>
@@ -116,16 +116,16 @@ class CriarEvento4 extends Component {
 
 
 
-                    <div class="foto-sub6">
+                    <div className="foto-sub6">
                         <p>Adicionar foto para o ícone do evento?(Opcional)</p>
-                        <input class="procurar-arquivo" type="file" />
+                        <input className="procurar-arquivo" type="file" />
                     </div>
 
-                    <div class="criar-evento-4-div-texto">
-                        <textarea class="criar-evento-4-texto" cols="35" rows="5" placeholder="Observações adicionais(opcional)"></textarea>
+                    <div className="criar-evento-4-div-texto">
+                        <textarea className="criar-evento-4-texto" cols="35" rows="5" placeholder="Observações adicionais(opcional)"></textarea>
                     </div>
 
-                    <div class="botão_sub6">
+                    <div className="botão_sub6">
                         <button>Continuar</button>
                     </div>
             

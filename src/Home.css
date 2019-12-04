@@ -43,7 +43,7 @@ a, h1, h2, h3, h4, p{
     background-repeat: no-repeat; 
     background-size: cover; 
     display: flex;
-    height: 60vh; 
+    height: 55vh; 
     justify-content: space-around;
 }
 
@@ -317,15 +317,19 @@ time.data-formato-home{
 
 #FAQ-home{
     background: var(--preto);
-    height: 20vh;
+    height: 25vh;
+    display: flex;
+    align-items: center;
 }
 
 .FAQ-conteudo-home{
     display: flex;
-    height: 20vh;
+    height: 100%;
     justify-content: space-between;
+    /* align-items: center; */
     margin: 0 auto;
     width: 80vw;
+    /* background: #11AA58; */
 }
 
 .FAQ-texto-home{

@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function AprovarEventosAdm() {
-  return (
-    <div>
-      <h1>Essa é a AprovarEventosAdm</h1>
-    </div>
-  );
+class AprovarEventosAdm extends Component {
+  render(){
+    return(
+      <div className='AprovarEventosAdm'>
+        
+
+
+
+
+      </div>
+    )
+  }
 }
 
 export default AprovarEventosAdm;

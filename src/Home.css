@@ -89,7 +89,7 @@ a, h1, h2, h3, h4, p{
     display: flex;
     flex-direction: column;
     margin: auto;
-    height: 80vh;
+    height: 135vh;
     justify-content: center;
     width: 60vw;
 }
@@ -161,8 +161,9 @@ a, h1, h2, h3, h4, p{
 .eventos-home{
     /* background: yellowgreen; */
     display: flex;
-    height: 33vh;
+    /* height: 50vh; */
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-bottom: 6em;
     width: 60vw;
 }

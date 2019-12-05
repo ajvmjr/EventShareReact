@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './Home.css';
 import Moment from 'react-moment';
 import 'moment-timezone';
-import Cabecalho from './components/CabecalhoSemBotao'
-import Rodape from './components/Rodape'
+import Cabecalho from './components/CabecalhoSemBotao.js'
+import RodapeHome from './components/RodapeHome.js'
 
 
 class Home extends Component {
@@ -76,6 +76,8 @@ class Home extends Component {
       ListaDataFiltrada: listaFiltrada
     })
   }
+
+  
 
   componentDidMount() {
     this.buscarEvento()
@@ -200,7 +202,7 @@ class Home extends Component {
                 </section>
 
         </main>
-        <Rodape/>
+        <RodapeHome/>
       </div>
             );
           }

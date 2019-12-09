@@ -22,12 +22,13 @@ import DescricaoEvento from './pages/DescricaoEvento';
 import DescricaoEventoAdm from './pages/DescriçãoEventoAdm';
 import EditarEventoAdm from './pages/EditarEventoAdm';
 import EditarEventoPerfilUsuario from './pages/EditarEventoPerfilUsuario';
-import EditarPerfilAdm from './pages/EditarEventoAdm';
+import EditarPerfilAdm from './pages/EditarPerfilAdm';
 import EditarPerfilUsuario from './pages/EditarPerfilUsuario';
 import FAQ from './pages/FAQ';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import PainelEventos from './pages/PainelEventos';
+import PerfilAdmAprovarEvento from './pages/PerfilAdmAprovarEventos';
 
 const Rotas = (
     <Router>
@@ -52,6 +53,7 @@ const Rotas = (
                 <Route path='/FAQ' component={FAQ}/>
                 <Route path='/Login' component={Login}/>
                 <Route path='/PerfilUsuario' component={PainelEventos}/>
+                <Route path='/PerfilAdmAprovarEventos' component={PerfilAdmAprovarEvento}/>
                 <Route component={NotFound}/>
             </Switch>
         </div>

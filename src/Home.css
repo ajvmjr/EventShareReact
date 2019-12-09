@@ -88,8 +88,8 @@ a, h1, h2, h3, h4, p{
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin: auto;
-    height: 135vh;
+    margin: 8vh auto;
+    height: auto;
     justify-content: center;
     width: 60vw;
 }
@@ -170,6 +170,7 @@ a, h1, h2, h3, h4, p{
 
 .eventos-home a{
     text-decoration: none;
+    margin: 2vh 0;
 }
 
 .evento-1-home{

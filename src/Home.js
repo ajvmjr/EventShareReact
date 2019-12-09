@@ -30,7 +30,9 @@ class Home extends Component {
       espacoNome: '',
       eventoHorarioComeco: '',
       eventosFiltrados: [],
-      valorA: ''
+      valorA: '',
+      indice: true,
+      indiceGeral: 4 
       
     }
     this.buscarEvento = this.buscarEvento.bind(this)
@@ -58,26 +60,11 @@ class Home extends Component {
     })
   }
 
-  toggleFiltroData(event){
-    let data = event.target.value
-    this.filtrarData(data)
+  toggleIndice(){
+    console.log("Inverteu o valor do indice.")
+
+    this.setState({indice: !this.state.indice}, () => this.mudarIndice());
   }
-
-  filtrarData(data){
-    // console.log('Entramos em filtrar data a data é:' + data)
-    var listaDatas = this.state.listaDatas
-
-    var listaFiltrada = listaDatas.filter((value, index, arr) => {
-      if(listaDatas[index].evento.eventoData == data){
-        return listaDatas[index]
-      }
-    })
-    this.setState({
-      ListaDataFiltrada: listaFiltrada
-    })
-  }
-
-  
 
   componentDidMount() {
     this.buscarEvento()
@@ -109,6 +96,18 @@ class Home extends Component {
     console.log(this.state.data)
   }
 
+  mudarIndice(){
+    let tamanhoLista = this.state.listaFiltradaDeEventos
+    console.log(tamanhoLista.length)
+   
+    if (this.state.indice === false){
+      this.setState({indiceGeral: tamanhoLista.length})
+    } else {
+      this.setState({indiceGeral : 4})
+    }
+  }
+
+
   render() {
 
     return (
@@ -131,7 +130,7 @@ class Home extends Component {
                 <div className="filtro-categorias-data-home">
 
                   <select  onChange={this.toggleFiltro.bind(this)}  value='value-select' id='id-select' className="filtro-categorias-home" >
-                  <option id="value-option1" selected>Selecione uma categoria</option>
+                  <option id="" selected>Selecione uma categoria</option>
                   {
                     this.state.listaCategorias.map(function(categoria){
                     return <option  value={categoria.categoriaId} key={categoria.categoriaId}  name="teste">{categoria.categoriaNome}</option>
@@ -150,7 +149,7 @@ class Home extends Component {
               <div className="eventos-home">
                 {
                   this.state.listaFiltradaDeEventos ?
-                  this.state.listaFiltradaDeEventos.map( evento => {
+                  this.state.listaFiltradaDeEventos.slice(0, this.state.indiceGeral).map( evento => {
                     return(
                     <a href="#">
                       <div key={evento.eventoId} className="evento-1-home">
@@ -184,8 +183,15 @@ class Home extends Component {
                 </div>
 
                   <section id="secao-botao-ver-mais-home">
-                    <button className="botao-ver-mais-home">Ver mais</button>
-          </section>
+                  {
+                    this.state.indice === true &&
+                    <button onClick={this.toggleIndice.bind(this)} type='submit' className="botao-ver-mais-home">Ver mais</button>
+                  }
+                  {
+                    this.state.indice === false &&
+                    <button onClick={this.toggleIndice.bind(this)} type='submit' className="botao-ver-mais-home">Ver menos</button>
+                  }
+                  </section>
 
                   </section>
 

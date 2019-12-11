@@ -46,7 +46,9 @@ p {
 
 /*COMEÇO WEB - perfil-adm-aprovar-eventos*/
 
-.titulo-perfil-adm-aprovar-eventos {
+
+
+.titulo-aprovar-eventos {
     align-items: center;
     /* background: #11AA58; */
     display: flex;
@@ -56,106 +58,191 @@ p {
     width: 60vw;
 }
 
-.titulo-perfil-adm-aprovar-eventos h1 {
+.titulo-aprovar-eventos h1 {
     color: var(--preto);
     font-size: 1.80em;
     font-weight: 100;
     text-transform: uppercase;
 }
 
-#eventos-perfil-adm-aprovar-eventos {
+.filtro-status-data-aprovar{
+    /* height: 5.80vh;
+    width: 65.55vw; */
+    /* background-color: #94399E; */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.filtro-status-aprovar{
+    border: 1px solid var(--cinza_input);
+    color: var(--cinza_input);
+    font-size: 0.90em;
+    height: 5.20vh;
+    width: 49.90%;
+}
+
+.filtro-categorias-aprovar{
+    border: 1px solid var(--cinza_input);
+    color: var(--cinza_input);
+    font-size: 0.90em;
+    height: 5.20vh;
+    width: 49.90%;
+}
+
+.filtro-data-aprovar{
+    height: 5.80vh;
+    width: 49.90%;
+}
+
+.filtro-botão-input-aprovar:hover{
+    box-shadow: none;
+    cursor: none;
+    opacity: 1;
+    transition: none;
+}
+
+
+#eventos-aprovar-eventos {
     /* background: lightblue; */
     align-items: center;
     display: flex;
     flex-direction: column;
     margin: auto;
-    height: 60vh;
-    justify-content: center;
+    height: auto;
     padding-bottom: 3em;
     width: 60vw;
+    flex-wrap: wrap;
 }
 
-.eventos-perfil-adm-aprovar-eventos {
+.eventos-menor-aprovar-eventos{
     /* background: yellowgreen; */
     display: flex;
-    height: 33vh;
+    height: auto;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-bottom: 6em;
     width: 60vw;
 }
 
-.eventos-perfil-adm-aprovar-eventos a {
-    text-decoration: none;
-}
-
-.evento-1-perfil-adm-aprovar-eventos {
+.evento-1-aprovar{
     /* background: coral; */
-    height: 42vh;
+    height: 47vh;
     width: 28vw;
+    margin-bottom: 10px;
+    /* background: #ED312F; */
 }
 
-.evento-1-perfil-adm-aprovar-eventos:hover {
+.evento-1-aprovar:hover{
     box-shadow: 0.20em 0.20em 0.50em #CCC;
 }
 
-.evento-um-perfil-adm-aprovar-eventos {
+.evento-um-aprovar{
     height: 30vh;
     width: 17.7vw;
 }
 
-.evento-um-perfil-adm-aprovar-eventos img {
+.evento-imagem-aprovar{
     border: 1px solid var(--cinza);
     height: 33vh;
     width: 28vw;
 }
 
-.evento-2-perfil-adm-aprovar-eventos {
+
+.evento-2-aprovar{
     /* background: cornflowerblue; */
-    height: 42vh;
+    height: 40vh;
     width: 28vw;
 }
 
-.evento-2-perfil-adm-aprovar-eventos:hover {
+.evento-2-aprovar:hover{
     box-shadow: 0.20em 0.20em 0.50em #CCC;
 }
 
-.evento-dois-perfil-adm-aprovar-eventos {
+.evento-dois-aprovar{
     height: 30vh;
     width: 17.7vw;
 }
 
-.evento-dois-perfil-adm-aprovar-eventos img {
+.evento-dois-aprovar img{
     border: 1px solid var(--cinza);
     height: 33vh;
     width: 28vw;
 }
 
-.evento-nome-data-hora-local-perfil-adm-aprovar-eventos {
+.evento-nome-data-hora-local-aprovar{
     display: flex;
     flex-direction: column;
     height: 2.50vh;
     justify-content: space-between;
-    margin-top: 0.30em;
+    margin-top: 0.30em; 
     width: 15vw;
 }
 
-.evento-nome-perfil-adm-aprovar-eventos p {
+.data-evento-aprovar{
+    /* background: #11AA58; */
+    display: flex;
+    width: 9vw;
+    height: 3vh;
+    /* align-items: center; */
+    
+}
+
+.data-evento-aprovar p{
+    margin-right: 2px;
+    font-weight: bold;
+}
+
+time.data-formato-aprovar{
+    color: #000000;
+    font-size: 0.8em;
+}
+
+.hora-evento-aprovar{
+    display: flex;
+}
+
+.horario-bold-aprovar{
+    font-weight: bold;
+    margin-right: 2px; 
+}
+
+
+.evento-nome-aprovar{
+    /* background: #5a155a; */
+    width: 28vw;
+}
+
+.evento-nome-aprovar p{
     color: var(--preto);
     font-size: 0.90em;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-.evento-data-hora-local-perfil-adm-aprovar-eventos {
+.evento-data-hora-local-aprovar{
     display: flex;
     justify-content: space-between;
-    width: 15vw;
+    width: 25vw;
+   
+    /* background: #5a155a; */
 }
 
-.evento-data-hora-local-perfil-adm-aprovar-eventos p {
+.evento-data-hora-local-aprovar p{
     color: var(--preto);
     font-size: 0.80em;
     text-transform: uppercase;
+}
+
+.espaco-evento-aprovar{
+    /* background: #11AA58; */
+    display: flex;
+    /* width: 7vw; */
+}
+
+.espaco-aprovar{
+    font-weight: bold;
+    margin-right: 2px;
 }
 
 #secao-botao-ver-mais-perfil-adm-aprovar-eventos {

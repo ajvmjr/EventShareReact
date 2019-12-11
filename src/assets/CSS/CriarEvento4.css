@@ -31,6 +31,11 @@ a, h1, h2, h3, h4, p{
 
 
 /* COMEÇO WEB - CRIAR EVENTO 4 */
+/* .main-criar-evento-4{
+    background-color: #11AA58;
+    height: 300vh;
+} */
+
 .obs p {
     font-size: 0.70em;
     padding-top: 0.50em;
@@ -104,6 +109,8 @@ a, h1, h2, h3, h4, p{
     display: flex;
     justify-content: center;
     margin-top: 1em;
+    height: auto;
+
 }
 
 #formulario-sub6 {
@@ -112,6 +119,7 @@ a, h1, h2, h3, h4, p{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: auto;
 }
 
 .inputs-sub6 {
@@ -216,6 +224,10 @@ a, h1, h2, h3, h4, p{
 
 .foto-sub6 p {
     margin-bottom: 5px;
+}
+
+.fileContainer .chooseFileButton{
+    background-color: var(--rosa) !important;
 }
 
 .obs-sub6 {

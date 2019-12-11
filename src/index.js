@@ -7,7 +7,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 
 import AprovarEventos from './pages/AprovarEventosAdm';
 import Cadastro from './pages/Cadastro';
@@ -29,32 +29,48 @@ import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import PainelEventos from './pages/PainelEventos';
 import PerfilAdmAprovarEvento from './pages/PerfilAdmAprovarEventos';
+import { usuarioAutenticado, parseJwt } from './services/auth';
+
+
+
+const PermissaoAdm = ({ component: Component }) => (
+    <Route
+        render={props =>
+            usuarioAutenticado() && parseJwt().Role === 'Administrador' ? (
+                <Component {...props} />
+                ) : (
+                    <Redirect to={{ pathname: '/PerfilAdmAprovarEventos' }} />
+                )
+        }
+    /> 
+)
+
 
 const Rotas = (
     <Router>
         <div>
             <Switch>
-                <Route exact path='/' component={Home}/>
-                <Route path='/AprovarEventos' component={AprovarEventos}/>
-                <Route path='/Cadastro' component={Cadastro}/>
-                <Route path='/Categorias' component={Categoria}/>
-                <Route path='/CriarEvento' component={CriarEvento1}/>
-                <Route path='/CriarEvento2' component={CriarEvento2}/>
-                <Route path='/CriarEvento3' component={CriarEvento3}/>
-                <Route path='/CriarEvento4' component={CriarEvento4}/>
-                <Route path='/CriarEvento5' component={CriarEvento5}/>
-                <Route path='/CriarEvento6' component={CriarEvento6}/>
-                <Route path='/DescricaoEvento' component={DescricaoEvento}/>
-                <Route path='/DescricaoEventoAdm' component={DescricaoEventoAdm}/>
-                <Route path='/EditarEventoAdm' component={EditarEventoAdm}/>
-                <Route path='/EditarEventoUsuario' component={EditarEventoPerfilUsuario}/>
-                <Route path='/EditarPerfilAdm' component={EditarPerfilAdm}/>
-                <Route path='/EditarPerfilUsuario' component={EditarPerfilUsuario}/>
-                <Route path='/FAQ' component={FAQ}/>
-                <Route path='/Login' component={Login}/>
-                <Route path='/PerfilUsuario' component={PainelEventos}/>
-                <Route path='/PerfilAdmAprovarEventos' component={PerfilAdmAprovarEvento}/>
-                <Route component={NotFound}/>
+                <Route exact path='/' component={Home} />
+                <PermissaoAdm path='/AprovarEventos' component={AprovarEventos} />
+                <Route path='/Cadastro' component={Cadastro} />
+                <Route path='/Categorias' component={Categoria} />
+                <Route path='/CriarEvento' component={CriarEvento1} />
+                <Route path='/CriarEvento2' component={CriarEvento2} />
+                <Route path='/CriarEvento3' component={CriarEvento3} />
+                <Route path='/CriarEvento4' component={CriarEvento4} />
+                <Route path='/CriarEvento5' component={CriarEvento5} />
+                <Route path='/CriarEvento6' component={CriarEvento6} />
+                <Route path='/DescricaoEvento' component={DescricaoEvento} />
+                <Route path='/DescricaoEventoAdm' component={DescricaoEventoAdm} />
+                <PermissaoAdm path='/EditarEventoAdm' component={EditarEventoAdm} />
+                <Route path='/EditarEventoUsuario' component={EditarEventoPerfilUsuario} />
+                <PermissaoAdm path='/EditarPerfilAdm' component={EditarPerfilAdm} />
+                <Route path='/EditarPerfilUsuario' component={EditarPerfilUsuario} />
+                <Route path='/FAQ' component={FAQ} />
+                <Route path='/Login' component={Login} />
+                <Route path='/PerfilUsuario' component={PainelEventos} />
+                <PermissaoAdm path='/PerfilAdmAprovarEventos' component={PerfilAdmAprovarEvento} />
+                <Route component={NotFound} />
             </Switch>
         </div>
     </Router>

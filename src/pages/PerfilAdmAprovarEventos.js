@@ -9,8 +9,8 @@ class PerfilAdmAprovarEvento extends Component {
   render() {
     return (
       <div>
-        <Cabecalho/>
-        <TopoPerfil/>
+        <Cabecalho />
+        <TopoPerfil />
         <main class="main-perfil-adm-aprovar-eventos">
           <section class="titulo-perfil-adm-aprovar-eventos">
             <h1>Aprovar Eventos</h1>
@@ -53,7 +53,7 @@ class PerfilAdmAprovarEvento extends Component {
                       src={require("../assets/imagens/Evento2.jpeg")}
                       alt=""
                       class="evento-imagem-perfil-adm-aprovar-eventos"
-                      />
+                    />
                     <div class="evento-nome-data-hora-local-perfil-adm-aprovar-eventos">
                       <div class="evento-nome-perfil-adm-aprovar-eventos">
                         <p>THOUGHTWORKS TECH TALKS</p>
@@ -82,7 +82,7 @@ class PerfilAdmAprovarEvento extends Component {
             </section>
           </section>
         </main>
-        <Rodape/>
+        <Rodape />
       </div>
     );
   }

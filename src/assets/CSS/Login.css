@@ -99,6 +99,17 @@ a, h1, h2, h3, h4, p{
 }
 /* FIM WEB - LOGIN */
 
+.botão_sub6 button {
+    background-color: var(--rosa);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0.70em 1.40em;
+    text-decoration: none;
+}
+
 
 
 /* COMEÇO TABLET - LOGIN */

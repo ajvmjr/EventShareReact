@@ -8,17 +8,17 @@ class CabecalhoBotao extends Component {
             <div className="">
                 <header>
         <section id="cabecalho-padrao">
-            <div class="itens-cabecalho-padrao">
+            <div className="itens-cabecalho-padrao">
 
-                <div class="logo-eventshare-cabecalho-padrao">
+                <div className="logo-eventshare-cabecalho-padrao">
                     <a href="/">
                         <img src={Logo} alt="Logo do projeto Eventshare"/>
                     </a>
                 </div>
 
 
-                <div class="menu-cabecalho-padrao">
-                    <nav class="menu">
+                <div className="menu-cabecalho-padrao">
+                    <nav className="menu">
 
                         <ul>
                             <li>

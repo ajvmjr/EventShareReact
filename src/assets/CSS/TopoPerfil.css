@@ -55,10 +55,10 @@ a, h1, h2, h3, h4, p{
 
 .nome-TopoPerfil{
     margin-left: 5em;
-    height: 5.6vh;
+    height: 5vh;
     width: 13vw;
     background: var(--rosa);
-    position: relative; top: 109px; left: 200px;
+    position: relative; top: 112px; left: 200px;
     display: flex;
     align-items: center;
     justify-content: center;

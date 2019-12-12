@@ -32,7 +32,8 @@ class Home extends Component {
       eventosFiltrados: [],
       valorA: '',
       indice: true,
-      indiceGeral: 4 
+      indiceGeral: 4 ,
+      eventoStatusId: ''
       
     }
     this.buscarEvento = this.buscarEvento.bind(this)
@@ -62,7 +63,6 @@ class Home extends Component {
 
   toggleIndice(){
     console.log("Inverteu o valor do indice.")
-
     this.setState({indice: !this.state.indice}, () => this.mudarIndice());
   }
 
@@ -150,6 +150,7 @@ class Home extends Component {
                 {
                   this.state.listaFiltradaDeEventos ?
                   this.state.listaFiltradaDeEventos.slice(0, this.state.indiceGeral).map( evento => {
+                    if(evento.eventoStatusId === 1){
                     return(
                     <a href="#">
                       <div key={evento.eventoId} className="evento-1-home">
@@ -178,7 +179,7 @@ class Home extends Component {
                             </div>
                           </div>
                         </div>
-                    </a> ) } ) : null
+                    </a> )} } ) : null
                   }
                 </div>
 

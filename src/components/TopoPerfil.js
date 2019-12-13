@@ -38,17 +38,17 @@ class TopoPerfil extends Component {
     render() {
         return (
             <div className="">
-                <div class="pai-TopoPerfil">
-                    <div class="capa-TopoPerfil">
-                        <div key={this.state.usuario.usuarioId} class="nome-TopoPerfil">
+                <div className="pai-TopoPerfil">
+                    <div className="capa-TopoPerfil">
+                        <div key={this.state.usuario.usuarioId} className="nome-TopoPerfil">
                             <p>{this.state.usuario.usuarioNome}</p>
                         </div>
-                        <div class="fotoperfil-TopoPerfil">
+                        <div className="fotoperfil-TopoPerfil">
                             <img src={require("../assets/imagens/perfil1.png")} alt="" />
                         </div>
                         {/* <!--fim textor--> */}
                     </div>
-                    <nav class="menu-TopoPerfil">
+                    <nav className="menu-TopoPerfil">
                         <Link to={"/EditarPerfilUsuario"}>Editar Perfil</Link>
                         <Link to={"/PerfilUsuario"} >Painel de Eventos</Link>
                     </nav>

@@ -37,8 +37,8 @@ class PainelEventos extends Component {
   }
 
   buscarEventosUsuario(){
-    console.log(this.state.usuario.UserId)
-    fetch('http://localhost:5000/api/eventotbl/perfilusuario/' + this.state.usuario.UserId)
+    console.log(this.state.usuario)
+    fetch('http://localhost:5000/api/eventotbl/perfilusuario/' + this.state.usuario)
     .then(resposta => resposta.json())
     .then(data => this.setState({ 
                                   listaEventos: data
@@ -78,6 +78,7 @@ class PainelEventos extends Component {
               <div className="display-perfilU">
                 { 
                   this.state.listaEventos.map(event => {
+                    console.log( this.state.listaEventos.length )
                       return (
                           <div className="painel-perfilU" key={event.eventoId}>
                             <div className="esquerda-perfilU">
@@ -98,7 +99,6 @@ class PainelEventos extends Component {
                               </div>
 
                               <div className="box-perfilU">
-                                <h3>Horário</h3>
                                 <p>Início: { event.eventoHorarioComeco }</p>
                                 <p>Fim: { event.eventoHorarioFim }</p>
                               </div>
@@ -119,7 +119,7 @@ class PainelEventos extends Component {
                               
                             </div>
                           </div>
-                    )})
+                      )})
                   }
                 {/* <!--fim painel--> */}
 

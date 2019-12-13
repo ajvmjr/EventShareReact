@@ -60,7 +60,7 @@ const Rotas = (
                 <Route path='/CriarEvento4' component={CriarEvento4} />
                 <Route path='/CriarEvento5' component={CriarEvento5} />
                 <Route path='/CriarEvento6' component={CriarEvento6} />
-                <Route path='/DescricaoEvento' component={DescricaoEvento} />
+                <Route path='/DescricaoEvento/:id' component={DescricaoEvento} />
                 <Route path='/DescricaoEventoAdm' component={DescricaoEventoAdm} />
                 <PermissaoAdm path='/EditarEventoAdm' component={EditarEventoAdm} />
                 <Route path='/EditarEventoUsuario' component={EditarEventoPerfilUsuario} />

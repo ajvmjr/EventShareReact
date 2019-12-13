@@ -178,6 +178,7 @@ a, h1, h2, h3, h4, p{
     height: 43vh;
     width: 28vw;
     /* background: #ED312F; */
+    cursor: pointer;
 }
 
 .evento-1-home:hover{

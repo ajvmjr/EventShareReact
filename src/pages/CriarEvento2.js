@@ -17,7 +17,7 @@ class CriarEvento2 extends Component {
                 <h2>Informações básicas sobre o evento:</h2>
               </div>
               <section class="form_sub2">
-                <form action="#" method="POST">
+                <form className='form-sub2' action="#" method="POST">
                   <div class="input_sub2">
                     <input type="text" id="nome" placeholder="Nome" />
                   </div>

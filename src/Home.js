@@ -223,10 +223,17 @@ class Home extends Component {
         </main>
         <RodapeHome />
       </div>
+<<<<<<< HEAD
     );
   }
 }
 
 
 
+=======
+            );
+          }
+        }
+               
+>>>>>>> 33dc2e819b9d932fe39732fca842dedf60216488
 export default Home;

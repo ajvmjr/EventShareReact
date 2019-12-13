@@ -75,7 +75,7 @@ class Login extends Component {
             if (parseJwt().Role === 'Administrador') {
               this.props.history.push('/PerfilAdmAprovarEventos');
             }else{
-              this.props.history.push('/');
+              this.props.history.push('/PerfilUsuario');
             }
           
         })

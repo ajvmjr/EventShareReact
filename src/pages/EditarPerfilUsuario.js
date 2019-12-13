@@ -16,7 +16,13 @@ class EditarPerfilUsuario extends Component {
       usuarioNome: '',
       usuarioEmail: '',
       usuarioComunidade: '',
-      usuarioSenha: ''
+      usuarioSenha: '',
+      editarModal: {
+        usuarioNome: '',
+        usuarioEmail: '',
+        usuarioComunidade: '',
+        usuarioSenha: '',
+      }
     }
 
     this.atualizarEstadoNome = this.atualizarEstadoNome.bind(this);
@@ -69,62 +75,63 @@ class EditarPerfilUsuario extends Component {
   salvarAlteracoes = (event) => {
     event.preventDefault();
 
-    fetch('https://localhost:5001/api/usuariotbl/' + this.state.editarModal.usuarioId, {
+    let perfilUsuario = new FormData()
+    
+    perfilUsuario.set("usuarioNome", this.state.usuarioNome);
+    perfilUsuario.set("usuarioEmail", this.state.usuarioEmail);
+    perfilUsuario.set("usuarioComunidade", this.state.usuarioComunidade);
+    perfilUsuario.set("usuarioSenha", this.state.usuarioSenha);
+
+    fetch('https://localhost:5001/api/usuariotbl/'+this.state.editarModal.usuarioId, {
       method: "PUT",
-      body: JSON.stringify(this.state.editarModal),
-      headers: {
-        "Content-type": "application/json"
-      }
+      body: perfilUsuario
     })
       .then(resposta => resposta.json())
       .then(
         setTimeout(() => {
           this.buscarUsuario()
-        }, 2000)
+        }, 1000)
       )
       .catch(erro => console.log(erro))
 
     this.toggle();
   }
 
-  atualizaEditarModal(input) {
+  atualizaEditarModalNome(event) {
     this.setState({
       editarModal: {
         usuarioId: this.state.editarModal.usuarioId,
-        usuarioNome: input.target.value,
-        usuarioEmail: input.target.value,
-        usuarioComunidade: input.target.value,
-        usuarioSenha: input.target.value
+        usuarioNome: event.target.value,
       }
     })
   }
 
-  // atualizaEditarModalEmail(input) {
-  //   this.setState({
-  //     editarModal: {
-  //       usuarioId: this.state.editarModal.usuarioId,
-  //       usuarioEmail: input.target.value
-  //     }
-  //   })
-  // }
+  atualizaEditarModalEmail(event) {
+    this.setState({
+      editarModal: {
+        usuarioId: this.state.editarModal.usuarioId,
+        usuarioEmail: event.target.value
+      }
+    })
+  }
 
-  // atualizaEditarModalComunidade(input) {
-  //   this.setState({
-  //     editarModal: {
-  //       usuarioId: this.state.editarModal.usuarioId,
-  //       usuarioComunidade: input.target.value
-  //     }
-  //   })
-  // }
+  atualizaEditarModalComunidade(event) {
+    this.setState({
+      editarModal: {
+        usuarioId: this.state.editarModal.usuarioId,
+        usuarioComunidade: event.target.value
+      }
+    })
+  }
 
-  // atualizaEditarModalSenha(input) {
-  //   this.setState({
-  //     editarModal: {
-  //       usuarioId: this.state.editarModal.usuarioId,
-  //       usuarioSenha: input.target.value
-  //     }
-  //   })
-  // }
+  atualizaEditarModalSenha(event) {
+    this.setState({
+      editarModal: {
+        usuarioId: this.state.editarModal.usuarioId,
+        usuarioSenha: event.target.value
+      }
+    })
+  }
 
   toggle = () => {
     this.setState({
@@ -170,30 +177,30 @@ class EditarPerfilUsuario extends Component {
           </section>
         </main>
 
-        {/* <MDBContainer>
+        <MDBContainer>
           <form onSubmit={this.salvarAlteracoes}>
             <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
               <MDBModalHeader toggle={this.toggle}>Editar Perfil</MDBModalHeader>
-              <MDBModalBody>
+              <MDBModalBody  key={this.state.usuario.usuarioId} >
                 <MDBInput
                   label='Nome'
                   value={this.state.editarModal.usuarioNome}
-                  onChange={this.atualizaEditarModal.bind(this)}
+                  onChange={this.atualizaEditarModalNome.bind(this)}
                 />
                 <MDBInput
                   label='Email'
                   value={this.state.editarModal.usuarioEmail}
-                  onChange={this.atualizaEditarModal.bind(this)}
+                  onChange={this.atualizaEditarModalEmail.bind(this)}
                 />
                 <MDBInput
                   label='Comunidade'
                   value={this.state.editarModal.usuarioComunidade}
-                  onChange={this.atualizaEditarModal.bind(this)}
+                  onChange={this.atualizaEditarModalComunidade.bind(this)}
                 />
                 <MDBInput
                   label='Senha'
                   value={this.state.editarModal.usuarioSenha}
-                  onChange={this.atualizaEditarModal.bind(this)}
+                  onChange={this.atualizaEditarModalSenha.bind(this)}
                 />
                 </MDBModalBody>
               <MDBModalFooter>
@@ -202,7 +209,7 @@ class EditarPerfilUsuario extends Component {
               </MDBModalFooter>
             </MDBModal>
           </form>
-        </MDBContainer> */}
+        </MDBContainer>
 
         <Rodape />
       </div>

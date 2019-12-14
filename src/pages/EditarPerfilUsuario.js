@@ -1,3 +1,4 @@
+import Api from '../services/Api';
 import React, { Component } from 'react';
 import '../assets/CSS/EditarPerfilUsuario.css';
 import Cabecalho from '../components/CabecalhoBotao';
@@ -17,11 +18,15 @@ class EditarPerfilUsuario extends Component {
       usuarioEmail: '',
       usuarioComunidade: '',
       usuarioSenha: '',
+      usuarioTipoId: parseJwt().Tipo,
       editarModal: {
+        usuario: '',
+        usuarioId: parseJwt().UserId,
         usuarioNome: '',
         usuarioEmail: '',
         usuarioComunidade: '',
         usuarioSenha: '',
+        usuarioTipoId: parseJwt().Tipo,
       }
     }
 
@@ -30,6 +35,7 @@ class EditarPerfilUsuario extends Component {
     this.atualizarEstadoComunidade = this.atualizarEstadoComunidade.bind(this);
     this.atualizarEstadoSenha = this.atualizarEstadoSenha.bind(this);
     this.buscarUsuario = this.buscarUsuario.bind(this);
+    this.salvarAlteracoes = this.salvarAlteracoes.bind(this);
   }
 
   buscarUsuario(){
@@ -38,8 +44,8 @@ class EditarPerfilUsuario extends Component {
       .then(data => {
         this.setState({ usuario: data })
       })
-      .catch(erro => {
-        console.log(erro);
+      .catch((erro) => {
+        console.log(erro)
       })
   }
 
@@ -59,43 +65,57 @@ class EditarPerfilUsuario extends Component {
     this.setState({ usuarioSenha: event.target.value })
   }
 
-  alterarUsuario = (usuario) => {
+  alterarUsuario() {
     this.setState({
       editarModal: {
-        usuarioId: usuario.usuarioId,
-        usuarioNome: usuario.usuarioNome,
-        usuarioEmail: usuario.usuarioEmail,
-        usuarioComunidade: usuario.usuarioComunidade,
-        usuarioSenha: usuario.usuarioSenha
+        usuarioId: this.state.usuario.usuarioId,
+        usuarioNome: this.state.usuario.usuarioNome,
+        usuarioEmail: this.state.usuario.usuarioEmail,
+        usuarioComunidade: this.state.usuario.usuarioComunidade,
+        usuarioSenha: this.state.usuario.usuarioSenha,
+        usuarioTipoId: this.state.usuario.usuarioTipoId
       }
     })
+    console.log(this.state.usuario.usuarioId);
+    console.log(this.state.usuario.usuarioNome);
+    console.log(this.state.usuario.usuarioEmail);
+    console.log(this.state.usuario.usuarioComunidade);
+    console.log(this.state.usuario.usuarioSenha);
+    console.log(this.state.usuario.usuarioTipoId);
+
     this.toggle();
   }
 
   salvarAlteracoes = (event) => {
     event.preventDefault();
-
-    let perfilUsuario = new FormData()
     
-    perfilUsuario.set("usuarioNome", this.state.usuarioNome);
-    perfilUsuario.set("usuarioEmail", this.state.usuarioEmail);
-    perfilUsuario.set("usuarioComunidade", this.state.usuarioComunidade);
-    perfilUsuario.set("usuarioSenha", this.state.usuarioSenha);
-
-    fetch('https://localhost:5001/api/usuariotbl/'+this.state.editarModal.usuarioId, {
+    fetch('https://localhost:5001/api/usuariotbl/'+ this.state.usuario.usuarioId, {
       method: "PUT",
-      body: perfilUsuario
+      body: JSON.stringify(this.state.editarModal),
+      headers: {
+        "Content-type": "application/json"
+      }
     })
       .then(resposta => resposta.json())
-      .then(
-        setTimeout(() => {
+      .then(setTimeout(() => {
           this.buscarUsuario()
         }, 1000)
       )
       .catch(erro => console.log(erro))
-
-    this.toggle();
+      this.toggle();
   }
+
+  // salvarAlteracoes = (event) => {
+  //   event.preventDefault();
+
+  //   Api.put('/usuariotbl/' + this.state.usuario.usuarioId)
+  //   .then(setTimeout(() => {
+  //       this.buscarUsuario()
+  //     }, 1000)
+  //   )
+  //   .catch(erro => console.log(erro))
+  //   this.toggle()
+  // }
 
   atualizaEditarModalNome(event) {
     this.setState({
@@ -181,7 +201,7 @@ class EditarPerfilUsuario extends Component {
           <form onSubmit={this.salvarAlteracoes}>
             <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
               <MDBModalHeader toggle={this.toggle}>Editar Perfil</MDBModalHeader>
-              <MDBModalBody  key={this.state.usuario.usuarioId} >
+              <MDBModalBody  key={this.state.editarModal.usuarioId} >
                 <MDBInput
                   label='Nome'
                   value={this.state.editarModal.usuarioNome}

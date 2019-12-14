@@ -108,8 +108,8 @@ class EditarEventoPerfilUsuario extends Component {
 
   salvarAlteracoes = (event) => {
     event.preventDefault();
-    
-    fetch('https://localhost:5001/api/eventotbl/'+ this.state.evento.eventoId, {
+
+    fetch('https://localhost:5001/api/eventotbl/' + this.state.evento.eventoId, {
       method: "PUT",
       body: JSON.stringify(this.state.editarModal),
       headers: {
@@ -118,11 +118,11 @@ class EditarEventoPerfilUsuario extends Component {
     })
       .then(resposta => resposta.json())
       .then(setTimeout(() => {
-          this.buscarEvento()
-        }, 1000)
+        this.buscarEvento()
+      }, 1000)
       )
       .catch(erro => console.log(erro))
-      this.toggle();
+    this.toggle();
   }
 
 
@@ -233,7 +233,10 @@ class EditarEventoPerfilUsuario extends Component {
             <section className="quadrado_forades4">
               <div className="direita_topo_descrição4">
                 <div className="botao-edicao-concluida-descricao4-evento">
-                  <button type="submit" onClick={i => this.alterarEvento(this.state.evento)}>Editar Evento</button>
+                  <button type="submit" onClick={i => this.alterarEvento(this.state.evento)}>Editar</button>
+                </div>
+                <div className="botao-deletar-descricao4-evento">
+                  <button type="submit">Deletar</button>
                 </div>
               </div>
               <div className="info_descrição4">
@@ -276,7 +279,7 @@ class EditarEventoPerfilUsuario extends Component {
           <form onSubmit={this.salvarAlteracoes}>
             <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
               <MDBModalHeader toggle={this.toggle}>Editar Evento <b> {this.state.editarModal.eventoNome} </b></MDBModalHeader>
-              <MDBModalBody  key={this.state.editarModal.eventoId} >
+              <MDBModalBody key={this.state.editarModal.eventoId} >
                 <MDBInput
                   label='Nome'
                   value={this.state.editarModal.eventoNome}
@@ -302,7 +305,7 @@ class EditarEventoPerfilUsuario extends Component {
                   value={this.state.editarModal.eventoHorarioFim}
                   onChange={this.atualizaEditarModalFim.bind(this)}
                 />
-                </MDBModalBody>
+              </MDBModalBody>
               <MDBModalFooter>
                 <MDBBtn color="secondary" onClick={this.toggle}>Cancelar</MDBBtn>
                 <MDBBtn type="submit" color="primary">Salvar</MDBBtn>

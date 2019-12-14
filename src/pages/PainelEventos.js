@@ -94,61 +94,61 @@ class PainelEventos extends Component {
                         <div className="painel-perfilU" key={event.eventoId}>
 
                           <div className="esquerda-perfilU">
-                            <Link to={"/EditarEventoUsuario"}>
-                              <h3>{event.eventoNome}</h3>
-                              <img src={require("../assets/imagens/wakanda.png")} alt="Imagem do evento" />
-                            </Link>
-                          </div>
+                            <h3>{event.eventoNome}</h3>
+                            <img src={require("../assets/imagens/wakanda.png")} alt="Imagem do evento" />
+                        </div>
 
-                          <div className="direita-perfilU">
+                        <div className="direita-perfilU">
+                          <Link to={"/EditarEventoUsuario"}>
                             <div className="editar-perfilU">
                               {event.eventoStatus.eventoStatusNome === 'Aguardando Aprovação' ? (<a id="edit" href="#">Editar Evento</a>) : (this.mudarDisplay)}
                             </div>
+                          </Link>
 
-                            <div className="box-perfilU">
-                              <h3>Data: <Moment format="DD/MM/YYYY">
-                                            {event.eventoData}
-                                        </Moment>
-                              </h3>
-                            </div>
-
-                            <div className="box-perfilU">
-                              <p>Início: {event.eventoHorarioComeco}</p>
-                              <p>Fim: {event.eventoHorarioFim}</p>
-                            </div>
-
-                            <div className="box-perfilU">
-                              <h3>Local:</h3>
-                              <p>{event.eventoEspaco.espacoNome}</p>
-                            </div>
-
-                            <div className="box-perfilU">
-                              <h3>Status:
-                                </h3>
-                              <div className="status-perfilU">
-                                <p>{event.eventoStatus.eventoStatusNome}</p>
-                                {/* <div className="circulo-perfilU"></div> */}
-                              </div>
-                            </div>
-
+                          <div className="box-perfilU">
+                            <h3>Data: <Moment format="DD/MM/YYYY">
+                              {event.eventoData}
+                            </Moment>
+                            </h3>
                           </div>
+
+                          <div className="box-perfilU">
+                            <p>Início: {event.eventoHorarioComeco}</p>
+                            <p>Fim: {event.eventoHorarioFim}</p>
+                          </div>
+
+                          <div className="box-perfilU">
+                            <h3>Local:</h3>
+                            <p>{event.eventoEspaco.espacoNome}</p>
+                          </div>
+
+                          <div className="box-perfilU">
+                            <h3>Status:
+                                </h3>
+                            <div className="status-perfilU">
+                              <p>{event.eventoStatus.eventoStatusNome}</p>
+                              {/* <div className="circulo-perfilU"></div> */}
+                            </div>
+                          </div>
+
+                        </div>
                         </div>
 
-                      )
-                    })
-                  }
+                )
+              })
+            }
                   {/* <!--fim painel--> */}
 
                 </div>
               </section>
 
-            }
+          }
 
           </main>
 
-        </div>
-        <Rodape />
       </div>
+      <Rodape />
+      </div >
     );
   }
 }

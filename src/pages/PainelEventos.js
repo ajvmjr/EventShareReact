@@ -107,8 +107,8 @@ class PainelEventos extends Component {
 
                             <div className="box-perfilU">
                               <h3>Data: <Moment format="DD/MM/YYYY">
-                                {event.eventoData}
-                              </Moment>
+                                            {event.eventoData}
+                                        </Moment>
                               </h3>
                             </div>
 

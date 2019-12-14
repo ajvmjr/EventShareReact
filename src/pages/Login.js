@@ -81,7 +81,7 @@ class Login extends Component {
       })
       .catch(erro => {
         console.log("Erro: ", erro);
-        this.setState({ erroMensagem: "Email ou senha inválido, conta inexistente" });
+        this.setState({ erroMensagem: "Email ou senha inválidos" });
         this.setState({ isLoading: false })
       })
 

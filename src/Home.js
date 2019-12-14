@@ -114,7 +114,7 @@ class Home extends Component {
   render() {
 
     return (
-      <div classNameName="Home">
+      <div className="Home">
         <Cabecalho />
         <main className="main-home">
 
@@ -172,12 +172,12 @@ class Home extends Component {
                               <div className="evento-data-hora-local-home">
                                 <div className="data-evento-home">
                                   <p>Data:</p>
-                                  <Moment class='data-formato-home' format="DD/MM/YYYY">
+                                  <Moment className='data-formato-home' format="DD/MM/YYYY">
                                     {evento.eventoData}
                                   </Moment>
                                 </div>
-                                <div class="hora-evento-home">
-                                  <p class='horario-bold-home'>Horário:</p>
+                                <div className="hora-evento-home">
+                                  <p className='horario-bold-home'>Horário:</p>
                                   <p>{evento.eventoHorarioComeco}</p>
                                 </div>
                                 <div className="espaco-evento-home">

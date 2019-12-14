@@ -15,7 +15,7 @@ class EditarEventoPerfilUsuario extends Component {
       usuarioId: parseJwt().UserId,
       usuarioNome: '',
       evento: '',
-      eventoId: '',
+      eventoId: this.props.eventoId,
       eventoNome: '',
       eventoDescricao: '',
       eventoData: '',
@@ -23,7 +23,7 @@ class EditarEventoPerfilUsuario extends Component {
       eventoHorarioFim: '',
       editarModal: {
         evento: '',
-        eventoId: '',
+        eventoId: this.props.eventoId,
         eventoNome: '',
         eventoDescricao: '',
         eventoData: '',
@@ -55,6 +55,14 @@ class EditarEventoPerfilUsuario extends Component {
   // atualizarEstadoNome(event) {
   //   this.setState({ usuarioNome: event.target.value })
   // }
+
+  componentWillReceiveProps(){
+    setTimeout(() => {
+      this.setState({ eventoId: this.props.eventoId })
+    }, 100)
+
+    console.log('id evento: ' + this.state.eventoId)
+  }
 
   buscarEvento() {
     fetch('https://localhost:5001/api/eventotbl/perfilusuario/' + this.state.usuarioId)

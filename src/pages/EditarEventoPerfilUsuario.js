@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import Api from '../services/Api';
 import '../assets/CSS/EditarEventoPerfilUsuario.css';
 import CabecalhoBotao from '../components/CabecalhoBotao';
 import Rodape from '../components/Rodape';
+import { parseJwt } from '../services/auth';
 
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBInput } from 'mdbreact';
 
@@ -10,7 +12,7 @@ class EditarEventoPerfilUsuario extends Component {
     super(props);
     this.state = {
       usuario: '',
-      usuarioId: '',
+      usuarioId: parseJwt().UserId,
       usuarioNome: '',
       evento: '',
       eventoId: '',
@@ -30,7 +32,7 @@ class EditarEventoPerfilUsuario extends Component {
       }
     }
 
-    this.buscarUsuario = this.buscarUsuario.bind(this);
+    // this.buscarUsuario = this.buscarUsuario.bind(this);
     this.buscarEvento = this.buscarEvento.bind(this);
     this.atualizarEstadoNome = this.atualizarEstadoNome.bind(this);
     this.atualizarEstadoDescricao = this.atualizarEstadoDescricao.bind(this);
@@ -39,23 +41,23 @@ class EditarEventoPerfilUsuario extends Component {
     this.atualizarEstadoHorarioFim = this.atualizarEstadoHorarioFim.bind(this);
   }
 
-  buscarUsuario() {
-    fetch('https://localhost:5001/api/usuariotbl/' + this.state.usuarioId)
-      .then(resposta => resposta.json())
-      .then(data => {
-        this.setState({ usuario: data })
-      })
-      .catch((erro) => {
-        console.log(erro)
-      })
-  }
+  // buscarUsuario() {
+  //   fetch('https://localhost:5001/api/usuariotbl/' + this.state.usuarioId)
+  //     .then(resposta => resposta.json())
+  //     .then(data => {
+  //       this.setState({ usuario: data })
+  //     })
+  //     .catch((erro) => {
+  //       console.log(erro)
+  //     })
+  // }
 
-  atualizarEstadoNome(event) {
-    this.setState({ usuarioNome: event.target.value })
-  }
+  // atualizarEstadoNome(event) {
+  //   this.setState({ usuarioNome: event.target.value })
+  // }
 
   buscarEvento() {
-    fetch('https://localhost:5001/api/eventotbl/' + this.state.eventoId)
+    fetch('https://localhost:5001/api/eventotbl/perfilusuario/' + this.state.usuarioId)
       .then(resposta => resposta.json())
       .then(data => {
         this.setState({ evento: data })

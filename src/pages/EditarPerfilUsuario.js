@@ -26,14 +26,9 @@ class EditarPerfilUsuario extends Component {
         usuarioEmail: '',
         usuarioComunidade: '',
         usuarioSenha: '',
-        usuarioTipoId: parseJwt().Tipo,
       }
     }
 
-    this.atualizarEstadoNome = this.atualizarEstadoNome.bind(this);
-    this.atualizarEstadoEmail = this.atualizarEstadoEmail.bind(this);
-    this.atualizarEstadoComunidade = this.atualizarEstadoComunidade.bind(this);
-    this.atualizarEstadoSenha = this.atualizarEstadoSenha.bind(this);
     this.buscarUsuario = this.buscarUsuario.bind(this);
     this.salvarAlteracoes = this.salvarAlteracoes.bind(this);
   }
@@ -49,20 +44,12 @@ class EditarPerfilUsuario extends Component {
       })
   }
 
-  atualizarEstadoNome(event) {
-    this.setState({ usuarioNome: event.target.value })
-  }
-
-  atualizarEstadoEmail(event) {
-    this.setState({ usuarioEmail: event.target.value })
-  }
-
-  atualizarEstadoComunidade(event) {
-    this.setState({ usuarioComunidade: event.target.value })
-  }
-
-  atualizarEstadoSenha(event) {
-    this.setState({ usuarioSenha: event.target.value })
+  putSetState = (input) =>{
+    this.setState({
+          editarModal : {
+              ...this.state.editarModal, [input.target.name] : input.target.value
+          }   
+      })
   }
 
   alterarUsuario() {
@@ -76,12 +63,6 @@ class EditarPerfilUsuario extends Component {
         usuarioTipoId: this.state.usuario.usuarioTipoId
       }
     })
-    console.log(this.state.usuario.usuarioId);
-    console.log(this.state.usuario.usuarioNome);
-    console.log(this.state.usuario.usuarioEmail);
-    console.log(this.state.usuario.usuarioComunidade);
-    console.log(this.state.usuario.usuarioSenha);
-    console.log(this.state.usuario.usuarioTipoId);
 
     this.toggle();
   }
@@ -103,54 +84,6 @@ class EditarPerfilUsuario extends Component {
       )
       .catch(erro => console.log(erro))
       this.toggle();
-  }
-
-  // salvarAlteracoes = (event) => {
-  //   event.preventDefault();
-
-  //   Api.put('/usuariotbl/' + this.state.usuario.usuarioId)
-  //   .then(setTimeout(() => {
-  //       this.buscarUsuario()
-  //     }, 1000)
-  //   )
-  //   .catch(erro => console.log(erro))
-  //   this.toggle()
-  // }
-
-  atualizaEditarModalNome(event) {
-    this.setState({
-      editarModal: {
-        usuarioId: this.state.editarModal.usuarioId,
-        usuarioNome: event.target.value,
-      }
-    })
-  }
-
-  atualizaEditarModalEmail(event) {
-    this.setState({
-      editarModal: {
-        usuarioId: this.state.editarModal.usuarioId,
-        usuarioEmail: event.target.value
-      }
-    })
-  }
-
-  atualizaEditarModalComunidade(event) {
-    this.setState({
-      editarModal: {
-        usuarioId: this.state.editarModal.usuarioId,
-        usuarioComunidade: event.target.value
-      }
-    })
-  }
-
-  atualizaEditarModalSenha(event) {
-    this.setState({
-      editarModal: {
-        usuarioId: this.state.editarModal.usuarioId,
-        usuarioSenha: event.target.value
-      }
-    })
   }
 
   toggle = () => {
@@ -205,22 +138,26 @@ class EditarPerfilUsuario extends Component {
                 <MDBInput
                   label='Nome'
                   value={this.state.editarModal.usuarioNome}
-                  onChange={this.atualizaEditarModalNome.bind(this)}
+                  name="usuarioNome"
+                  onChange={this.putSetState}
                 />
                 <MDBInput
                   label='Email'
                   value={this.state.editarModal.usuarioEmail}
-                  onChange={this.atualizaEditarModalEmail.bind(this)}
+                  name="usuarioEmail"
+                  onChange={this.putSetState}
                 />
                 <MDBInput
                   label='Comunidade'
                   value={this.state.editarModal.usuarioComunidade}
-                  onChange={this.atualizaEditarModalComunidade.bind(this)}
+                  name="usuarioComunidade"
+                  onChange={this.putSetState}
                 />
                 <MDBInput
                   label='Senha'
                   value={this.state.editarModal.usuarioSenha}
-                  onChange={this.atualizaEditarModalSenha.bind(this)}
+                  name="usuarioSenha"
+                  onChange={this.putSetState}
                 />
                 </MDBModalBody>
               <MDBModalFooter>

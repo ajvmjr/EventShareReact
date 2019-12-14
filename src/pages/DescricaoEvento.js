@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import '../assets/CSS/DescricaoEvento.css'
-import CabecalhoSemBotao from '../components/CabecalhoSemBotao';
+import CabecalhoSemBotao from '../components/CabecalhoSemBotao'
+import CabecalhoLogado from '../components/CabecalhoLogado.js'
 import Rodape from '../components/Rodape';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom'
+import { usuarioAutenticado, parseJwt } from '../services/auth';
 
 class DescricaoEvento extends Component {
   constructor(props) {
@@ -56,13 +58,20 @@ class DescricaoEvento extends Component {
   componentDidMount() {
     // this.teste()
     this.buscarEvento()
+    this.setState({ token: usuarioAutenticado() })
+
+        if (usuarioAutenticado()) {
+
+            this.setState({ acesso: parseJwt().Roles })
+            console.log("acesso " + parseJwt().Roles);
+        }
   }
 
   render() {
 
     return (
       <div>
-        <CabecalhoSemBotao />
+        {this.state.token === false ? (<CabecalhoSemBotao />) : (<CabecalhoLogado/>)}
         <main className="main-descricao">
           <section className="secao-geral-descricao">
             <section className="container_descrição">

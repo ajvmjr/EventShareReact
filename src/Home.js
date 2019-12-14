@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import './Home.css';
 import Moment from 'react-moment';
 import 'moment-timezone';
-import Cabecalho from './components/CabecalhoSemBotao.js'
+import CabecalhoSemBotao from './components/CabecalhoSemBotao.js'
+import CabecalhoLogado from './components/CabecalhoLogado.js'
 import RodapeHome from './components/RodapeHome.js'
 import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
+import { usuarioAutenticado, parseJwt } from './services/auth';
 
 
 class Home extends Component {
@@ -35,7 +37,6 @@ class Home extends Component {
       indice: true,
       indiceGeral: 4,
       eventoStatusId: '',
-      // usuario: parseJwt().UserId,
 
     }
     this.buscarEvento = this.buscarEvento.bind(this)
@@ -71,6 +72,14 @@ class Home extends Component {
   componentDidMount() {
     this.buscarEvento()
     this.buscarCategorias()
+
+    this.setState({ token: usuarioAutenticado() })
+
+        if (usuarioAutenticado()) {
+
+            this.setState({ acesso: parseJwt().Roles })
+            console.log("acesso " + parseJwt().Roles);
+        }
   }
 
   buscarEvento() {
@@ -116,7 +125,7 @@ class Home extends Component {
 
     return (
       <div classNameName="Home">
-        <Cabecalho />
+        {this.state.token === false ? (<CabecalhoSemBotao />) : (<CabecalhoLogado/>)}
         <main className="main-home">
 
           <section id="banner-home">

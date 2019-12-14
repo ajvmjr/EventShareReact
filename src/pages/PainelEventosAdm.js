@@ -71,7 +71,7 @@ class PainelEventos extends Component {
             <section className="container-perfilU">
               <div className="texto-perfilU">
                 <h2>Painel de Eventos</h2>
-                <p>{ this.state.listaEventos.length } Eventos</p>
+                 this.state.listaEventos.length === 1 ? (<p> {this.state.listaEventos.length} Evento</p>) : (<p>{this.state.listaEventos.length} Eventos</p>)
               </div>
               <div className="display-perfilU">
                 { 

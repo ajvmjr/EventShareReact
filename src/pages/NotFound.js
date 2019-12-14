@@ -11,15 +11,15 @@ class NotFound extends Component{
         <Cabecalho/>
     <main>
         <section>
-            <div class="banner-tela-notfound">
-                <div class="titulo-tela-notfound">
+            <div className="banner-tela-notfound">
+                <div className="titulo-tela-notfound">
                     <h1>404</h1>
                 </div>
             </div>
         </section>
 
-        <section class="conteudo-not-found">
-            <div class="texto-pagina-notfound">
+        <section className="conteudo-not-found">
+            <div className="texto-pagina-notfound">
                 <p> Página não encontrada, confira o endereço no seu navegador, ou entre em contato através do
                     eventos-sp@thoughtworks.com para informar o problema.
                 </p>

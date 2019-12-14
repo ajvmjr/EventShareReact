@@ -18,7 +18,9 @@ class Rodape extends Component {
 
                             <div className="lado-esquerdo-rodape-padrao">
                                 <div className="logo-tw-rodape-padrao">
-                                    <img src={LogoTW} alt="" />
+                                    <a href="https://www.thoughtworks.com/pt">
+                                        <img src={LogoTW} alt="" />
+                                    </a>
                                 </div>
                                 <div className="logo-eventshare-rodape-padrao">
                                     <img src={LogoES} alt="" />

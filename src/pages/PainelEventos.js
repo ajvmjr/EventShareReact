@@ -4,7 +4,7 @@ import Cabecalho from '../components/CabecalhoBotao'
 import Rodape from '../components/Rodape'
 import TopoPerfil from '../components/TopoPerfil';
 import Moment from 'react-moment';
-import { parseJwt }  from '../services/auth';
+import { parseJwt } from '../services/auth';
 import { thisExpression } from '@babel/types';
 import Axios from 'axios';
 import Api from '../services/Api';
@@ -18,7 +18,7 @@ import {
 } from "react-router-dom";
 
 class PainelEventos extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       listaEventos: [],
@@ -41,18 +41,18 @@ class PainelEventos extends Component {
     // this.buscarEvento = this.buscarEvento.bind(this)
   }
 
-  mudarDisplay(){
+  mudarDisplay() {
     var element = document.getElementsById("edit");
     element.classList.add("hidden");
   }
 
-  buscarEventosUsuario(){
+  buscarEventosUsuario() {
     console.log("id é:" + this.state.usuario)
     Api.get('eventotbl/perfilusuario/' + this.state.usuario)
-    .then(dados => this.setState({ 
-                                  listaEventos: dados.data
-                                }))
-    .catch((erro) => console.log(erro))
+      .then(dados => this.setState({
+        listaEventos: dados.data
+      }))
+      .catch((erro) => console.log(erro))
   }
 
   // buscarEvento() {
@@ -63,8 +63,8 @@ class PainelEventos extends Component {
   //                                 }))
   //     .catch((erro) => console.log(erro))
   // }
-  
-  componentDidMount(){
+
+  componentDidMount() {
     // this.buscarEvento();
     this.buscarEventosUsuario();
   }
@@ -76,76 +76,81 @@ class PainelEventos extends Component {
         <TopoPerfil />
         <div>
           <main className="main-perfilU">
-           
-{
-           
-            <section className="container-perfilU">
-              <div className="texto-perfilU">
-                <h2>Painel de Eventos</h2>
-                <p>{ this.state.listaEventos.length } Eventos</p>
-              </div>
-              <div className="display-perfilU">
-                { 
-                  this.state.listaEventos.map(event => {
-                    console.log( this.state.listaEventos.length )
+
+            {
+
+              <section className="container-perfilU">
+                <div className="texto-perfilU">
+                  <h2>Painel de Eventos</h2>
+                  <p>{this.state.listaEventos.length} Eventos</p>
+                </div>
+                <div className="display-perfilU">
+                  {
+                    this.state.listaEventos.map(event => {
+                      console.log(this.state.listaEventos.length)
                       return (
 
-                        <Link to={"/EditarEventoUsuario"} className="painel-perfilU" key={event.eventoId}>
 
-                            <div className="esquerda-perfilU">
-                              <h3>{ event.eventoNome }</h3>
+                        <div className="painel-perfilU" key={event.eventoId}>
+
+                          <div className="esquerda-perfilU">
+                            <Link to={"/EditarEventoUsuario"}>
+                              <h3>{event.eventoNome}</h3>
                               <img src={require("../assets/imagens/wakanda.png")} alt="Imagem do evento" />
+                            </Link>
+                          </div>
+
+                          <div className="direita-perfilU">
+                            <div className="editar-perfilU">
+                              {event.eventoStatus.eventoStatusNome === 'Aguardando Aprovação' ? (<a id="edit" href="#">Editar Evento</a>) : (this.mudarDisplay)}
                             </div>
 
-                            <div className="direita-perfilU">
-                              <div className="editar-perfilU">
-                                { event.eventoStatus.eventoStatusNome === 'Aguardando Aprovação' ? (<a id="edit" href="#">Editar Evento</a>) : (this.mudarDisplay) }
-                              </div>
-
-                              <div className="box-perfilU">
-                                <h3>Data: <Moment format="DD/MM/YYYY">
-                                            { event.eventoData }
-                                          </Moment>
-                                </h3>
-                              </div>
-
-                              <div className="box-perfilU">
-                                <p>Início: { event.eventoHorarioComeco }</p>
-                                <p>Fim: { event.eventoHorarioFim }</p>
-                              </div>
-
-                              <div className="box-perfilU">
-                                <h3>Local:</h3>
-                                <p>{ event.eventoEspaco.espacoNome }</p>
-                              </div>
-
-                              <div className="box-perfilU">
-                                <h3>Status: 
-                                </h3>
-                                <div className="status-perfilU">
-                                  <p>{ event.eventoStatus.eventoStatusNome }</p>
-                                  {/* <div className="circulo-perfilU"></div> */}
-                                </div>
-                              </div>
-                              
+                            <div className="box-perfilU">
+                              <h3>Data: <Moment format="DD/MM/YYYY">
+                                {event.eventoData}
+                              </Moment>
+                              </h3>
                             </div>
-                          </Link>
-                      )})
+
+                            <div className="box-perfilU">
+                              <p>Início: {event.eventoHorarioComeco}</p>
+                              <p>Fim: {event.eventoHorarioFim}</p>
+                            </div>
+
+                            <div className="box-perfilU">
+                              <h3>Local:</h3>
+                              <p>{event.eventoEspaco.espacoNome}</p>
+                            </div>
+
+                            <div className="box-perfilU">
+                              <h3>Status:
+                                </h3>
+                              <div className="status-perfilU">
+                                <p>{event.eventoStatus.eventoStatusNome}</p>
+                                {/* <div className="circulo-perfilU"></div> */}
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      )
+                    })
                   }
-                {/* <!--fim painel--> */}
+                  {/* <!--fim painel--> */}
 
-              </div>
-            </section>
+                </div>
+              </section>
 
-}
+            }
 
           </main>
 
         </div>
-        <Rodape/>
+        <Rodape />
       </div>
-        );
-      }
-    }
-      
+    );
+  }
+}
+
 export default PainelEventos;

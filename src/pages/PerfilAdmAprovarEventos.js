@@ -3,7 +3,7 @@ import '../assets/CSS/PerfilAdmAprovarEventos.css';
 import Api from '../services/Api';
 import Cabecalho from '../components/CabecalhoBotao';
 import Rodape from '../components/Rodape';
-import TopoPerfil from '../components/TopoPerfil';
+import TopoPerfil from '../components/TopoPerfilAdm';
 import Moment from 'react-moment';
 import 'moment-timezone';
 
@@ -98,7 +98,7 @@ class PerfilAdmAprovarEvento extends Component {
                 this.state.listaFiltradaDeEventos ?
                   this.state.listaFiltradaDeEventos.map(function (evento) {
                     return (
-                      <a href="#">
+                      <a onClick={() => {window.location.href = '/DescricaoEventoAdm/' + evento.eventoId}}>
                         <div key={evento.eventoId} className="evento-1-aprovar">
                           <div className="evento-um-aprovar">
                             <img src={require("../assets/imagens/Evento1.jpeg")} alt="" className="evento-imagem-aprovar" />
@@ -133,9 +133,7 @@ class PerfilAdmAprovarEvento extends Component {
 
             </div>
             <section id="secao-botao-ver-mais-perfil-adm-aprovar-eventos">
-              <button class="botao-ver-mais-perfil-adm-aprovar-eventos">
-                Ver mais
-              </button>
+              
             </section>
           </section>
         </main>

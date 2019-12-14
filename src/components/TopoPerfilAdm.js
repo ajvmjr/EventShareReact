@@ -49,8 +49,8 @@ class TopoPerfil extends Component {
                         {/* <!--fim textor--> */}
                     </div>
                     <nav className="menu-TopoPerfil">
-                        <Link to={"/EditarPerfilUsuario"}>Editar Perfil</Link>
-                        <Link to={"/PerfilUsuario"} >Painel de Eventos</Link>
+                        <Link to={"/PerfilUsuarioAdm"} >Painel de Eventos</Link>
+                        <Link to={"/PerfilAdmAprovarEventos"} >Aprovar Eventos</Link>
                     </nav>
                 </div>
             </div>

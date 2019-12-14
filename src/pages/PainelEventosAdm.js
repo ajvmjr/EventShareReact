@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import '../assets/CSS/PainelEventos.css'
 import Cabecalho from '../components/CabecalhoBotao'
 import Rodape from '../components/Rodape'
-import TopoPerfil from '../components/TopoPerfil';
+import TopoPerfil from '../components/TopoPerfilAdm';
 import Moment from 'react-moment';
 import { parseJwt }  from '../services/auth';
 import { thisExpression } from '@babel/types';
-import Axios from 'axios';
-import Api from '../services/Api';
 
 class PainelEventos extends Component {
   constructor(props){
@@ -39,11 +37,10 @@ class PainelEventos extends Component {
   }
 
   buscarEventosUsuario(){
-    console.log("id é:" + this.state.usuario)
-    Api.get('eventotbl/perfilusuario/' + this.state.usuario)
-    .then(dados => this.setState({ 
-                                  listaEventos: dados.data
-                                }))
+    console.log(this.state.usuario)
+    fetch('http://localhost:5000/api/eventotbl/perfilusuario/' + this.state.usuario)
+    .then(resposta => resposta.json())
+    .then(data => this.setState({ listaEventos: data }))
     .catch((erro) => console.log(erro))
   }
 

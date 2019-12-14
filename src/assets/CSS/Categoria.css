@@ -48,6 +48,20 @@ p {
 
 /* COMEÇO WEB - PERFIL ADM CATEGORIA */
 
+.formulario-input-categoria {
+    /* background: yellow; */
+    height: 10vh;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* .formulario-input-categoria form {
+    display: block;
+    justify-content: center;
+} */
+
 .secao-add-categoria {
     align-items: center;
     /* background: lightblue; */
@@ -98,7 +112,7 @@ p {
     /* background-color: red; */
     display: flex;
     flex-direction: column;
-    height: 50vh;
+    height: auto;
     justify-content: center;
     width: 60vw;
 }
@@ -201,6 +215,7 @@ p {
     height: 5vh;
     justify-content: space-between;
     width: 90%;
+    margin: 2px 0;
 }
 
 .div-minicard-nome-categoria {

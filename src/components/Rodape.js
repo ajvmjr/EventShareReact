@@ -10,7 +10,7 @@ import instagram from '../assets/imagens/iconeInstagram.png'
 class Rodape extends Component {
     render() {
         return (
-            <div classNameName='Rodape'>
+            <div className='Rodape'>
 
                 <footer>
                     <section id="rodape-padrao">

@@ -22,12 +22,12 @@ import DescricaoEvento from './pages/DescricaoEvento';
 import DescricaoEventoAdm from './pages/DescriçãoEventoAdm';
 import EditarEventoAdm from './pages/EditarEventoAdm';
 import EditarEventoPerfilUsuario from './pages/EditarEventoPerfilUsuario';
-import EditarPerfilAdm from './pages/EditarPerfilAdm';
 import EditarPerfilUsuario from './pages/EditarPerfilUsuario';
 import FAQ from './pages/FAQ';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import PainelEventos from './pages/PainelEventos';
+import PainelEventosAdm from './pages/PainelEventosAdm';
 import PerfilAdmAprovarEvento from './pages/PerfilAdmAprovarEventos';
 import { usuarioAutenticado, parseJwt } from './services/auth';
 
@@ -60,15 +60,15 @@ const Rotas = (
                 <Route path='/CriarEvento4' component={CriarEvento4} />
                 <Route path='/CriarEvento5' component={CriarEvento5} />
                 <Route path='/CriarEvento6' component={CriarEvento6} />
-                <Route path='/DescricaoEvento' component={DescricaoEvento} />
+                <Route path='/DescricaoEvento/:id' component={DescricaoEvento} />
                 <Route path='/DescricaoEventoAdm' component={DescricaoEventoAdm} />
                 <PermissaoAdm path='/EditarEventoAdm' component={EditarEventoAdm} />
                 <Route path='/EditarEventoUsuario' component={EditarEventoPerfilUsuario} />
-                <PermissaoAdm path='/EditarPerfilAdm' component={EditarPerfilAdm} />
                 <Route path='/EditarPerfilUsuario' component={EditarPerfilUsuario} />
                 <Route path='/FAQ' component={FAQ} />
                 <Route path='/Login' component={Login} />
                 <Route path='/PerfilUsuario' component={PainelEventos} />
+                <Route path='/PerfilUsuarioAdm' component={PainelEventosAdm} />
                 <PermissaoAdm path='/PerfilAdmAprovarEventos' component={PerfilAdmAprovarEvento} />
                 <Route component={NotFound} />
             </Switch>

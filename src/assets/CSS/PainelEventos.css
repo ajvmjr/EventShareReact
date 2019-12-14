@@ -34,7 +34,7 @@ a, h1, h2, h3, h4, p{
     margin-top: 40px;
     display: flex;
     justify-content: center;
-    height: 45em;
+    height: auto;
 }
 
 .container-perfilU{
@@ -60,9 +60,10 @@ a, h1, h2, h3, h4, p{
 }
 
 .display-perfilU{
+    align-items: center;
     display: flex;
-    justify-content: center;
-    
+    /* justify-content: center; */
+    flex-direction: column;
 }
 
 .painel-perfilU{
@@ -74,6 +75,7 @@ a, h1, h2, h3, h4, p{
     /* height: 50vh; */
     display: flex;
     justify-content: space-between;
+    margin-bottom: 30px;
 }
 
 .esquerda-perfilU h3{

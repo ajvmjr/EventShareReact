@@ -166,7 +166,7 @@ a, h1, h2, h3, h4, p{
     font-weight: normal;
 }
 
-form {
+.form-sub2 {
     height: 26.3vw;
     justify-content: center;
     display: flex;

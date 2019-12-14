@@ -37,19 +37,19 @@ class RodapeHome extends Component {
                                 <div className="logos-redes-sociais-rodape-home">
 
                                     <div className="logo-facebook">
-                                        <a href="#">
+                                        <a href="https://www.facebook.com/ThoughtWorks">
                                             <img src={facebook} alt="Logo da rede social Facebook" />
                                         </a>
                                     </div>
 
                                     <div className="logo-youtube">
-                                        <a href="#">
+                                        <a href="https://www.youtube.com/user/thoughtworks">
                                             <img src={youtube} alt="Logo da plataforma de vídeos Youtube" />
                                         </a>
                                     </div>
 
                                     <div className="logo-instagram">
-                                        <a href="#">
+                                        <a href="https://www.instagram.com/thoughtworks/">
                                             <img src={instagram} alt="Logo da rede social Instagram " />
                                         </a>
                                     </div>

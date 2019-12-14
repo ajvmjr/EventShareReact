@@ -26,7 +26,7 @@ class CabecalhoBotao extends Component {
 
                                     <ul>
                                         <li>
-                                            <a href="/CriarEvento1" id="btns-menu-cabecalho-padrao">Publicar evento</a>
+                                            <a href="/CriarEvento" id="btns-menu-cabecalho-padrao">Publicar evento</a>
                                         </li>
                                     </ul>
 

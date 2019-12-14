@@ -7,7 +7,7 @@ import {
     Link,
     useRouteMatch
 } from "react-router-dom";
-import { parseJwt }  from '../services/auth';
+import { parseJwt } from '../services/auth';
 
 
 class TopoPerfil extends Component {
@@ -20,15 +20,15 @@ class TopoPerfil extends Component {
         }
     }
 
-    buscarUsuario(){
+    buscarUsuario() {
         fetch('https://localhost:5001/api/usuariotbl/' + this.state.usuarioId)
-          .then(resposta => resposta.json())
-          .then(data => {
-            this.setState({ usuario: data })
-          })
-          .catch(erro => {
-            console.log(erro);
-          })
+            .then(resposta => resposta.json())
+            .then(data => {
+                this.setState({ usuario: data })
+            })
+            .catch(erro => {
+                console.log(erro);
+            })
     }
 
     componentDidMount() {
@@ -49,8 +49,8 @@ class TopoPerfil extends Component {
                         {/* <!--fim textor--> */}
                     </div>
                     <nav className="menu-TopoPerfil">
-                        <Link to={"/EditarPerfilUsuario"}>Editar Perfil</Link>
                         <Link to={"/PerfilUsuario"} >Painel de Eventos</Link>
+                        <Link to={"/EditarPerfilUsuario"}>Editar Perfil</Link>
                     </nav>
                 </div>
             </div>

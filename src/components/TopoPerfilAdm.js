@@ -44,7 +44,7 @@ class TopoPerfil extends Component {
                             <p>{this.state.usuario.usuarioNome}</p>
                         </div>
                         <div className="fotoperfil-TopoPerfil">
-                            <img src={require("../assets/imagens/perfil1.png")} alt="" />
+                            <img src={require("../assets/imagens/iconeUsuario.png")} alt="" />
                         </div>
                         {/* <!--fim textor--> */}
                     </div>

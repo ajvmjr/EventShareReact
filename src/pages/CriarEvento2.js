@@ -9,11 +9,11 @@ class CriarEvento2 extends Component {
       <div className="CriarEvento2">
         <Cabecalho/>
        
-              <div class="banner_sub2">
+              <div className="banner_sub2">
                 <img src={require("../assets/imagens/submeter_evento2.png")} alt="" />
               </div>
               {/* <!--Fim banner_sub2--> */}
-              <div class="texto1_sub2">
+              <div className="texto1_sub2">
                 <h2>Informações básicas sobre o evento:</h2>
               </div>
               <section class="form_sub2">

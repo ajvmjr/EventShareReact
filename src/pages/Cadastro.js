@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; //importando objeto React 
 import '../assets/CSS/Cadastro.css';
 import Api from '../services/Api';
-import Cabecalho from '../components/CabecalhoSemBotao';
+import Cabecalho from '../components/CabecalhoCriarConta';
 import Rodape from '../components/Rodape';
 
 

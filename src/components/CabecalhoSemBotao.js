@@ -3,6 +3,12 @@ import '../assets/CSS/CabecalhoSemBotao.css'
 import Logo from '../assets/imagens/LogoEventShare.png'
 
 class CabecalhoSemBotao extends Component {
+
+    logout() {
+        localStorage.clear();
+        window.location.href = '/';
+    }
+
     render() {
         return (
             <div className="">

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CabecalhoSemBotao from '../components/CabecalhoSemBotao'
+import CabecalhoSemBotao from '../components/CabecalhoLogin'
 import '../assets/CSS/Login.css'
 import Rodape from '../components/Rodape'
 import { parseJwt } from '../services/auth';
@@ -26,66 +26,67 @@ class Login extends Component {
     // this.props = {}
   }
 
-    
-    atualizaStateCampo = (event) => {
-        this.setState({[event.target.name] : event.target.value});
-    }
 
-    realizarLogin = (event) => {
-        event.preventDefault();
+  atualizaStateCampo = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  }
 
-        this.setState({isLoading: true});
+  realizarLogin = (event) => {
+    event.preventDefault();
 
-        console.log(this.state.usuarioEmail);
-        console.log(this.state.usuarioSenha);
+    this.setState({ isLoading: true });
 
-        fetch("http://localhost:5000/api/Login", {
-            method : "POST",
-            headers : {
-                "Content-Type" : "application/json"
-            },
-            body : JSON.stringify({
-              UsuarioEmail: this.state.usuarioEmail,
-              UsuarioSenha: this.state.usuarioSenha
-            })
-        }) 
-        .then(response => response.json())
-        .then(response => {
-            console.log("Retorno do login - JSON: ", );
+    console.log(this.state.usuarioEmail);
+    console.log(this.state.usuarioSenha);
 
-            // console.log("Minhas props: ", this.props);
+    fetch("http://localhost:5000/api/Login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        UsuarioEmail: this.state.usuarioEmail,
+        UsuarioSenha: this.state.usuarioSenha
+      })
+    })
+      .then(response => response.json())
+      .then(response => {
+        console.log("Retorno do login - JSON: ", response);
 
-            console.log("Nha: ", response.status)
-            
-            // if(response.status === 200){
-            console.log("Nha")
-            localStorage.setItem("usuario-eventshare", response.token);
-            this.setState({ isLoading: false })
-            console.log("O token é: ", response.token);
+        // console.log("Minhas props: ", this.props);
 
-            var base64 = localStorage.getItem("usuario-eventshare").split('.')[1];
+        
 
-            console.log(base64)
+        // if(response.status === 200){
+        console.log("Nha")
+        localStorage.setItem("usuario-eventshare", response.token);
+        this.setState({ isLoading: false })
+        console.log("O token é: ", response.token);
 
-            // console.log(parseJwt().Id);
-            // }
+        var base64 = localStorage.getItem("usuario-eventshare").split('.')[1];
 
-            console.log()
+        console.log(base64)
 
-            if (parseJwt().Role === 'Administrador') {
-              this.props.history.push('/PerfilAdmAprovarEventos');
-            }else{
-              this.props.history.push('/PerfilUsuario');
-            }
-          
-        })
-        .catch(erro => {
-            console.log("Erro: ", erro);
-            // this.setState({ erroMensagem: "Email ou senha inválido" });
-            this.setState({ isLoading: false })
-        })    
-    }
-  
+        // console.log(parseJwt().Id);
+        // }
+
+        console.log()
+
+        if (parseJwt().Role === 'Administrador') {
+          this.props.history.push('/PerfilAdmAprovarEventos');
+        } else {
+          this.props.history.push('/');
+        }
+
+      })
+      .catch(erro => {
+        console.log("Erro: ", erro);
+        this.setState({ erroMensagem: "Email ou senha inválido, conta inexistente" });
+        this.setState({ isLoading: false })
+      })
+
+  }
+
   render() {
     return (
       <div>
@@ -97,28 +98,28 @@ class Login extends Component {
         </section>
         <form onSubmit={this.realizarLogin.bind(this)}>
           <section className="login-pai botão_sub6">
-            
-            <input className="login-input" 
-            type="email" 
-            name="usuarioEmail" 
-            id="" 
-            placeholder="E-mail"
-            value={this.state.usuarioEmail}
-            onChange={this.atualizaStateCampo}
+
+            <input className="login-input"
+              type="email"
+              name="usuarioEmail"
+              id=""
+              placeholder="E-mail"
+              value={this.state.usuarioEmail}
+              onChange={this.atualizaStateCampo}
             />
-            <input className="login-input" 
-            type="password" name="usuarioSenha" 
-            id="" placeholder="Senha"
-            value={this.state.usuarioSenha}
-            onChange={this.atualizaStateCampo}
+            <input className="login-input"
+              type="password" name="usuarioSenha"
+              id="" placeholder="Senha"
+              value={this.state.usuarioSenha}
+              onChange={this.atualizaStateCampo}
             />
             <p style={{ color: 'red' }}>{this.state.erroMensagem}</p>
 
-            <button 
-            type="submit" 
-            className="btn btn__login" 
-            id="btn__login" 
-            disabled={this.state.isLoading}>
+            <button
+              type="submit"
+              className="btn btn__login"
+              id="btn__login"
+              disabled={this.state.isLoading}>
 
               {this.state.isLoading === true ? <SyncLoader
                 css={override}

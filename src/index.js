@@ -27,6 +27,7 @@ import FAQ from './pages/FAQ';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import PainelEventos from './pages/PainelEventos';
+import PainelEventosAdm from './pages/PainelEventosAdm';
 import PerfilAdmAprovarEvento from './pages/PerfilAdmAprovarEventos';
 import { usuarioAutenticado, parseJwt } from './services/auth';
 
@@ -67,6 +68,7 @@ const Rotas = (
                 <Route path='/FAQ' component={FAQ} />
                 <Route path='/Login' component={Login} />
                 <Route path='/PerfilUsuario' component={PainelEventos} />
+                <Route path='/PerfilUsuarioAdm' component={PainelEventosAdm} />
                 <PermissaoAdm path='/PerfilAdmAprovarEventos' component={PerfilAdmAprovarEvento} />
                 <Route component={NotFound} />
             </Switch>

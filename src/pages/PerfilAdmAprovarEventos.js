@@ -3,7 +3,7 @@ import '../assets/CSS/PerfilAdmAprovarEventos.css';
 import Api from '../services/Api';
 import Cabecalho from '../components/CabecalhoBotao';
 import Rodape from '../components/Rodape';
-import TopoPerfil from '../components/TopoPerfil';
+import TopoPerfil from '../components/TopoPerfilAdm';
 import Moment from 'react-moment';
 import 'moment-timezone';
 

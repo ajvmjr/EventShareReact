@@ -11,21 +11,22 @@ class CriarEvento4 extends Component {
         this.state = {
             pictures: '',
             listaCategorias: [],
+            listaLugares: [],
             categoriaId: '',
             categoria: '',
             categoriaNome: '',
             eventoNome: '',
-            eventoData: '07/01/2020',
+            eventoData: '',
             eventoHorarioComeco: '',
             eventoHorarioFim: '',
             eventoDescricao: '',
             eventoCategoriaId: '',
-            eventoStatusId: 3,
-            criadorUsuarioId: 2,
+            eventoStatusId: '',
+            criadorUsuarioId: '',
             evento: '',
-            eventoEspacoId: 1,
+            eventoEspacoId: '',
             eventoLinkInscricao: '',
-            eventoRestrito: false
+            eventoRestrito: ''
         }
         this.cadastrarEvento = this.cadastrarEvento.bind(this);
     }
@@ -54,9 +55,14 @@ class CriarEvento4 extends Component {
                 eventoCategoriaId: this.state.eventoCategoriaId,
                 eventoEspacoId: this.state.eventoEspacoId,
                 eventoStatusId: this.state.eventoStatusId,
-                criadorUsuarioId: this.state.criadorUsuarioId,
+                // eventoImagem: this.state.eventoImagem,
                 eventoLinkInscricao: this.state.eventoLinkInscricao,
-                eventoRestrito: this.state.eventoRestrito
+                eventoRestrito: this.state.eventoRestrito,
+                eventoNumeroParticipantes: this.eventoNumeroParticipantes,
+                eventoDiversidade: this.eventoDiversidade,
+                eventoCoffe: this.eventoCoffe,
+                eventoObsAdicional: this.eventoObsAdicional,
+                criadorUsuarioId: this.state.criadorUsuarioId
             })
         })
             .then(resposta => {
@@ -67,8 +73,6 @@ class CriarEvento4 extends Component {
             .catch(erro => console.log(erro))
     }
 
-    
-
     buscarCategorias() {
         console.log('Entrei')
         fetch('http://localhost:5000/api/categoria')
@@ -76,17 +80,34 @@ class CriarEvento4 extends Component {
             .then(data => this.setState({ listaCategorias: data }))
             .catch((erro) => console.log(erro))
     }
+
+    buscarLugares() {
+        // console.log('Entrei')
+        fetch('http://localhost:5000/api/espaco')
+            .then(resposta => resposta.json())
+            .then(data => this.setState({ listaLugares: data }))
+            .catch((erro) => console.log(erro))
+    }
+
+
     updateStateData(event) {
         this.setState({ data: event.target.value })
         console.log(this.state.data)
     }
 
-
-
     armazenaCategoria(event) {
         let id = event.target.value
         console.log(id)
     }
+
+    buscarCategorias() {
+        this.setState({ loading: true })
+    
+        fetch('http://localhost:5000/api/categoria')
+          .then(resposta => resposta.json())
+          .then(data => this.setState({ listaCategorias: data }))
+          .catch((erro) => console.log(erro))
+      }
 
     componentDidMount() {
         this.buscarCategorias()
@@ -108,6 +129,21 @@ class CriarEvento4 extends Component {
 
                     <div className='container-sub6'>
                         <form id="formulario-sub6">
+
+                            <div className="input_sub2">
+                                <input type="text" value={this.setState.eventoNome} id="nome" placeholder="Nome do Evento" />
+                            </div>
+
+                            <div className='input-lugar-sub4'>
+                                <div>
+                                    <p>Escolha a sala para realizar o seu evento</p>
+                                    <input type="radio" name="#" value="" /> Sala de Reuniões
+
+                                    </div>
+                                <div>
+                                    <input type="radio" name="#" value="" /> Lounge
+                                    </div>
+                            </div>
 
                             <div className="criar-evento-4-pai-input">
                                 <input className="criar-evento-4-input" type="text" name="NomeEvento" value={this.state.eventoNome} placeholder="Nome do evento" />

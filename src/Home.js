@@ -215,7 +215,7 @@ class Home extends Component {
                 <p>Acesse nossa central de ajudas.</p>
               </div>
               <div className="FAQ-botão-home">
-                <a href="#">Saiba Mais</a>
+                <a href="/FAQ">Saiba Mais</a>
               </div>
             </div>
           </section>
@@ -223,17 +223,10 @@ class Home extends Component {
         </main>
         <RodapeHome />
       </div>
-<<<<<<< HEAD
     );
   }
 }
 
 
 
-=======
-            );
-          }
-        }
-               
->>>>>>> 33dc2e819b9d932fe39732fca842dedf60216488
 export default Home;

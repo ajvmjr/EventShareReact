@@ -22,7 +22,6 @@ import DescricaoEvento from './pages/DescricaoEvento';
 import DescricaoEventoAdm from './pages/DescriçãoEventoAdm';
 import EditarEventoAdm from './pages/EditarEventoAdm';
 import EditarEventoPerfilUsuario from './pages/EditarEventoPerfilUsuario';
-import EditarPerfilAdm from './pages/EditarPerfilAdm';
 import EditarPerfilUsuario from './pages/EditarPerfilUsuario';
 import FAQ from './pages/FAQ';
 import Login from './pages/Login';
@@ -64,7 +63,6 @@ const Rotas = (
                 <Route path='/DescricaoEventoAdm' component={DescricaoEventoAdm} />
                 <PermissaoAdm path='/EditarEventoAdm' component={EditarEventoAdm} />
                 <Route path='/EditarEventoUsuario' component={EditarEventoPerfilUsuario} />
-                <PermissaoAdm path='/EditarPerfilAdm' component={EditarPerfilAdm} />
                 <Route path='/EditarPerfilUsuario' component={EditarPerfilUsuario} />
                 <Route path='/FAQ' component={FAQ} />
                 <Route path='/Login' component={Login} />

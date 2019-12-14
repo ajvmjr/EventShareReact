@@ -97,14 +97,12 @@ class EditarPerfilUsuario extends Component {
   //     }
   //   })
   //     .then(resposta => resposta.json())
-  //     .then(
-  //       setTimeout(() => {
+  //     .then(setTimeout(() => {
   //         this.buscarUsuario()
   //       }, 1000)
   //     )
   //     .catch(erro => console.log(erro))
-
-  //   this.toggle();
+  //     this.toggle();
   // }
 
   salvarAlteracoes = (event) => {

@@ -124,13 +124,8 @@ class Home extends Component {
   render() {
 
     return (
-<<<<<<< HEAD
       <div classNameName="Home">
         {this.state.token === false ? (<CabecalhoSemBotao />) : (<CabecalhoLogado/>)}
-=======
-      <div className="Home">
-        <Cabecalho />
->>>>>>> e58812ac95072c2e241253cda1ac7031afe5fbde
         <main className="main-home">
 
           <section id="banner-home">

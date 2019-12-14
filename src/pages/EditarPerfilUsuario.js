@@ -1,10 +1,10 @@
+import Api from '../services/Api';
 import React, { Component } from 'react';
 import '../assets/CSS/EditarPerfilUsuario.css';
 import Cabecalho from '../components/CabecalhoBotao';
 import Rodape from '../components/Rodape';
 import TopoPerfil from '../components/TopoPerfil';
 import { parseJwt }  from '../services/auth';
-import Api from '../services/Api';
 
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBInput } from 'mdbreact';
 
@@ -86,36 +86,36 @@ class EditarPerfilUsuario extends Component {
     this.toggle();
   }
 
-  // salvarAlteracoes = (event) => {
-  //   event.preventDefault();
-    
-  //   fetch('https://localhost:5001/api/usuariotbl/'+ this.state.usuario.usuarioId, {
-  //     method: "PUT",
-  //     body: JSON.stringify(this.state.editarModal),
-  //     headers: {
-  //       "Content-type": "application/json"
-  //     }
-  //   })
-  //     .then(resposta => resposta.json())
-  //     .then(setTimeout(() => {
-  //         this.buscarUsuario()
-  //       }, 1000)
-  //     )
-  //     .catch(erro => console.log(erro))
-  //     this.toggle();
-  // }
-
   salvarAlteracoes = (event) => {
     event.preventDefault();
-
-    Api.put('/usuariotbl/' + this.state.usuario.usuarioId)
-    .then(setTimeout(() => {
-        this.buscarUsuario()
-      }, 1000)
-    )
-    .catch(erro => console.log(erro))
-    this.toggle()
+    
+    fetch('https://localhost:5001/api/usuariotbl/'+ this.state.usuario.usuarioId, {
+      method: "PUT",
+      body: JSON.stringify(this.state.editarModal),
+      headers: {
+        "Content-type": "application/json"
+      }
+    })
+      .then(resposta => resposta.json())
+      .then(setTimeout(() => {
+          this.buscarUsuario()
+        }, 1000)
+      )
+      .catch(erro => console.log(erro))
+      this.toggle();
   }
+
+  // salvarAlteracoes = (event) => {
+  //   event.preventDefault();
+
+  //   Api.put('/usuariotbl/' + this.state.usuario.usuarioId)
+  //   .then(setTimeout(() => {
+  //       this.buscarUsuario()
+  //     }, 1000)
+  //   )
+  //   .catch(erro => console.log(erro))
+  //   this.toggle()
+  // }
 
   atualizaEditarModalNome(event) {
     this.setState({

@@ -8,6 +8,14 @@ import { parseJwt }  from '../services/auth';
 import { thisExpression } from '@babel/types';
 import Axios from 'axios';
 import Api from '../services/Api';
+import { link } from 'fs';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch
+} from "react-router-dom";
 
 class PainelEventos extends Component {
   constructor(props){
@@ -81,7 +89,9 @@ class PainelEventos extends Component {
                   this.state.listaEventos.map(event => {
                     console.log( this.state.listaEventos.length )
                       return (
-                          <div className="painel-perfilU" key={event.eventoId}>
+
+                        <Link to={"/EditarEventoUsuario"} className="painel-perfilU" key={event.eventoId}>
+
                             <div className="esquerda-perfilU">
                               <h3>{ event.eventoNome }</h3>
                               <img src={require("../assets/imagens/wakanda.png")} alt="Imagem do evento" />
@@ -119,7 +129,7 @@ class PainelEventos extends Component {
                               </div>
                               
                             </div>
-                          </div>
+                          </Link>
                       )})
                   }
                 {/* <!--fim painel--> */}

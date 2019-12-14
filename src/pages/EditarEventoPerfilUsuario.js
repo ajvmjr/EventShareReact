@@ -19,8 +19,8 @@ class EditarEventoPerfilUsuario extends Component {
       eventoData: '',
       eventoHorarioComeco: '',
       eventoHorarioFim: '',
-      eventoEspaco: '',
       editarModal: {
+        evento: '',
         eventoId: '',
         eventoNome: '',
         eventoDescricao: '',
@@ -96,7 +96,89 @@ class EditarEventoPerfilUsuario extends Component {
         eventoHorarioFim: evento.eventoHorarioFim
       }
     })
+    console.log(this.state.evento.eventoId);
+    console.log(this.state.evento.eventoNome);
+    console.log(this.state.evento.eventoDescricao);
+    console.log(this.state.evento.eventoData);
+    console.log(this.state.evento.eventoHorarioComeco);
+    console.log(this.state.evento.eventoHorarioFim);
+
     this.toggle();
+  }
+
+  salvarAlteracoes = (event) => {
+    event.preventDefault();
+    
+    fetch('https://localhost:5001/api/eventotbl/'+ this.state.evento.eventoId, {
+      method: "PUT",
+      body: JSON.stringify(this.state.editarModal),
+      headers: {
+        "Content-type": "application/json"
+      }
+    })
+      .then(resposta => resposta.json())
+      .then(setTimeout(() => {
+          this.buscarEvento()
+        }, 1000)
+      )
+      .catch(erro => console.log(erro))
+      this.toggle();
+  }
+
+
+  atualizaEditarModalNome(event) {
+    this.setState({
+      editarModal: {
+        eventoId: this.state.editarModal.eventoId,
+        eventoNome: event.target.value,
+      }
+    })
+  }
+
+  atualizaEditarModalDescricao(event) {
+    this.setState({
+      editarModal: {
+        eventoId: this.state.editarModal.eventoId,
+        eventoDescricao: event.target.value,
+      }
+    })
+  }
+
+  atualizaEditarModalData(event) {
+    this.setState({
+      editarModal: {
+        eventoId: this.state.editarModal.eventoId,
+        eventoData: event.target.value,
+      }
+    })
+  }
+
+  atualizaEditarModalComeco(event) {
+    this.setState({
+      editarModal: {
+        eventoId: this.state.editarModal.eventoId,
+        eventoHorarioComeco: event.target.value,
+      }
+    })
+  }
+
+  atualizaEditarModalFim(event) {
+    this.setState({
+      editarModal: {
+        eventoId: this.state.editarModal.eventoId,
+        eventoHorarioFim: event.target.value,
+      }
+    })
+  }
+
+  toggle = () => {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
+
+  componentDidMount() {
+    this.buscarEvento();
   }
 
   render() {
@@ -151,10 +233,7 @@ class EditarEventoPerfilUsuario extends Component {
             <section className="quadrado_forades4">
               <div className="direita_topo_descrição4">
                 <div className="botao-edicao-concluida-descricao4-evento">
-                  <button>Editar Evento</button>
-                </div>
-                <div className="botao-deletar-descricao4-evento">
-                  <button>Deletar Evento</button>
+                  <button type="submit" onClick={i => this.alterarEvento(this.state.evento)}>Editar Evento</button>
                 </div>
               </div>
               <div className="info_descrição4">
@@ -193,35 +272,35 @@ class EditarEventoPerfilUsuario extends Component {
           </section>
         </main>
 
-        {/* <MDBContainer>
+        <MDBContainer>
           <form onSubmit={this.salvarAlteracoes}>
             <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
               <MDBModalHeader toggle={this.toggle}>Editar Evento <b> {this.state.editarModal.eventoNome} </b></MDBModalHeader>
-              <MDBModalBody  key={this.state.evento.eventoId} >
+              <MDBModalBody  key={this.state.editarModal.eventoId} >
                 <MDBInput
                   label='Nome'
                   value={this.state.editarModal.eventoNome}
-                  onChange={this.atualizaEditarModal.bind(this)}
+                  onChange={this.atualizaEditarModalNome.bind(this)}
                 />
                 <MDBInput
                   label='Descrição'
                   value={this.state.editarModal.eventoDescricao}
-                  onChange={this.atualizaEditarModal.bind(this)}
+                  onChange={this.atualizaEditarModalDescricao.bind(this)}
                 />
                 <MDBInput
                   label='Data'
                   value={this.state.editarModal.eventoData}
-                  onChange={this.atualizaEditarModal.bind(this)}
+                  onChange={this.atualizaEditarModalData.bind(this)}
                 />
                 <MDBInput
                   label='Horário Começo'
                   value={this.state.editarModal.eventoHorarioComeco}
-                  onChange={this.atualizaEditarModal.bind(this)}
+                  onChange={this.atualizaEditarModalComeco.bind(this)}
                 />
                 <MDBInput
                   label='Horário Fim'
                   value={this.state.editarModal.eventoHorarioFim}
-                  onChange={this.atualizaEditarModal.bind(this)}
+                  onChange={this.atualizaEditarModalFim.bind(this)}
                 />
                 </MDBModalBody>
               <MDBModalFooter>
@@ -230,7 +309,7 @@ class EditarEventoPerfilUsuario extends Component {
               </MDBModalFooter>
             </MDBModal>
           </form>
-        </MDBContainer> */}
+        </MDBContainer>
 
         <Rodape />
       </div>

@@ -21,6 +21,7 @@ class PainelEventos extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      evento: '',
       listaEventos: [],
       eventoEspaco: '',
       espacoNome: '',
@@ -101,7 +102,12 @@ class PainelEventos extends Component {
                         <div className="direita-perfilU">
                           <Link to={"/EditarEventoUsuario"}>
                             <div className="editar-perfilU">
-                              {event.eventoStatus.eventoStatusNome === 'Aguardando Aprovação' ? (<a id="edit" href="#">Editar Evento</a>) : (this.mudarDisplay)}
+                              {event.eventoStatus.eventoStatusNome === 'Aguardando Aprovação' ? (<Link onClick={() =>(
+                                console.log('objeto: ' + event.eventoId)
+                              )} to={{
+                                pathname: '/editareventousuario',
+                                evento: event.eventoId
+                              }} >Editar Evento</Link>) : (this.mudarDisplay)}
                             </div>
                           </Link>
 

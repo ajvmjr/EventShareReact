@@ -18,53 +18,55 @@ class RodapeHome extends Component {
 
                             <div className="lado-esquerdo-rodape-home">
                                 <div className="logo-tw-rodape-home">
-                                    <img src={LogoTW} alt="" />
+                                    <a href="https://www.thoughtworks.com/pt">
+                                        <img src={LogoTW} alt="" />
+                                    </a>
                                 </div>
-                                <div className="logo-eventshare-rodape-home">
-                                    <img src={LogoES} alt="" />
+                                    <div className="logo-eventshare-rodape-home">
+                                        <img src={LogoES} alt="" />
+                                    </div>
+                                    <div className="email-contato-rodape-home">
+                                        <p>Contato: info-br@thoughtworks.com</p>
+                                    </div>
                                 </div>
-                                <div className="email-contato-rodape-home">
-                                    <p>Contato: info-br@thoughtworks.com</p>
+
+                                <div className="lado-direito-rodape-home">
+
+                                    <div className="seguir-rodape-home">
+                                        <p>Siga-nos</p>
+                                    </div>
+
+                                    <div className="logos-redes-sociais-rodape-home">
+
+                                        <div className="logo-facebook">
+                                            <a href="https://www.facebook.com/ThoughtWorks">
+                                                <img src={facebook} alt="Logo da rede social Facebook" />
+                                            </a>
+                                        </div>
+
+                                        <div className="logo-youtube">
+                                            <a href="https://www.youtube.com/user/thoughtworks">
+                                                <img src={youtube} alt="Logo da plataforma de vídeos Youtube" />
+                                            </a>
+                                        </div>
+
+                                        <div className="logo-instagram">
+                                            <a href="https://www.instagram.com/thoughtworks/">
+                                                <img src={instagram} alt="Logo da rede social Instagram " />
+                                            </a>
+                                        </div>
+
+                                    </div>
+
                                 </div>
+
                             </div>
-
-                            <div className="lado-direito-rodape-home">
-
-                                <div className="seguir-rodape-home">
-                                    <p>Siga-nos</p>
-                                </div>
-
-                                <div className="logos-redes-sociais-rodape-home">
-
-                                    <div className="logo-facebook">
-                                        <a href="https://www.facebook.com/ThoughtWorks">
-                                            <img src={facebook} alt="Logo da rede social Facebook" />
-                                        </a>
-                                    </div>
-
-                                    <div className="logo-youtube">
-                                        <a href="https://www.youtube.com/user/thoughtworks">
-                                            <img src={youtube} alt="Logo da plataforma de vídeos Youtube" />
-                                        </a>
-                                    </div>
-
-                                    <div className="logo-instagram">
-                                        <a href="https://www.instagram.com/thoughtworks/">
-                                            <img src={instagram} alt="Logo da rede social Instagram " />
-                                        </a>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
                     </section>
                 </footer>
 
 
             </div>
-        )
-    }
-}
+                )
+            }
+        }
 export default RodapeHome

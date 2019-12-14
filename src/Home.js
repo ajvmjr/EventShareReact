@@ -124,8 +124,13 @@ class Home extends Component {
   render() {
 
     return (
+<<<<<<< HEAD
       <div classNameName="Home">
         {this.state.token === false ? (<CabecalhoSemBotao />) : (<CabecalhoLogado/>)}
+=======
+      <div className="Home">
+        <Cabecalho />
+>>>>>>> e58812ac95072c2e241253cda1ac7031afe5fbde
         <main className="main-home">
 
           <section id="banner-home">
@@ -182,12 +187,12 @@ class Home extends Component {
                               <div className="evento-data-hora-local-home">
                                 <div className="data-evento-home">
                                   <p>Data:</p>
-                                  <Moment class='data-formato-home' format="DD/MM/YYYY">
+                                  <Moment className='data-formato-home' format="DD/MM/YYYY">
                                     {evento.eventoData}
                                   </Moment>
                                 </div>
-                                <div class="hora-evento-home">
-                                  <p class='horario-bold-home'>Horário:</p>
+                                <div className="hora-evento-home">
+                                  <p className='horario-bold-home'>Horário:</p>
                                   <p>{evento.eventoHorarioComeco}</p>
                                 </div>
                                 <div className="espaco-evento-home">

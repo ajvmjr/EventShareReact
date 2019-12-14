@@ -34,7 +34,8 @@ class Home extends Component {
       valorA: '',
       indice: true,
       indiceGeral: 4,
-      eventoStatusId: ''
+      eventoStatusId: '',
+      // usuario: parseJwt().UserId,
 
     }
     this.buscarEvento = this.buscarEvento.bind(this)

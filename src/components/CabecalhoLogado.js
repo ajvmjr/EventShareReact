@@ -4,10 +4,7 @@ import Logo from '../assets/imagens/LogoEventShare.png'
 
 class CabecalhoBotao extends Component {
 
-    logout() {
-        localStorage.clear();
-        window.location.href = '/';
-    }
+    
     
 
     render() {
@@ -36,7 +33,7 @@ class CabecalhoBotao extends Component {
                                     <ul>
 
                                         <li>
-                                            <a onClick={this.logout.bind(this)} href="/">Sair</a>
+                                            <a href="/PerfilUsuario">Meu Perfil</a>
                                         </li>
                                     </ul>
 

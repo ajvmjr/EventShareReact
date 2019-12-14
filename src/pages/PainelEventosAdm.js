@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../assets/CSS/PainelEventos.css'
 import Cabecalho from '../components/CabecalhoBotao'
 import Rodape from '../components/Rodape'
-import TopoPerfil from '../components/TopoPerfil';
+import TopoPerfil from '../components/TopoPerfilAdm';
 import Moment from 'react-moment';
 import { parseJwt }  from '../services/auth';
 import { thisExpression } from '@babel/types';

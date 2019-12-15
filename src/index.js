@@ -13,10 +13,7 @@ import AprovarEventos from './pages/AprovarEventosAdm';
 import Cadastro from './pages/Cadastro';
 import Categoria from './pages/Categoria';
 import CriarEvento1 from './pages/CriarEvento1';
-import CriarEvento2 from './pages/CriarEvento2';
-import CriarEvento3 from './pages/CriarEvento3';
 import CriarEvento4 from './pages/CriarEvento4';
-import CriarEvento5 from './pages/CriarEvento5';
 import CriarEvento6 from './pages/CriarEvento6';
 import DescricaoEvento from './pages/DescricaoEvento';
 import DescricaoEventoAdm from './pages/DescriçãoEventoAdm';
@@ -55,10 +52,7 @@ const Rotas = (
                 <Route path='/Cadastro' component={Cadastro} />
                 <Route path='/Categorias' component={Categoria} />
                 <Route path='/CriarEvento' component={CriarEvento1} />
-                <Route path='/CriarEvento2' component={CriarEvento2} />
-                <Route path='/CriarEvento3' component={CriarEvento3} />
                 <Route path='/CriarEvento4' component={CriarEvento4} />
-                <Route path='/CriarEvento5' component={CriarEvento5} />
                 <Route path='/CriarEvento6' component={CriarEvento6} />
                 <Route path='/DescricaoEvento/:id' component={DescricaoEvento} />
                 <Route path='/DescricaoEventoAdm' component={DescricaoEventoAdm} />

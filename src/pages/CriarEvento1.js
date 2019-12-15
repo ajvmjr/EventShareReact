@@ -25,7 +25,7 @@ class CriarEvento1 extends Component {
     render() {
         return (
             <div className='CriarEvento1'>
-            {this.state.token === false ? (<CabecalhoSemBotao />) : (<CabecalhoLogado/>)}
+                {this.state.token === false ? (<CabecalhoSemBotao />) : (<CabecalhoLogado />)}
                 <main>
                     <div className="banner-criar-evento">
 
@@ -64,11 +64,14 @@ class CriarEvento1 extends Component {
                                 <p> Para mais informações acesse o nosso FAQ na área de Contato no site.</p>
                             </div>
 
-                            <div className="botao-banner-criar-evento-1">
-                                <a href="#">
+
+                            {this.state.token === false ? <p>Faça seu login para criar um evento</p> : <div className="botao-banner-criar-evento-1">
+                                <a href="/CriarEvento4">
                                     Enviar Proposta
-                    </a>
-                            </div>
+                                </a>
+                            </div>}
+
+
 
                         </div>
                     </div>

@@ -16,7 +16,7 @@ a, h1, h2, h3, h4, p{
 
 /*Definição de cores*/
 :root{
-    --cinza: #808285;
+    --cinza: #373636;
     --verde: #11AA58;
     --azul: #3CBACE;
     --roxo: #94399E;
@@ -33,236 +33,128 @@ a, h1, h2, h3, h4, p{
 /*Fim definição de cores*/
 
 
-/*Configurações do main*/
-main{
-    background: var(--branco);
-}
-
+/*COMEÇO WEB - CRIE SUA CONTA*/
 #banner-cadastro{
     align-items: center;
-    background-image: url('../imagens/teclado.PNG');
-    /* background-attachment: fixed;  */
+    background-image: linear-gradient(rgba(37,1,38,0.55),rgba(37,1,38,0.55)), url(../imagens/BannerLoginCriarConta.jpg);
     background-repeat: no-repeat; 
-    /* background-size: cover;  */
+    background-position: center;
+    background-size: cover; 
     display: flex;
-    height: 30vh; 
-    width: 100%;
+    height: 35vh; 
     justify-content: space-around;
 }
 
-.texto-banner-cadastro{
+.texto-cadastro{
     align-items: center;
     height: 30vh;
     display: flex;
     justify-content: center;
-    width: 80%;
+    width: 80vw;
 }
 
-.texto-banner-cadastro h1{
+.texto-cadastro h1{
     color: var(--branco);
     font-size: 5em;  
 }
-.pai-cadastro{
+
+.cadastro-pai {
+    /* background: red; */
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin: 20px 0;
+    padding: 5em 0;
+    margin: auto;
+    width: 60vw;
 }
-.input-cadastro{
+/* .cadastro-pai button{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 5em 0;
+    margin: auto;
+    width: 60vw;
+} */
+
+.cadastro-input{
     border-radius: 2px;
-    height: 5vh;
+    height: 5.30vh;
     margin: 8px 0;
     width: 50vw;
-    /* padding: 0.5em; */
     border:  var(--cinza_sombra) solid 1px;
     box-shadow: 2px 2px 15px var(--cinza_sombra);
     font-size: 0.9em;
 }
 
-.form_cadastro{
-    display: flex;
-    flex-direction: column;
+.cadastro-pai input::-webkit-input-placeholder{
+    padding-left: 5px; 
+    
 }
 
-::placeholder{
-    padding-left: 5px;
-}
-span{
-    color: var(--cinza);
+.cadastro-span{
+    color: #A8A8A8;
     display: flex;
     justify-content: flex-start;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 0.7em;
+    font-size: 0.70em;
+    padding-bottom: 0.50em;
 }
-.button-cadastro{
+
+.cadastro-botao{
     background-color: var(--rosa);
     border: none;
     color: white;
+    cursor: pointer;
     font-size: 1em;
     font-weight: bold;
-    padding: 0 1.8em;
-    margin-top: 3em;
-    height: 6vh;
-}
-
-.texto-banner-cadastro a{
-    background: var(--rosa);
-    color: var(--branco);
-    font-weight: bold;
-    padding: 1em 1em;
+    padding: 0.60em 2.20em;
+    margin-top: 2em;
     text-decoration: none;
-    text-transform: uppercase;
-    position: absolute;
-    top: 67%;
-    
 }
 
-.texto-banner-cadastro a:hover{
-    background: #f287b9;
-    /* box-shadow: 0.10em 0.10em var(--preto); */
-    color: var(--branco);
+.cadastro-botao:hover{
+    box-shadow: 1px 1px 5px #CCC;
+    opacity: 0.7;
     transition: 0.6s;
 }
-/*Fim das configurações do main*/
+/* FIM WEB - CRIE SUA CONTA */
 
 
-/*Media Query 768px*/
+/* COMEÇO TABLET - CRIE SUA CONTA*/
 @media screen and (max-width: 768px){
-    #topo-cadastro{  
-        display: flex;
-        height: 20vh;
-        width: 99.9vw;
-    }
-    .div-topo-cadastro-esquerda{
-        width: 50%;
-    }
-    .menu-cadastro{
-        display: flex;
-        width: 100%;
-    }
-    .texto-banner-cadastro h1{
-        display: flex;
-        justify-content: center;
-        font-size: 3em;
-    }
-    #banner-cadastro{
-        width: 100%;
-        height: 27vh;
-        background-image: linear-gradient(to right, rgba(59, 74, 77, 0.3), rgba(91, 107, 119, 0.3)), url("../imagens/teclado.PNG");
-        background-size: contain;
-    }
-    #rodapé-cadastro{
-        width: 100%;
-        height: 27vh;
-    }
-    .rodapé-logo-tw-cadastro img{
-        height: 4vh;
-        width: 15vw;  
-    }
-    .rodapé-logo-eventshare-cadastro img{
-        /* height: 2vh; */
-        /* padding-left: 0.15em; */
-        width: 11vw;
-    } 
-    .rodapé-contato{
-        width: 40vw;
-    }
-    .rodapé-icones img{
-        width: 4vw;
-        
-    }
-    
-
-    
-}
-/*Fim Media Query 768px*/
-
-
-
-/*Media Query 375px*/
-@media screen and (max-width: 375px){
-    #topo-cadastro{
-        height: 20vh;
-        width: 100vw;
-        display: flex;
-    }
-    .logo img{
-        width: 40vw;
-    }
-    
-    .div-topo-cadastro-direita{
-        /* background: #11AA58; */
-        width: 50vw;
-        display: flex;
-        flex-direction: column;
-    }
-    .menu-cadastro{
-        /* background: yellow; */
-        width: 50vw;
-        height: 25vh;
+    .texto-cadastro h1{
+        font-size: 4em;
     }
 
-    #banner-cadastro{
-        background-size: cover;
-        background-position: center;
-        height: 25vh;
-    }
-    .menu-toggle{
-        align-content: flex-end;
-        display: flex;
-        font-size: 0.8em;
-        justify-content: space-between;
-        width: 70%;
-    }
-    .texto-banner-cadastro h1{
-        display: flex;
-        justify-content: center;
-        font-size: 2em;
-    }
-    .menu-toggle p{
-        font-size: 1.3em;
-        font-weight: bold;
-    }
-    .menu-cadastro{
-        display: none;
-    }
-    .input-cadastro{
-    border-radius: 2px;
-    height: 5vh;
-    /* margin: 5px 0; */
-    width: 75vw;
-    /* padding: 0.5em; */
-    border:  var(--cinza_sombra) solid 1px;
-    box-shadow: 2px 2px 15px var(--cinza_sombra);
-    font-size: 0.9em;
-    }
-    .rodapé-logo-tw-cadastro img{
-        width: 27vw;
-    }
-    .rodapé-logo-eventshare-cadastro img{
-        width: 18vw;
-    } 
-    #rodapé-cadastro{
-        /* background: #EF5BA1; */
-        height: 35vh;  
-    }    
-    .rodapé-conteudo-cadastro{
-        display: block;
-    }
-    .rodapé-contato{
-        /* background: #3CBACE; */
-        width: 70vw;
-    }
-    .rodapé-redes-sociais{
-        /* background: #11AA58; */
+    .cadastro-pai{
+        padding: 4em 0;
         width: 80vw;
-        height: 15vh;
     }
-    .rodapé-icones img{
-        width: 10vw;
-        height: 6vh;
-        margin: 0 3px;
+
+    .cadastro-input{
+        width: 80vw;
     }
-    
+
+    .cadastro-button:hover{
+        box-shadow: 0px 0px 0px;
+        opacity: 1;
+        transition: 0s;
+    }
 }
-/*Fim Media Query 375px*/
+/* FIM TABLET - CRIE SUA CONTA */
+
+
+
+/* COMEÇO MOBILE - CRIE SUA CONTA */
+@media screen and (max-width: 375px){
+    .texto-cadastro h1{
+        font-size: 2.30em;
+    }
+
+    .cadastro-button:hover{
+        box-shadow: 0px 0px 0px;
+        opacity: 1;
+        transition: 0s;
+    }
+
+}
+/* FIM MOBILE - CRIE SUA CONTA */

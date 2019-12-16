@@ -14,6 +14,7 @@ class EditarEventoPerfilUsuario extends Component {
       usuario: '',
       usuarioId: parseJwt().UserId,
       usuarioNome: '',
+      eventoIdProps: this.props.match.params.id,
       evento: '',
       eventoId: this.props.eventoId,
       eventoNome: '',
@@ -66,6 +67,7 @@ class EditarEventoPerfilUsuario extends Component {
 
   buscarEvento() {
     fetch('https://localhost:5001/api/eventotbl/perfilusuario/' + this.state.usuarioId)
+      .then(console.log(this.state.eventoIdProps + 'ok'))
       .then(resposta => resposta.json())
       .then(data => {
         this.setState({ evento: data })

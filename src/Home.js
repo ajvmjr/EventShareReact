@@ -7,6 +7,7 @@ import CabecalhoLogado from './components/CabecalhoLogado.js'
 import RodapeHome from './components/RodapeHome.js'
 import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 import { usuarioAutenticado, parseJwt } from './services/auth';
+import { Link } from 'react-router-dom'
 
 
 class Home extends Component {
@@ -167,7 +168,9 @@ class Home extends Component {
                       return (
                         // <a href="#">
 
-                        <div onClick={() => {window.location.href = '/DescricaoEvento/' + evento.eventoId}} key={evento.eventoId} className="evento-1-home">
+                        <Link to={{
+                          pathname: '/DescricaoEvento',
+                          id: evento.eventoId}}> 
                           {/* <button onClick={
                               () => {
                               window.location.href = '/DescricaoEvento/' + evento.eventoId
@@ -197,7 +200,7 @@ class Home extends Component {
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </Link>
                         // </a> 
                       )
                     }

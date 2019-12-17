@@ -6,6 +6,7 @@ import Rodape from '../components/Rodape';
 import TopoPerfil from '../components/TopoPerfilAdm';
 import Moment from 'react-moment';
 import 'moment-timezone';
+import { Link } from 'react-router-dom'
 
 class PerfilAdmAprovarEvento extends Component {
   constructor(props) {
@@ -98,7 +99,9 @@ class PerfilAdmAprovarEvento extends Component {
                 this.state.listaFiltradaDeEventos ?
                   this.state.listaFiltradaDeEventos.map(function (evento) {
                     return (
-                      <a onClick={() => {window.location.href = '/DescricaoEventoAdm/' + evento.eventoId}}>
+                      <Link to={{
+                                pathname: '/DescricaoEventoAdm',
+                                id: evento.eventoId}}>
                         <div key={evento.eventoId} className="evento-1-aprovar">
                           <div className="evento-um-aprovar">
                             <img src={require("../assets/imagens/Evento1.jpeg")} alt="" className="evento-imagem-aprovar" />
@@ -125,7 +128,7 @@ class PerfilAdmAprovarEvento extends Component {
                             </div>
                           </div>
                         </div>
-                      </a>
+                      </Link>
 
                     )
                   }) : null

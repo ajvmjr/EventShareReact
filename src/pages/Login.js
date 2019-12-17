@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CabecalhoSemBotao from '../components/CabecalhoLogin'
+import CabecalhoSemBotao from '../components/CabecalhoCriarConta'
 import '../assets/CSS/Login.css'
 import Rodape from '../components/Rodape'
 import { parseJwt } from '../services/auth';

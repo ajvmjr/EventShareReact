@@ -11,7 +11,7 @@ class DescricaoEvento extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      eventoIdProps: this.props.match.params.id,
+      eventoIdProps: this.props.location.id,
       evento: {
         eventoId: '',
         eventoNome: '',
@@ -102,10 +102,8 @@ class DescricaoEvento extends Component {
                 <div className="botao-inscrever-descricao-evento">
                   {/* <button onClick={() => window.location.replace></button> */}
                   
-                <Link to={this.state.evento.eventoLinkInscricao} target="_blank">Me inscrever</Link>
-                 {/* <Link to={'${{this.state.evento.eventoLinkInscricao}}'}>Me inscever</Link>
-                 */}
-                 {/* <a href={this.state.evento.eventoLinkInscricao}></a> */}
+                {/* <Link to={this.state.evento.eventoLinkInscricao} target="_blank">Me inscrever</Link> */}
+                 <a href={'https://' + this.state.evento.eventoLinkInscricao} target="_blank">Me Inscrever</a>
                 </div>
                 
               </div>

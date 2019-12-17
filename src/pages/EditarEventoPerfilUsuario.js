@@ -4,6 +4,7 @@ import '../assets/CSS/EditarEventoPerfilUsuario.css';
 import CabecalhoBotao from '../components/CabecalhoBotao';
 import Rodape from '../components/Rodape';
 import { parseJwt } from '../services/auth';
+import Moment from 'react-moment';
 
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBInput } from 'mdbreact';
 
@@ -11,90 +12,91 @@ class EditarEventoPerfilUsuario extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      usuario: '',
-      usuarioId: parseJwt().UserId,
-      usuarioNome: '',
-      eventoIdProps: this.props.match.params.id,
+      eventoId: this.props.location.id,
       evento: '',
-      eventoId: this.props.eventoId,
       eventoNome: '',
       eventoDescricao: '',
       eventoData: '',
       eventoHorarioComeco: '',
       eventoHorarioFim: '',
+      usuario: '',
+      usuarioId: parseJwt().UserId,
+      usuarioNome: '',
+      // categoria: '',
+      // categoriaId: '',
+      // categoriaNome: '',
+      eventoEspaco: '',
+      eventoEspacoId: '',
+      espacoNome: '',
       editarModal: {
+        eventoId: this.props.location.id,
         evento: '',
-        eventoId: this.props.eventoId,
         eventoNome: '',
         eventoDescricao: '',
         eventoData: '',
         eventoHorarioComeco: '',
         eventoHorarioFim: '',
+        usuario: '',
+        usuarioId: parseJwt().UserId,
+        usuarioNome: '',
+        // categoria: '',
+        // categoriaId: '',
+        // categoriaNome: ''
+        eventoEspaco: '',
+        eventoEspacoId: '',
+        espacoNome: '',
       }
     }
-
-    // this.buscarUsuario = this.buscarUsuario.bind(this);
     this.buscarEvento = this.buscarEvento.bind(this);
-    this.atualizarEstadoNome = this.atualizarEstadoNome.bind(this);
-    this.atualizarEstadoDescricao = this.atualizarEstadoDescricao.bind(this);
-    this.atualizarEstadoData = this.atualizarEstadoData.bind(this);
-    this.atualizarEstadoHorarioComeco = this.atualizarEstadoHorarioComeco.bind(this);
-    this.atualizarEstadoHorarioFim = this.atualizarEstadoHorarioFim.bind(this);
+    this.buscarUsuario = this.buscarUsuario.bind(this);
+    // this.buscarCategoria = this.buscarCategoria.bind(this);
   }
 
-  // buscarUsuario() {
-  //   fetch('https://localhost:5001/api/usuariotbl/' + this.state.usuarioId)
+  buscarUsuario() {
+    console.log("id usuario:" + this.state.usuarioId)
+    fetch('https://localhost:5001/api/usuariotbl/' + this.state.usuarioId)
+      .then(resposta => resposta.json())
+      .then(data => {
+        this.setState({ usuario: data })
+      })
+      .catch((erro) => {
+        console.log(erro)
+      })
+  }
+
+  // buscarCategoria() {
+  //   console.log("id categoria:" + this.state.categoriaId)
+  //   fetch('https://localhost:5001/api/categoria/' + this.state.categoriaId)
   //     .then(resposta => resposta.json())
   //     .then(data => {
-  //       this.setState({ usuario: data })
+  //       this.setState({ categoria: data })
   //     })
   //     .catch((erro) => {
   //       console.log(erro)
   //     })
   // }
 
-  // atualizarEstadoNome(event) {
-  //   this.setState({ usuarioNome: event.target.value })
-  // }
-
-  componentWillReceiveProps(){
-    setTimeout(() => {
-      this.setState({ eventoId: this.props.eventoId })
-    }, 100)
-
-    console.log('id evento: ' + this.state.eventoId)
-  }
-
   buscarEvento() {
-    fetch('https://localhost:5001/api/eventotbl/perfilusuario/' + this.state.usuarioId)
-      .then(console.log(this.state.eventoIdProps + 'ok'))
+    console.log("id novo:" + this.state.eventoId)
+    fetch('https://localhost:5001/api/eventotbl/evento/' + this.state.eventoId)
       .then(resposta => resposta.json())
       .then(data => {
-        this.setState({ evento: data })
+        this.setState({
+          evento: data,
+          usuario: data,
+        })
       })
       .catch(erro => {
         console.log(erro);
       })
   }
 
-  atualizarEstadoNome(event) {
-    this.setState({ eventoNome: event.target.value })
-  }
-
-  atualizarEstadoDescricao(event) {
-    this.setState({ eventoDescricao: event.target.value })
-  }
-
-  atualizarEstadoData(event) {
-    this.setState({ eventoData: event.target.value })
-  }
-
-  atualizarEstadoHorarioComeco(event) {
-    this.setState({ eventoHorarioComeco: event.target.value })
-  }
-
-  atualizarEstadoHorarioFim(event) {
-    this.setState({ eventoHorarioFim: event.target.value })
+  putSetState = (input) => {
+    this.setState({
+      editarModal: {
+        ...this.state.editarModal, [input.target.name]: input.target.value
+      }
+    })
   }
 
   alterarEvento = (evento) => {
@@ -105,7 +107,9 @@ class EditarEventoPerfilUsuario extends Component {
         eventoDescricao: evento.eventoDescricao,
         eventoData: evento.eventoData,
         eventoHorarioComeco: evento.eventoHorarioComeco,
-        eventoHorarioFim: evento.eventoHorarioFim
+        eventoHorarioFim: evento.eventoHorarioFim,
+        // categoriaId: categoria.categoriaId,
+        // categoriaNome: categoria.categoriaNome,
       }
     })
     console.log(this.state.evento.eventoId);
@@ -114,14 +118,16 @@ class EditarEventoPerfilUsuario extends Component {
     console.log(this.state.evento.eventoData);
     console.log(this.state.evento.eventoHorarioComeco);
     console.log(this.state.evento.eventoHorarioFim);
+    // console.log(this.state.categoria.categoriaId);
+    // console.log(this.state.categoria.categoriaNome);
 
     this.toggle();
   }
 
   salvarAlteracoes = (event) => {
     event.preventDefault();
-
-    fetch('https://localhost:5001/api/eventotbl/' + this.state.evento.eventoId, {
+    console.log("id salvar: " + this.state.eventoId)
+    fetch('https://localhost:5001/api/eventotbl/' + this.state.eventoId, {
       method: "PUT",
       body: JSON.stringify(this.state.editarModal),
       headers: {
@@ -137,52 +143,6 @@ class EditarEventoPerfilUsuario extends Component {
     this.toggle();
   }
 
-
-  atualizaEditarModalNome(event) {
-    this.setState({
-      editarModal: {
-        eventoId: this.state.editarModal.eventoId,
-        eventoNome: event.target.value,
-      }
-    })
-  }
-
-  atualizaEditarModalDescricao(event) {
-    this.setState({
-      editarModal: {
-        eventoId: this.state.editarModal.eventoId,
-        eventoDescricao: event.target.value,
-      }
-    })
-  }
-
-  atualizaEditarModalData(event) {
-    this.setState({
-      editarModal: {
-        eventoId: this.state.editarModal.eventoId,
-        eventoData: event.target.value,
-      }
-    })
-  }
-
-  atualizaEditarModalComeco(event) {
-    this.setState({
-      editarModal: {
-        eventoId: this.state.editarModal.eventoId,
-        eventoHorarioComeco: event.target.value,
-      }
-    })
-  }
-
-  atualizaEditarModalFim(event) {
-    this.setState({
-      editarModal: {
-        eventoId: this.state.editarModal.eventoId,
-        eventoHorarioFim: event.target.value,
-      }
-    })
-  }
-
   toggle = () => {
     this.setState({
       modal: !this.state.modal
@@ -191,6 +151,8 @@ class EditarEventoPerfilUsuario extends Component {
 
   componentDidMount() {
     this.buscarEvento();
+    this.buscarUsuario();
+    // this.buscarCategoria();
   }
 
   render() {
@@ -213,7 +175,7 @@ class EditarEventoPerfilUsuario extends Component {
                   <img src={require("../assets/imagens/iconeUsuario.png")} alt="Logo da comunidade Nerdzão, um desenho de um cérebro rosa com um ocúlos de armação preta" />
                 </div>
 
-                <div key={this.state.usuario.usuarioId} className="nome-usuario-descrição4-evento">
+                <div className="nome-usuario-descrição4-evento">
                   <p>{this.state.usuario.usuarioNome}</p>
                 </div>
 
@@ -225,17 +187,8 @@ class EditarEventoPerfilUsuario extends Component {
                   <img src={require("../assets/imagens/Evento1.jpeg")} alt="Banner do evento Nerdgirlz #22 - Panic! at the LINUX, com um fundo roxo." />
                 </div>
 
-                <div key={this.state.evento.eventoId} className="descricao4-evento">
-                  <p className="titulo-descrição4">Detalhes</p>
-                  <p>Data: 07/08/2019</p>
-                  <p>Hora: 19h</p>
-                  <p>Local do evento: ThoughtWorks São Paulo - Av Paulista, 2300, 4º andar</p>
-                  <p>Talk 1: "De Java para Kotlin - primeiros passos de uma jornada possível no backend"</p>
-                  <p>Palestrante: Rosi e Ailton</p>
-                  <p>Talk 2: Saúde Mental</p>
-                  <p>Palestrante: Jefferson Santos</p>
-                  <p>Fishbowl: Qual o impacto das pequenas comunidades no movimento social negro?</p>
-                  <p>Facilitadoras: Marylly e Ailton.</p>
+                <div className="descricao4-evento">
+                  <p>{this.state.evento.eventoDescricao}</p>
                 </div>
 
               </div>
@@ -259,9 +212,11 @@ class EditarEventoPerfilUsuario extends Component {
                         <img src={require("../assets/imagens/clock.png")} alt="" />
                         <p>Data e Horário</p>
                       </div>
-                      <div key={this.state.evento.eventoId} className="data-horario-descrição4">
-                        <p>Dia 03 de setembro de 2019</p>
-                        <p>Das 10h00 às 13h00 </p>
+                      <div className="data-horario-descrição4">
+                        <Moment className='data-formato-home' format="DD/MM/YYYY">
+                          <p>{this.state.evento.eventoData}</p>
+                        </Moment>
+                        <p>{this.state.evento.eventoHorarioComeco} às {this.state.evento.eventoHorarioFim}</p>
                       </div>
                     </div>
                   </div>
@@ -274,7 +229,7 @@ class EditarEventoPerfilUsuario extends Component {
                       <div key={this.state.evento.eventoId} className="endereco_local_img-descrição4">
                         <p>ThoughtWorks - Av. Paulista 2300, Conjunto 41</p>
                         <p>São Paulo - SP</p>
-                        <p> Lounge</p>
+                        {/* <p>Lounge</p> */}
                       </div>
                     </div>
                   </div>
@@ -290,32 +245,43 @@ class EditarEventoPerfilUsuario extends Component {
         <MDBContainer>
           <form onSubmit={this.salvarAlteracoes}>
             <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
-              <MDBModalHeader toggle={this.toggle}>Editar Evento <b> {this.state.editarModal.eventoNome} </b></MDBModalHeader>
+              <MDBModalHeader toggle={this.toggle}>Editar Evento <br /><b>{this.state.editarModal.eventoNome}</b></MDBModalHeader>
               <MDBModalBody key={this.state.editarModal.eventoId} >
                 <MDBInput
                   label='Nome'
                   value={this.state.editarModal.eventoNome}
-                  onChange={this.atualizaEditarModalNome.bind(this)}
+                  name="eventoNome"
+                  onChange={this.putSetState}
                 />
                 <MDBInput
                   label='Descrição'
                   value={this.state.editarModal.eventoDescricao}
-                  onChange={this.atualizaEditarModalDescricao.bind(this)}
+                  name="eventoDescricao"
+                  onChange={this.putSetState}
                 />
                 <MDBInput
                   label='Data'
                   value={this.state.editarModal.eventoData}
-                  onChange={this.atualizaEditarModalData.bind(this)}
+                  name="eventoData"
+                  onChange={this.putSetState}
                 />
                 <MDBInput
                   label='Horário Começo'
                   value={this.state.editarModal.eventoHorarioComeco}
-                  onChange={this.atualizaEditarModalComeco.bind(this)}
+                  name="eventoHorarioComeco"
+                  onChange={this.putSetState}
                 />
                 <MDBInput
                   label='Horário Fim'
                   value={this.state.editarModal.eventoHorarioFim}
-                  onChange={this.atualizaEditarModalFim.bind(this)}
+                  name="eventoHorarioFim"
+                  onChange={this.putSetState}
+                />
+                <MDBInput
+                  label='Categoria'
+                  value={this.state.editarModal.categoriaNome}
+                  name="categoriaNome"
+                  onChange={this.putSetState}
                 />
               </MDBModalBody>
               <MDBModalFooter>

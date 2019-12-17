@@ -42,6 +42,12 @@ class PainelEventos extends Component {
     // this.buscarEvento = this.buscarEvento.bind(this)
   }
 
+  // componentWillReceiveProps() {
+  //   setTimeout(() => {
+  //     this.setState({ idProp: this.props.idProp })
+  //   }, 100);
+  // }
+
   mudarDisplay() {
     var element = document.getElementsById("edit");
     element.classList.add("hidden");
@@ -56,17 +62,8 @@ class PainelEventos extends Component {
       .catch((erro) => console.log(erro))
   }
 
-  // buscarEvento() {
-  //   fetch('http://localhost:5000/api/eventotbl')
-  //     .then(resposta => resposta.json())
-  //     .then(data => this.setState({ 
-  //                                     listaEventos: data
-  //                                 }))
-  //     .catch((erro) => console.log(erro))
-  // }
 
   componentDidMount() {
-    // this.buscarEvento();
     this.buscarEventosUsuario();
   }
 
@@ -97,60 +94,61 @@ class PainelEventos extends Component {
                           <div className="esquerda-perfilU">
                             <h3>{event.eventoNome}</h3>
                             <img src={require("../assets/imagens/wakanda.png")} alt="Imagem do evento" />
-                        </div>
+                          </div>
 
-                        <div className="direita-perfilU">
-                          <Link to={"/EditarEventoUsuario"}>
+                          <div className="direita-perfilU">
+
                             <div className="editar-perfilU">
-                              {event.eventoStatus.eventoStatusNome === 'Aguardando Aprovação' ? (<Link onClick={() =>{
-                                window.location.href = '/EditarEventoUsuario/' + event.eventoId}
-                              } >Editar Evento</Link>) : (this.mudarDisplay)}
+                            {event.eventoStatus.eventoStatusNome === 'Aguardando Aprovação' ?
+                              (<Link to={{
+                                pathname: "/EditarEventoUsuario",
+                                id: event.eventoId
+                              }}>Editar Evento</Link>) : (this.mudarDisplay)}
                             </div>
-                          </Link>
 
-                          <div className="box-perfilU">
-                            <h3>Data: <Moment format="DD/MM/YYYY">
-                              {event.eventoData}
-                            </Moment>
-                            </h3>
-                          </div>
+                            <div className="box-perfilU">
+                              <h3>Data: <Moment format="DD/MM/YYYY">
+                                {event.eventoData}
+                              </Moment>
+                              </h3>
+                            </div>
 
-                          <div className="box-perfilU">
-                            <p>Início: {event.eventoHorarioComeco}</p>
-                            <p>Fim: {event.eventoHorarioFim}</p>
-                          </div>
+                            <div className="box-perfilU">
+                              <p>Início: {event.eventoHorarioComeco}</p>
+                              <p>Fim: {event.eventoHorarioFim}</p>
+                            </div>
 
-                          <div className="box-perfilU">
-                            <h3>Local:</h3>
-                            <p>{event.eventoEspaco.espacoNome}</p>
-                          </div>
+                            <div className="box-perfilU">
+                              <h3>Local:</h3>
+                              <p>{event.eventoEspaco.espacoNome}</p>
+                            </div>
 
-                          <div className="box-perfilU">
-                            <h3>Status:
+                            <div className="box-perfilU">
+                              <h3>Status:
                                 </h3>
-                            <div className="status-perfilU">
-                              <p>{event.eventoStatus.eventoStatusNome}</p>
-                              {/* <div className="circulo-perfilU"></div> */}
+                              <div className="status-perfilU">
+                                <p>{event.eventoStatus.eventoStatusNome}</p>
+                                {/* <div className="circulo-perfilU"></div> */}
+                              </div>
                             </div>
+
                           </div>
-
-                        </div>
                         </div>
 
-                )
-              })
-            }
+                      )
+                    })
+                  }
                   {/* <!--fim painel--> */}
 
                 </div>
               </section>
 
-          }
+            }
 
           </main>
 
-      </div>
-      <Rodape />
+        </div>
+        <Rodape />
       </div >
     );
   }

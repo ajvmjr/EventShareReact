@@ -34,7 +34,7 @@ class DescricaoEvento extends Component {
         }
       }
     }
-
+    
     this.buscarEvento = this.buscarEvento.bind(this)
     // this.teste = this.teste.bind(this)
   }
@@ -43,6 +43,7 @@ class DescricaoEvento extends Component {
   //   console.log(this.state.eventoId)
   // }
 
+  
   buscarEvento() {
     fetch('http://localhost:5000/api/eventotbl/evento/' + this.state.eventoIdProps)
       .then(resposta => resposta.json())

@@ -9,9 +9,9 @@ class DescriçãoEventoAdm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            eventoIdProps: this.props.match.params.id,
+            eventoId: '',
             evento: {
-                eventoId: '',
+                eventoId: '' ,
                 eventoNome: '',
                 eventoData: '',
                 eventoHorarioComeco: '',
@@ -19,8 +19,7 @@ class DescriçãoEventoAdm extends Component {
                 eventoDescricao: '',
                 eventoCategoriaId: '',
                 eventoEspacoId: '',
-                // criadorUsuario: '',
-                // criadorUsuarioId: '',
+                eventoStatusId: '',
                 usuarioId: '',
                 usuarioNome: '',
                 eventoImagem: '',
@@ -33,27 +32,92 @@ class DescriçãoEventoAdm extends Component {
             }
         }
         this.buscarEvento = this.buscarEvento.bind(this)
-        this.teste = this.teste.bind(this)
+        this.SetIdEventAndGetEventInfo = this.SetIdEventAndGetEventInfo.bind(this)
+        this.alterarEvento = this.alterarEvento.bind(this)
+        // this.alterarEvento = this.alterarEvento.bind(this)
     }
 
-    teste() {
-        console.log(this.state.eventoIdProps)
-    }
 
     buscarEvento() {
-        fetch('https://localhost:5001/api/eventotbl/evento/' + 2)
-
+        var id = localStorage.getItem('idEventoShow')
+        fetch('https://localhost:5001/api/eventotbl/evento/' + id)
             .then(resposta => resposta.json())
             .then(resposta => {
-                // console.log("Resposta do fetch: ", resposta)
-                this.setState({ evento: resposta }, () => console.log("Evento do state: ", this.state.evento));
+                this.setState({ evento: resposta }, () => console.log("Resposta: ", resposta));
             })
             .catch((erro) => console.log(erro))
     }
 
-    componentDidMount() {
-        this.teste()
+    SetIdEventAndGetEventInfo() {
+        console.log('id props: ',this.props.location.id)
+        if (this.props.location.id) {
+            localStorage.setItem('idEventoShow', this.props.location.id)
+        }
+
         this.buscarEvento()
+    }
+
+    alterarEvento = (evento) => {
+        console.log('entrei no alterar')
+        this.setState({
+            evento:{
+                eventoId: localStorage.getItem('idEventoShow') ,
+                eventoNome: evento.eventoNome,
+                eventoData: evento.eventoData,
+                eventoHorarioComeco: evento.eventoHorarioComeco,
+                eventoHorarioFim: evento.eventoHorarioFim,
+                eventoDescricao: evento.eventoDescricao,
+                eventoCategoriaId: evento.eventoCategoriaId,
+                eventoEspacoId: evento.eventoEspacoId,
+                eventoStatusId: evento.eventoStatusId,
+                usuarioId: evento.usuarioId,
+                usuarioNome: evento.usuarioNome,
+                eventoImagem: evento.eventoImagem,
+                eventoLinkInscricao: evento.eventoLinkInscricao,
+                listaUsuarios: [],
+                criadorUsuario: {
+                    usuarioId: '',
+                    usuarioNome: '',
+                }
+            }
+        })
+        this.aprovarEvento()
+    }
+
+    aprovarEvento(event){
+        console.log('entrei no aprovar')
+        var id = localStorage.getItem('idEventoShow')
+        fetch('https://localhost:5001/api/eventotbl/' + id, {
+            method: 'PUT',
+            body: JSON.stringify(this.state.evento),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+        .then(response => {
+            // console.log(response)
+            if(this.state.evento.eventoStatusId === 3){
+                this.state.evento.eventoStatusId = 1
+                alert('Evento aprovado')
+                console.log('status novo: ', this.state.evento.eventoStatusId)
+            }
+        })
+        console.log('EVENTO PARA APROVAR: ',this.state.evento)
+    }
+
+    // putSetState = (input) => {
+    //     this.setState({
+    //       evento: {
+    //         ...this.state.evento, [input.target.name]: input.target.value
+    //       }
+    //     })
+    //   }
+
+
+    componentDidMount() {
+        this.SetIdEventAndGetEventInfo()
+        this.alterarEvento()
+        // this.alterarEvento()
     }
 
     render() {
@@ -90,15 +154,7 @@ class DescriçãoEventoAdm extends Component {
 
                             <div className="descricao2-evento">
                                 <p className="titulo-descrição2">Detalhes</p>
-                                <p>Data: 07/08/2019</p>
-                                <p>Hora: 19h</p>
-                                <p>Local do evento: ThoughtWorks São Paulo - Av Paulista, 2300, 4º andar</p>
-                                <p>Talk 1: "De Java para Kotlin - primeiros passos de uma jornada possível no backend"</p>
-                                <p>Palestrante: Rosi  Ailton</p>
-                                <p>Talk 2: Saúde Mental</p>
-                                <p>Palestrante: Jefferson Santos</p>
-                                <p>Fishbowl: Qual o impacto das pequenas comunidades no movimento social negro?</p>
-                                <p>Facilitadoras: Marylly & Ailton.</p>
+                                <p>{this.state.evento.eventoDescricao}</p>
                             </div>
 
                         </div>
@@ -111,15 +167,15 @@ class DescriçãoEventoAdm extends Component {
                         <div className="direita_topo_descrição2">
 
                             <div className="botao-aprovar-descricao2-evento">
-                                <a href="#">Aprovar Evento</a>
+                                <button onClick={this.aprovarEvento} value='1' href="#">Aprovar Evento</button>
                             </div>
 
                             <div className="botao-recusar-descricao2-evento">
-                                <a href="#">Recusar Evento</a>
+                                <button value='3' href="#">Recusar Evento</button>
                             </div>
 
                             <div className="botao-editar-descricao2-evento">
-                                <a href="#">Editar Evento</a>
+                                <button href="#">Editar Evento</button>
                             </div>
 
 
@@ -139,8 +195,9 @@ class DescriçãoEventoAdm extends Component {
                                         </div>
 
                                         <div className="data-horario-descrição2">
-                                            <p>Dia 03 de setembro de 2019</p>
-                                            <p>Das 10h00 às 13h00 </p>
+                                            <p>{this.state.eventoData}</p>
+                                            <p>Das {this.state.evento.eventoHorarioComeco} </p>
+                                            <p>às {this.state.evento.eventoHorarioFim}</p>
                                         </div>
 
                                     </div>

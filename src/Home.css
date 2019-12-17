@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 /*Configurações gerais*/
@@ -92,7 +91,7 @@ p {
 }
 
 #eventos-home {
-    /* background: lightblue; */
+    background: lightblue;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -166,13 +165,13 @@ p {
 }
 
 .eventos-home {
-    /* background: yellowgreen; */
+    background: yellowgreen;
     display: flex;
     /* height: 50vh; */
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 6em;
-    width: 60vw;
+    width: 90vw;
 }
 
 .eventos-home a {
@@ -193,13 +192,13 @@ p {
 
 .evento-um-home {
     height: 30vh;
-    width: 17.7vw;
+    width: 29.9vw;
 }
 
 .evento-imagem-home {
     border: 1px solid var(--cinza);
     height: 33vh;
-    width: 28vw;
+    width: 29.9vw;
 }
 
 .evento-2-home {
@@ -452,7 +451,7 @@ time.data-formato-home {
     }
     .evento-um-home {
         height: 30vh;
-        width: 17.7vw;
+        width: 39.9vw;
     }
     .evento-um-home img {
         height: 30vh;
@@ -612,7 +611,7 @@ time.data-formato-home {
         box-shadow: none;
     }
     .evento-um-home {
-        height: 30vh;
+        height: 40vh;
     }
     .evento-um-home img {
         width: 80vw;

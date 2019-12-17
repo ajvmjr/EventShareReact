@@ -102,12 +102,9 @@ class PainelEventos extends Component {
                         <div className="direita-perfilU">
                           <Link to={"/EditarEventoUsuario"}>
                             <div className="editar-perfilU">
-                              {event.eventoStatus.eventoStatusNome === 'Aguardando Aprovação' ? (<Link onClick={() =>(
-                                console.log('objeto: ' + event.eventoId)
-                              )} to={{
-                                pathname: '/editareventousuario',
-                                evento: event.eventoId
-                              }} >Editar Evento</Link>) : (this.mudarDisplay)}
+                              {event.eventoStatus.eventoStatusNome === 'Aguardando Aprovação' ? (<Link onClick={() =>{
+                                window.location.href = '/EditarEventoUsuario/' + event.eventoId}
+                              } >Editar Evento</Link>) : (this.mudarDisplay)}
                             </div>
                           </Link>
 

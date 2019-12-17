@@ -39,6 +39,7 @@ class PainelEventos extends Component {
 
     this.mudarDisplay = this.mudarDisplay.bind(this)
     this.buscarEventosUsuario = this.buscarEventosUsuario.bind(this)
+    this.deletarEvento = this.deletarEvento.bind(this);
     // this.buscarEvento = this.buscarEvento.bind(this)
   }
 
@@ -62,9 +63,35 @@ class PainelEventos extends Component {
       .catch((erro) => console.log(erro))
   }
 
+  deletarEvento = (eventoId) => {
+
+    fetch('http://localhost:5000/api/eventotbl/' + eventoId,
+        {
+            method: 'DELETE',
+            headers: {
+                "Content-type": "application/json"
+            }
+        }
+    )
+
+    .then(resposta => resposta.json())
+    .then(resposta => {
+        console.log(resposta);
+        this.buscarEventosUsuario();
+        this.setState( () => ({ listaEventos: this.state.listaEventos }))    
+    })
+
+    .catch(erro => {
+        console.log(erro)
+        this.setState({erro})
+    })
+}
+
+
 
   componentDidMount() {
     this.buscarEventosUsuario();
+    this.deletarEvento();
   }
 
   render() {
@@ -104,6 +131,10 @@ class PainelEventos extends Component {
                                 pathname: "/EditarEventoUsuario",
                                 id: event.eventoId
                               }}>Editar Evento</Link>) : (this.mudarDisplay)}
+                            </div>
+
+                            <div className="excluir-perfilU">
+                              <button onClick={i => this.deletarEvento(event.eventoId)}>Deletar Evento</button>
                             </div>
 
                             <div className="box-perfilU">

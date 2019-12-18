@@ -66,28 +66,6 @@ class CriarEvento4 extends Component {
         })
     }
 
-    // alterarUsuario() {
-    //     this.setState({
-    //         evento: {
-    //             eventoNome: this.state.evento.eventoNome,
-    //             eventoData: this.state.evento.eventoData,
-    //             eventoHorarioComeco: this.state.evento.eventoHorarioComeco,
-    //             eventoHorarioFim: this.state.evento.eventoHorarioFim,
-    //             eventoDescricao: this.state.evento.eventoDescricao,
-    //             eventoCategoriaId: this.state.evento.eventoCategoriaId,
-    //             eventoEspacoId: this.state.evento.eventoEspacoId,
-    //             eventoLinkInscricao: this.state.evento.eventoLinkInscricao,
-    //             eventoRestrito: this.state.evento.eventoRestrito,
-    //             eventoNumeroParticipantes: this.state.evento.eventoNumeroParticipantes,
-    //             eventoDiversidade: this.state.evento.eventoDiversidade,
-    //             eventoCoffe: this.state.evento.eventoCoffe,
-    //             eventoObsAdicional: this.state.evento.eventoObsAdicional,
-    //         }
-    //     })
-    // }
-
-
-
     // onDrop(picture) {
     //     this.setState({
     //         pictures: this.state.pictures.concat(picture),
@@ -128,36 +106,6 @@ class CriarEvento4 extends Component {
             .then(resposta => resposta.json())
             .then(data => this.setState({ listaCategorias: data }))
             .catch((erro) => console.log(erro))
-    }
-
-    alterarUsuario() {
-        this.setState({
-            evento: {
-                usuarioId: this.state.usuario.usuarioId,
-                eventoNome: this.state.usuario.eventoNome,
-                eventoData: this.state.usuario.eventoData,
-                eventoHorarioComeco: this.state.usuario.eventoHorarioComeco,
-                usuarioSenha: this.state.usuario.usuarioSenha,
-                usuarioTipoId: this.state.usuario.usuarioTipoId,
-                eventoNome: '',
-                eventoData: '',
-                eventoHorarioComeco: '',
-                eventoHorarioFim: '',
-                eventoDescricao: '',
-                eventoCategoriaId: '',
-                eventoEspacoId: '',
-                eventoStatusId: 3,
-                // criadorUsuarioId: parseJwt().UserId,
-                eventoLinkInscricao: '',
-                eventoRestrito: false,
-                eventoNumeroParticipantes: '',
-                eventoDiversidade: '',
-                eventoCoffe: '',
-                eventoObsAdicional: '',
-            }
-        })
-
-        this.toggle();
     }
 
     componentDidMount() {

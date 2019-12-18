@@ -28,6 +28,13 @@ a, h1, h2, h3, h4, p{
     --cinza_sombra: #E6E6E6;
 }
 /*Fim definição de cores*/
+.evento-perfilU{
+    /* background: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 30vh;
+}
 
 .main-perfilU{
     /* background: #11AA58; */
@@ -62,7 +69,6 @@ a, h1, h2, h3, h4, p{
 .display-perfilU{
     align-items: center;
     display: flex;
-    /* justify-content: center; */
     flex-direction: column;
 }
 
@@ -70,9 +76,8 @@ a, h1, h2, h3, h4, p{
     background: var(--branco);
     border: solid 1px var(--cinza_sombra);
     box-shadow: 10px 10px 20px var(--cinza_sombra);
-    width: 65vw;
+    width: 62vw;
     padding: 30px;
-    /* height: 50vh; */
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
@@ -81,18 +86,19 @@ a, h1, h2, h3, h4, p{
 .esquerda-perfilU h3{
     font-weight: normal;
     text-transform: uppercase;
-    font-size: 1.7em;
+    font-size: 1.5em;
 }
 
 .esquerda-perfilU img{
-    width: 30vw;
-    margin-top: 30px;
+    width: 27vw;
+    margin-top: 10px;
 }
 
 .editar-perfilU{
     align-items: center;
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
+    height: 5.50vh;
     width: 100%;
     /* background: #3CBACE; */
 }
@@ -105,11 +111,24 @@ a, h1, h2, h3, h4, p{
     display: flex;
     font-size: 1em;
     font-weight: bold;
-    height: 7vh;
+    height: 5.50vh;
     justify-content: center;
     text-decoration: none;
-    width: 15vw;
-    margin-bottom: 20px;
+    width: 10vw;
+}
+
+.excluir-perfilU button{
+    align-items: center;
+    background-color: var(--vermelho);
+    border: none;
+    color: white;
+    display: flex;
+    font-size: 1em;
+    font-weight: bold;
+    height: 5.50vh;
+    justify-content: center;
+    text-decoration: none;
+    width: 10vw;
 }
 
 .esquerda-perfilU{
@@ -119,21 +138,27 @@ a, h1, h2, h3, h4, p{
 }
 
 .direita-perfilU{
-    /* background: #ED312F; */
+    /* background: lightcoral; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 38vh;
     width:22vw;
 }
 
 .box-perfilU{
-    margin-bottom: 10px;
+    /* background: green; */
+    height: auto;
 }
 
 .box-perfilU h3{
     font-weight: normal;
-    font-size: 1.4em;
+    font-size: 1.20em;
+    padding-top: 0.20em;
 }
 
 .box-perfilU p{
-    font-size: 1.2em;
+    font-size: 1.20em;
 }
 
 .circulo-perfilU{
@@ -150,7 +175,7 @@ a, h1, h2, h3, h4, p{
 }
 
 .legenda-perfilU{
-    /* background: #11AA58; */
+    /* background: plum; */
     height: 30vh;
 }
 
@@ -160,7 +185,7 @@ a, h1, h2, h3, h4, p{
 }
 
 .legendaSt-perfilU{
-    /* background: #F5C10D; */
+    /* background: palevioletred; */
     display: flex;
     justify-content: space-around;
     width: 50vw;

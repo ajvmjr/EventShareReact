@@ -66,26 +66,26 @@ class PainelEventos extends Component {
   deletarEvento = (eventoId) => {
 
     fetch('http://localhost:5000/api/eventotbl/' + eventoId,
-        {
-            method: 'DELETE',
-            headers: {
-                "Content-type": "application/json"
-            }
+      {
+        method: 'DELETE',
+        headers: {
+          "Content-type": "application/json"
         }
+      }
     )
 
-    .then(resposta => resposta.json())
-    .then(resposta => {
+      .then(resposta => resposta.json())
+      .then(resposta => {
         console.log(resposta);
         this.buscarEventosUsuario();
-        this.setState( () => ({ listaEventos: this.state.listaEventos }))    
-    })
+        this.setState(() => ({ listaEventos: this.state.listaEventos }))
+      })
 
-    .catch(erro => {
+      .catch(erro => {
         console.log(erro)
-        this.setState({erro})
-    })
-}
+        this.setState({ erro })
+      })
+  }
 
 
 
@@ -125,41 +125,34 @@ class PainelEventos extends Component {
                           <div className="direita-perfilU">
 
                             <div className="editar-perfilU">
-                            {event.eventoStatus.eventoStatusNome === 'Aguardando Aprovação' ?
-                              (<Link to={{
-                                pathname: "/EditarEventoUsuario",
-                                id: event.eventoId
-                              }}>Editar Evento</Link>) : (this.mudarDisplay)}
-                            </div>
-
-                            <div className="excluir-perfilU">
-                              <button onClick={i => this.deletarEvento(event.eventoId)}>Deletar Evento</button>
-                            </div>
-
-                            <div className="box-perfilU">
-                              <h3>Data: <Moment format="DD/MM/YYYY">
-                                {event.eventoData}
-                              </Moment>
-                              </h3>
-                            </div>
-
-                            <div className="box-perfilU">
-                              <p>Início: {event.eventoHorarioComeco}</p>
-                              <p>Fim: {event.eventoHorarioFim}</p>
-                            </div>
-
-                            <div className="box-perfilU">
-                              <h3>Local:</h3>
-                              <p>{event.eventoEspaco.espacoNome}</p>
-                            </div>
-
-                            <div className="box-perfilU">
-                              <h3>Status:
-                                </h3>
-                              <div className="status-perfilU">
-                                <p>{event.eventoStatus.eventoStatusNome}</p>
-                                {/* <div className="circulo-perfilU"></div> */}
+                              {event.eventoStatus.eventoStatusNome === 'Aguardando Aprovação' ?
+                                (<Link to={{
+                                  pathname: "/EditarEventoUsuario",
+                                  id: event.eventoId
+                                }}>Editar Evento</Link>) : (this.mudarDisplay)}
+                              <div className="excluir-perfilU">
+                                <button onClick={i => this.deletarEvento(event.eventoId)}>Deletar Evento</button>
                               </div>
+                            </div>
+
+                            <div className="evento-perfilU">
+
+                              <div className="box-perfilU">
+                                <h3>Data: <Moment format="DD/MM/YYYY"><p>{event.eventoData}</p></Moment></h3>
+                              </div>
+
+                              <div className="box-perfilU">
+                                <p>Horário: {event.eventoHorarioComeco} às {event.eventoHorarioFim}</p>
+                              </div>
+
+                              <div className="box-perfilU">
+                                <h3>Local: {event.eventoEspaco.espacoNome}</h3>
+                              </div>
+
+                              <div className="box-perfilU">
+                                <h3>Status: {event.eventoStatus.eventoStatusNome}</h3>
+                              </div>
+
                             </div>
 
                           </div>

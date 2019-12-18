@@ -71,7 +71,16 @@ class CriarEvento4 extends Component {
         }, 1000);
     }
 
+<<<<<<< HEAD
 
+=======
+    // onDrop(picture) {
+    //     this.setState({
+    //         pictures: this.state.pictures.concat(picture),
+    //     });
+    //     console.log(picture)
+    // }
+>>>>>>> 04416570f2ab2cf3d2e82140474b60d6beab5b7f
 
     atualizaSatetCampo(event) {
         this.setState({ [event.target.name]: event.target.value })

@@ -103,7 +103,6 @@ class PainelEventos extends Component {
           <main className="main-perfilU">
 
             {
-
               <section className="container-perfilU">
                 <div className="texto-perfilU">
                   <h2>Painel de Eventos</h2>

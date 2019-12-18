@@ -1,23 +1,23 @@
 import React, { Component } from 'react'
-import '../assets/CSS/CabecalhoSemBotao.css'
+import '../assets/CSS/CabecalhoLogin.css'
 import Logo from '../assets/imagens/LogoEventShare.png'
 
-class CabecalhoSemBotao extends Component {
+class CabecalhoLogin extends Component {
     render() {
         return (
             <div className="">
                 <header>
-                    <section id="cabecalho-CriarConta">
-                        <div class="itens-cabecalho-CriarConta">
+                    <section id="cabecalho-CriarConta5">
+                        <div className="itens-cabecalho-CriarConta5">
 
-                            <div class="logo-eventshare-cabecalho-CriarConta">
+                            <div className="logo-eventshare-cabecalho-CriarConta5">
                                 <a href="/">
-                                    <img src={Logo} alt="Logo do projeto Eventshare1" />
+                                    <img src={Logo} alt="Logo do projeto Eventshare" />
                                 </a>
                             </div>
 
-                            <div class="menu-cabecalho-CriarConta">
-                                <nav class="menu1">
+                            <div className="menu-cabecalho-CriarConta5">
+                                <nav className="menu5">
                                     <ul>
                                         <li>
                                             <a href="/Login">Login</a>
@@ -34,4 +34,4 @@ class CabecalhoSemBotao extends Component {
     }
 }
 
-export default CabecalhoSemBotao
+export default CabecalhoLogin

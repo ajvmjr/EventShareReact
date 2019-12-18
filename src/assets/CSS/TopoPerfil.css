@@ -56,9 +56,9 @@ a, h1, h2, h3, h4, p{
 .nome-TopoPerfil{
     margin-left: 5em;
     height: 5vh;
-    width: 17vw;
+    width: 13vw;
     background: var(--rosa);
-    position: relative; top: 113px; left: 200px;
+    position: relative; top: 112px; left: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,29 +66,30 @@ a, h1, h2, h3, h4, p{
 .nome-TopoPerfil p{
     text-transform: uppercase;
     color: var(--branco);
-    font-size: 1.2em;
+    font-size: 1.2em;;
     text-align: center;
     font-family:'Open Sans';
     margin-top: 0.5em;
-    padding-top: 0.30em;
 }
 
 .fotoperfil-TopoPerfil img{
     width: 7vw;
     height: 7vw;
     border-radius: 50%;
+    margin: 50px 50px 0 145px;
+    
 }
 
 .menu-TopoPerfil{
     background: var(--branco);
-    width: 25vw;
+    width: 22vw;
     height: 5vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
     border: var(--cinza_sombra) 1px solid;
     box-shadow: 2px 2px 15px var(--cinza_sombra);
-    margin-left: 17.5em;
+    margin-left: 17.4em;
 }
 
 .menu-TopoPerfil a{
@@ -111,12 +112,11 @@ a, h1, h2, h3, h4, p{
         width: 30vw;
         height: 5.6vh;
         margin-left: unset;
-        position: relative; top: 57.8px; left: 175px;
+        position: relative; top: 63.8px; left: 200px;
     }
     .menu-TopoPerfil {
-        height: 6vh;
         width: 45vw;
-        margin-left: 174px;
+        margin-left: 200px;
         margin-top: 0px;
     }    
 
@@ -128,7 +128,7 @@ a, h1, h2, h3, h4, p{
     }
 
     .fotoperfil-TopoPerfil img {
-        width: 12.20vw;
+        width: 14vw;
         height: 15vh;
         margin: 11px 65px;
     
@@ -147,28 +147,33 @@ a, h1, h2, h3, h4, p{
     }
 
     .nome-TopoPerfil {
-        width: 57vw;
-        height: 6vh;
+        width: 50vw;
+        height: 5.4vh;
         margin-right: 5px;
         position: relative;
-        top: 55px;
-        left: 129px;
+        top: 64px;
+        left: 145px;
+    }
+
+    .fotoperfil_TopoPerfil img{
+        width: 1vw;
+        height: 1vh; 
+        margin: 1px; 
     }
 
     .menu-TopoPerfil {
         height: 5em;
-        width: 57.5vw;
-        margin-left: 128px;
+        width: 50vw;
+        margin-left: 145px;
         /* display: flex; */
         flex-direction: column;
     }
 
     .fotoperfil-TopoPerfil img {
-        width: 20vw;
+        width: 22vw;
         height: 12vh;
-        margin: 15px 35px;
+        margin: 25px 35px;
     }
-
     .menu-TopoPerfil a {
         text-decoration: none;
         font-family: 'Open Sans';

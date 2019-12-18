@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../assets/CSS/CabecalhoSemBotao.css'
+import '../assets/CSS/CabecalhoCriarConta.css'
 import Logo from '../assets/imagens/LogoEventShare.png'
 
 class CabecalhoCriarConta extends Component {
@@ -7,17 +7,17 @@ class CabecalhoCriarConta extends Component {
         return (
             <div className="">
                 <header>
-                    <section id="cabecalho-CriarConta">
-                        <div class="itens-cabecalho-CriarConta">
+                    <section id="cabecalho-CriarConta1">
+                        <div className="itens-cabecalho-CriarConta1">
 
-                            <div class="logo-eventshare-cabecalho-CriarConta">
+                            <div className="logo-eventshare-cabecalho-CriarConta1">
                                 <a href="/">
                                     <img src={Logo} alt="Logo do projeto Eventshare1" />
                                 </a>
                             </div>
 
-                            <div class="menu-cabecalho-CriarConta">
-                                <nav class="menu1">
+                            <div className="menu-cabecalho-CriarConta1">
+                                <nav className="menu1">
                                     <ul>
                                         <li>
                                             <a href="/Cadastro">Criar Conta</a>

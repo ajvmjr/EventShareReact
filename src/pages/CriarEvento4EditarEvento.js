@@ -71,16 +71,7 @@ class CriarEvento4 extends Component {
         }, 1000);
     }
 
-<<<<<<< HEAD
-    // onDrop(picture) {
-    //     this.setState({
-    //         pictures: this.state.pictures.concat(picture),
-    //     });
-    //     console.log(picture)
-    // }
-=======
 
->>>>>>> dc6c856df195d069206fab23e8a3cdc15927a83c
 
     atualizaSatetCampo(event) {
         this.setState({ [event.target.name]: event.target.value })
@@ -117,8 +108,6 @@ class CriarEvento4 extends Component {
             .catch((erro) => console.log(erro))
     }
 
-<<<<<<< HEAD
-=======
     salvarEvento = () => {
 
         console.log('mano id é: ' + this.state.eventoId)
@@ -140,7 +129,6 @@ class CriarEvento4 extends Component {
         .catch(erro => console.log(erro))
     } 
 
->>>>>>> dc6c856df195d069206fab23e8a3cdc15927a83c
     componentDidMount() {
         this.buscarCategorias()
         this.buscarLugares()

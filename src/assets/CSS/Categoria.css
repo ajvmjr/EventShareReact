@@ -48,6 +48,12 @@ p {
 
 /* COMEÇO WEB - PERFIL ADM CATEGORIA */
 
+.pai-de-tudo{
+    /* background-color: #5a155a; */
+    min-height: 55vh;
+}
+
+
 .formulario-input-categoria {
     /* background: yellow; */
     height: 10vh;
@@ -276,7 +282,7 @@ p {
         border-radius: 2px;
         box-shadow: 2px 2px 15px var(--cinza_sombra);
         font-size: 0.9em;
-        height: 5.10vh;
+        height: 6vh;
         margin-right: 0.20em;
         width: 60vw;
     }
@@ -315,7 +321,10 @@ p {
         justify-content: space-evenly;
         width: 15%;
     }
+    #cabecalho-padrao {
+        align-items: center;
+        /* background: green; */
+        height: 20vh;
+        width: 110vw;
+    }
 }
-
-
-/* FIM MOBILE - PERFIL ADM CATEGORIA */

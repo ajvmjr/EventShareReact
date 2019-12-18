@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CabecalhoSemBotao from '../components/CabecalhoCriarConta'
+import CabecalhoCriarConta from '../components/CabecalhoCriarConta'
 import '../assets/CSS/Login.css'
 import Rodape from '../components/Rodape'
 import { parseJwt } from '../services/auth';
@@ -90,7 +90,7 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <CabecalhoSemBotao />
+        <CabecalhoCriarConta />
         <section id="banner-login">
           <div className="texto-login">
             <h1>LOGIN</h1>

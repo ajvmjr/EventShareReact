@@ -3,6 +3,7 @@ import CabecalhoLogin from '../components/CabecalhoLogin'
 import { css } from '@emotion/core';
 import { SyncLoader } from 'react-spinners';
 import '../assets/CSS/Cadastro.css';
+import Rodape from '../components/Rodape'
 
 const override = css`
     display: block;
@@ -118,6 +119,7 @@ class Cadastro extends Component {
             </section>
           </form>
         </main>
+        <Rodape/>
       </div>
     );
   }

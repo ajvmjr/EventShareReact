@@ -50,4 +50,3 @@ class CabecalhoBotao extends Component {
 }
 
 export default CabecalhoBotao
-

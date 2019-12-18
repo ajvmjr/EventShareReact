@@ -67,6 +67,7 @@ a, h1, h2, h3, h4, p{
     padding: 5em;
     margin: auto;
     width:  60vw;
+    height: 20em;
 }
 
 .login-input{
@@ -147,5 +148,18 @@ a, h1, h2, h3, h4, p{
         opacity: 1;
         transition: none;
     }
+
+    .login-pai {
+        height: 20em;
+    }
+
+    #banner-login {
+        height: 30vh;
+    }
+
+    #rodape-padrao {
+        height: 31.8vh;
+    }
+    
 }
 /* FIM MOBILE - LOGIN */

@@ -85,7 +85,7 @@ class CriarEvento4 extends Component {
             })
                 .then(response => {
                     if (response.status === 200) {
-                        alert("Evento Cadastrado")
+                        // alert("Evento Cadastrado")
                         window.location.replace('/criarevento6')
                     }       // this.setState({ isLoading: false })
                 })
@@ -244,7 +244,7 @@ class CriarEvento4 extends Component {
 
 
 
-                            <div className="foto-sub6">
+                            {/* <div className="foto-sub6">
                                 <p>Adicionar foto para o ícone do evento?(Opcional)</p>
                                 <ImageUploader
                                     withIcon={true}
@@ -253,7 +253,7 @@ class CriarEvento4 extends Component {
                                     imgExtension={['.jpg', '.gif', '.png']}
                                     maxFileSize={5242880}
                                 />
-                            </div>
+                            </div> */}
 
                             <div className="criar-evento-4-div-texto">
                                 <textarea name='eventoObsAdicional ' value={this.state.eventoObsAdicional} onChange={event => this.setState({ eventoObsAdicional: event.target.value })} className="criar-evento-4-texto" cols="35" rows="5" placeholder="Observações adicionais" required></textarea>

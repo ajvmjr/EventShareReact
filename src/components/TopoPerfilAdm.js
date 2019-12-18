@@ -10,7 +10,7 @@ import {
 import { parseJwt }  from '../services/auth';
 
 
-class TopoPerfil extends Component {
+class TopoPerfilAdm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -46,6 +46,7 @@ class TopoPerfil extends Component {
                         <div className="fotoperfil-TopoPerfil">
                             <img src={require("../assets/imagens/iconeUsuario.png")} alt="" />
                         </div>
+                        {/* <!--fim textor--> */}
                     </div>
                     <nav className="menu-TopoPerfil">
                         <Link to={"/PerfilUsuarioAdm"} >Painel de Eventos</Link>
@@ -58,5 +59,4 @@ class TopoPerfil extends Component {
 
 }
 
-export default TopoPerfil
-
+export default TopoPerfilAdm

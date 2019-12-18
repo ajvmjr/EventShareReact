@@ -84,28 +84,28 @@ a, h1, h2, h3, h4, p{
 /* Começo do Header - Tablet Media Query 768px */
 @media screen and (max-width: 768px){
     
-    .itens-cabecalho-CriarConta{
+    .itens-cabecalho-CriarConta1{
         /* background: red; */
         width: 90vw;
     }
 
-    .logo-eventshare-cabecalho-CriarConta img{
+    .logo-eventshare-cabecalho-CriarConta1 img{
         width: 23vw;
     }
 
-    .menu-cabecalho-CriarConta{
+    .menu-cabecalho-CriarConta1{
         /* background: yellow; */
         display: flex;
         justify-content: flex-end;
         width: 19.50vw;
     }
     
-    .menu-cabecalho-CriarConta ul a:hover{
+    .menu-cabecalho-CriarConta1 ul a:hover{
         border-bottom: none;
         color: var(--preto)
     }
 
-    .menu{
+    .menu1{
         /* background: blue; */
         width: 20vw;
     }
@@ -119,32 +119,32 @@ a, h1, h2, h3, h4, p{
 /* Começo do Header - Mobile Media Query 375px */
 @media screen and (max-width: 375px){
     
-    #cabecalho-CriarConta{
+    #cabecalho-CriarConta1{
         align-items: center;
         /* background: green; */
         height: 20vh;
     }
 
-    .itens-cabecalho-CriarConta{
+    .itens-cabecalho-CriarConta1{
         /* background: blue; */
         height: 25vh;
         width: 85vw;
     }
 
-    .logo-eventshare-cabecalho-CriarConta img{
+    .logo-eventshare-cabecalho-CriarConta1 img{
         /* background: purple; */
         height: 4.8vh;
         width: 40vw;
     }
 
-    .menu-cabecalho-CriarConta{
+    .menu-cabecalho-CriarConta1{
         align-items: flex-start;
         /* background: yellow; */
         height: 12vh;
         width: 39vw;
     }
 
-    .menu-cabecalho-CriarConta ul{
+    .menu-cabecalho-CriarConta1 ul{
         align-items: center;
         /* background: greenyellow; */
         display: flex;
@@ -154,11 +154,11 @@ a, h1, h2, h3, h4, p{
         width: 21vw;
     }
     
-    .menu-cabecalho-CriarConta ul a:hover{
+    .menu-cabecalho-CriarConta1 ul a:hover{
         border-bottom: none;
     }
     
-    .menu{
+    .menu1{
         align-items: center;
         /* background: red; */
         display: flex;
@@ -168,4 +168,3 @@ a, h1, h2, h3, h4, p{
     }
 
 }
-/* Fim do Header - Mobile Media Query 375px */

@@ -9,7 +9,6 @@ import 'mdbreact/dist/css/mdb.css';
 
 import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 
-import AprovarEventos from './pages/AprovarEventosAdm';
 import Cadastro from './pages/Cadastro';
 import Categoria from './pages/Categoria';
 import CriarEvento1 from './pages/CriarEvento1';
@@ -18,7 +17,6 @@ import CriarEvento4EditarEvento from './pages/CriarEvento4EditarEvento';
 import CriarEvento6 from './pages/CriarEvento6';
 import DescricaoEvento from './pages/DescricaoEvento';
 import DescricaoEventoAdm from './pages/DescriçãoEventoAdm';
-import EditarEventoAdm from './pages/EditarEventoAdm';
 import EditarPerfilUsuario from './pages/EditarPerfilUsuario';
 import FAQ from './pages/FAQ';
 import Login from './pages/Login';
@@ -48,7 +46,6 @@ const Rotas = (
         <div>
             <Switch>
                 <Route exact path='/' component={Home} />
-                <PermissaoAdm path='/AprovarEventos' component={AprovarEventos} />
                 <Route path='/Cadastro' component={Cadastro} />
                 <Route path='/Categorias' component={Categoria} />
                 <Route path='/CriarEvento' component={CriarEvento1} />
@@ -57,7 +54,6 @@ const Rotas = (
                 <Route path='/CriarEvento6' component={CriarEvento6} />
                 <Route path='/DescricaoEvento/' component={DescricaoEvento} />
                 <Route path='/DescricaoEventoAdm' component={DescricaoEventoAdm} />
-                <PermissaoAdm path='/EditarEventoAdm' component={EditarEventoAdm} />
                 <Route path='/EditarPerfilUsuario' component={EditarPerfilUsuario} />
                 <Route path='/FAQ' component={FAQ} />
                 <Route path='/Login' component={Login} />

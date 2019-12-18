@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; //importando objeto React 
-import '../assets/CSS/EditarEventoAdm.css';
+import '../assets/CSS/DescricaoEventoAdm.css';
 import Api from '../services/Api';
 import Cabecalho from '../components/CabecalhoSemBotao';
 import Rodape from '../components/Rodape';

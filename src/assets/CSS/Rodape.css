@@ -133,6 +133,15 @@ a, h1, h2, h3, h4, p{
         width: 4.30vh;
     }
 
+    .logo-tw-rodape-padrao img {
+        margin-bottom: 1em;
+    }
+
+    .logo-eventshare-rodape-padrao {
+        height: 2em;
+        width: 5em;
+    }
+
 }
 /* Fim do Footer - Tablet Media Query 768px */
 
@@ -162,7 +171,7 @@ a, h1, h2, h3, h4, p{
 
     .lado-direito-rodape-padrao{
         /* background: #EF5BA1; */
-        padding-top: 0.80em;
+        /* padding-top: 0.80em; */
         width: 25vw;
     }
 
@@ -181,5 +190,3 @@ a, h1, h2, h3, h4, p{
 
 }
 /* Fim do Footer - Mobile Media Query 375px */
-
-

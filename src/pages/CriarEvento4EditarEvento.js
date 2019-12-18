@@ -7,6 +7,7 @@ import { usuarioAutenticado, parseJwt } from '../services/auth';
 import { SyncLoader } from 'react-spinners';
 import { css } from '@emotion/core';
 import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
+import { th } from 'date-fns/locale';
 
 const override = css`
     display: block;
@@ -42,6 +43,7 @@ class CriarEvento4 extends Component {
         this.buscarCategorias = this.buscarCategorias.bind(this);
         this.buscarLugares = this.buscarLugares.bind(this);
         this.buscarEvento = this.buscarEvento.bind(this);
+        this.salvarEvento = this.salvarEvento.bind(this);
     }
 
     buscarEvento() {
@@ -64,14 +66,21 @@ class CriarEvento4 extends Component {
                 ...this.state.evento, [input.target.name]: input.target.value
             }
         })
+        setTimeout(() => {
+            console.log('ok', this.state.evento)
+        }, 1000);
     }
 
+<<<<<<< HEAD
     // onDrop(picture) {
     //     this.setState({
     //         pictures: this.state.pictures.concat(picture),
     //     });
     //     console.log(picture)
     // }
+=======
+
+>>>>>>> dc6c856df195d069206fab23e8a3cdc15927a83c
 
     atualizaSatetCampo(event) {
         this.setState({ [event.target.name]: event.target.value })
@@ -108,6 +117,25 @@ class CriarEvento4 extends Component {
             .catch((erro) => console.log(erro))
     }
 
+<<<<<<< HEAD
+=======
+    salvarEvento = () => {
+
+        console.log('mano id é: ' + this.state.eventoId)
+        fetch('http://localhost:5000/api/eventotbl/' + this.state.eventoId,
+        {
+            method: 'PUT',
+            body: JSON.stringify(this.state.evento),
+            headers: {
+              "Content-type": "application/json"
+            }
+        })
+        .then(resposta => resposta.json())
+        
+        .catch(erro => console.log(erro))
+    } 
+
+>>>>>>> dc6c856df195d069206fab23e8a3cdc15927a83c
     componentDidMount() {
         this.buscarCategorias()
         this.buscarLugares()
@@ -138,17 +166,17 @@ class CriarEvento4 extends Component {
                     <div className='container-sub6'>
                         <form id="formulario-sub6">
                             <div className="criar-evento-4-pai-input">
-                                <input className="criar-evento-4-input" type="text" name="eventoNome" value={this.state.evento.eventoNome} onChange={event => this.setState({ eventoNome: event.target.value })} placeholder="Nome do evento" />
-                                <input className="criar-evento-4-input" type="text" name="eventoHorarioComeco" value={this.state.evento.eventoHorarioComeco} onChange={event => this.setState({ eventoHorarioComeco: event.target.value })} placeholder="Horário de início" />
-                                <input className="criar-evento-4-input" type="text" name="eventoHorarioFim" value={this.state.evento.eventoHorarioFim} onChange={event => this.setState({ eventoHorarioFim: event.target.value })} placeholder="Horário do fim" />
-                                <input className="criar-evento-4-input" type="text" name="eventoLinkInscricao" value={this.state.evento.eventoLinkInscricao} onChange={event => this.setState({ eventoLinkInscricao: event.target.value })} placeholder="Link para formulário de inscrição (opcional)" />
-                                <input value={this.state.evento.eventoData} name='eventoData' onChange={event => this.setState({ eventoData: event.target.value })} type='date'></input>
+                                <input className="criar-evento-4-input" type="text" name="eventoNome" value={this.state.evento.eventoNome} onChange={this.putSetState} placeholder="Nome do evento" required/>
+                                <input className="criar-evento-4-input" type="text" name="eventoHorarioComeco" value={this.state.evento.eventoHorarioComeco} onChange={this.putSetState} placeholder="Horário de início" required/>
+                                <input className="criar-evento-4-input" type="text" name="eventoHorarioFim" value={this.state.evento.eventoHorarioFim} onChange={this.putSetState} placeholder="Horário do fim" required/>
+                                <input className="criar-evento-4-input" type="text" name="eventoLinkInscricao" value={this.state.evento.eventoLinkInscricao} onChange={this.putSetState} placeholder="Link para formulário de inscrição (opcional)" />
+                                <input value={this.state.evento.eventoData} name='eventoData' onChange={this.putSetState} type='date' required></input>
                                 <div className="criar-evento-4-div-texto">
-                                    <textarea className="criar-evento-4-texto" cols="35" rows="5" name='eventoDescricao' onChange={event => this.setState({ eventoDescricao: event.target.value })} value={this.state.evento.eventoDescricao} placeholder="Descrição do evento para o site"></textarea>
+                                    <textarea className="criar-evento-4-texto" cols="35" rows="5" name='eventoDescricao' onChange={this.putSetState} value={this.state.evento.eventoDescricao} placeholder="Descrição do evento para o site" required></textarea>
                                 </div>
                             </div>{/* fim criar-evento-4-pai-input */}
 
-                            <select value={this.state.evento.eventoEspacoId} onChange={event => this.setState({ eventoEspacoId: event.target.value })} name='eventoEspacoId' id='id-select' className="filtro-categorias-home" >
+                            <select value={this.state.evento.eventoEspacoId} onChange={this.putSetState} name='eventoEspacoId' id='id-select' className="filtro-categorias-home" required>
                                 <option id="" selected>Selecione um espaço</option>
                                 {
                                     this.state.listaLugares.map(function (espaco) {
@@ -160,7 +188,7 @@ class CriarEvento4 extends Component {
                             <div className="radiogeral-sub6">
                                 <p>Número de participantes:</p>
                                 <div className="radio-sub6">
-                                    <select name='eventoNumeroParticipantes' value={this.state.evento.eventoNumeroParticipantes} onChange={event => this.setState({ eventoNumeroParticipantes: event.target.value })}>
+                                    <select name='eventoNumeroParticipantes' value={this.state.evento.eventoNumeroParticipantes} onChange={this.putSetState} required>
                                         <option id="" selected>Selecione o número de participantes</option>
                                         <option value='25'>0 - 25</option>
                                         <option value='40'>25 - 40</option>
@@ -172,7 +200,7 @@ class CriarEvento4 extends Component {
                             <div className="acesso-sub6">
                                 <div className="categorias-sub6">
                                     <p>Selecione a categoria que o seu evento se encaixa:</p>
-                                    <select name='eventoCategoriaId' value={this.state.evento.eventoCategoriaId} onChange={event => this.setState({ eventoCategoriaId: event.target.value })}>
+                                    <select name='eventoCategoriaId' value={this.state.evento.eventoCategoriaId} onChange={this.putSetState} required>
                                         <option selected>Escolha uma categoria</option>
                                         {
                                             this.state.listaCategorias.map(function (categoria) {
@@ -187,16 +215,16 @@ class CriarEvento4 extends Component {
                             <div className="diversidade-sub6">
                                 <p>Seu evento tem foco em diversidade?</p>
 
-                                <select name='eventoDiversidade' value={this.state.evento.eventoDiversidade} onChange={event => this.setState({ eventoDiversidade: event.target.value })}>
-                                    <option value="">Sim</option>
-                                    <option value="">Não</option>
+                                <select name='eventoDiversidade' value={this.state.evento.eventoDiversidade} onChange={this.putSetState} required>
+                                    <option value="Sim">Sim</option>
+                                    <option value="Não">Não</option>
                                 </select>
 
                             </div>
 
                             <div className="coffe-sub6">
                                 <p>Você gostaria que a ThoughtWorks servisse coffe no seu evento?</p>
-                                <select name='eventoCoffe' value={this.state.evento.eventoCoffe} onChange={event => this.setState({ eventoCoffe: event.target.value })}>
+                                <select name='eventoCoffe' value={this.state.evento.eventoCoffe} onChange={this.putSetState} required>
                                     <option value="True">Sim</option>
                                     <option value="False">Não</option>
                                 </select>
@@ -217,12 +245,12 @@ class CriarEvento4 extends Component {
                             </div> */}
 
                             <div className="criar-evento-4-div-texto">
-                                <textarea name='eventoObsAdicional ' value={this.state.evento.eventoObsAdicional} onChange={event => this.setState({ eventoObsAdicional: event.target.value })} className="criar-evento-4-texto" cols="35" rows="5" placeholder="Observações adicionais(opcional)"></textarea>
+                                <textarea name='eventoObsAdicional' value={this.state.evento.eventoObsAdicional} onChange={this.putSetState} className="criar-evento-4-texto" cols="35" rows="5" placeholder="Observações adicionais(opcional)"></textarea>
                             </div>
 
                             <div className="botão_sub6">
                                 <button disabled={this.state.isLoading}
-                                    onClick={this.cadastrarEvento}
+                                    onClick={this.salvarEvento()}
                                 >
                                     {this.state.isLoading === true ?
                                         <SyncLoader

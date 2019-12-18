@@ -3,7 +3,13 @@ import '../assets/CSS/EditarEventoAdm.css';
 import Api from '../services/Api';
 import Cabecalho from '../components/CabecalhoSemBotao';
 import Rodape from '../components/Rodape';
-
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useRouteMatch
+  } from "react-router-dom";
 
 class DescriçãoEventoAdm extends Component {
     constructor(props) {
@@ -33,8 +39,7 @@ class DescriçãoEventoAdm extends Component {
         }
         this.buscarEvento = this.buscarEvento.bind(this)
         this.SetIdEventAndGetEventInfo = this.SetIdEventAndGetEventInfo.bind(this)
-        this.alterarEvento = this.alterarEvento.bind(this)
-        // this.alterarEvento = this.alterarEvento.bind(this)
+        this.alterarEventoAprovar  = this.alterarEventoAprovar .bind(this)
     }
 
 
@@ -57,34 +62,22 @@ class DescriçãoEventoAdm extends Component {
         this.buscarEvento()
     }
 
-    alterarEvento = (evento) => {
-        console.log('entrei no alterar')
+    alterarEventoAprovar = (evento) => {
+        console.log('entrei no alterar', this.state.evento)
+
         this.setState({
-            evento:{
-                eventoId: localStorage.getItem('idEventoShow') ,
-                eventoNome: evento.eventoNome,
-                eventoData: evento.eventoData,
-                eventoHorarioComeco: evento.eventoHorarioComeco,
-                eventoHorarioFim: evento.eventoHorarioFim,
-                eventoDescricao: evento.eventoDescricao,
-                eventoCategoriaId: evento.eventoCategoriaId,
-                eventoEspacoId: evento.eventoEspacoId,
-                eventoStatusId: evento.eventoStatusId,
-                usuarioId: evento.usuarioId,
-                usuarioNome: evento.usuarioNome,
-                eventoImagem: evento.eventoImagem,
-                eventoLinkInscricao: evento.eventoLinkInscricao,
-                listaUsuarios: [],
-                criadorUsuario: {
-                    usuarioId: '',
-                    usuarioNome: '',
-                }
-            }
+            evento: {
+                ...this.state.evento, eventoStatusId : 1
+           }
         })
-        this.aprovarEvento()
+
+        setTimeout(() => {
+            console.log('saí do alterar', this.state.evento)
+            this.aprovarEvento();
+        }, 1000);
     }
 
-    aprovarEvento(event){
+    aprovarEvento = (event) =>{
         console.log('entrei no aprovar')
         var id = localStorage.getItem('idEventoShow')
         fetch('https://localhost:5001/api/eventotbl/' + id, {
@@ -94,30 +87,72 @@ class DescriçãoEventoAdm extends Component {
                 'Content-type': 'application/json'
             }
         })
+        // .then(response => {
+        //     console.log(response)
+
+        // })
         .then(response => {
-            // console.log(response)
-            if(this.state.evento.eventoStatusId === 3){
-                this.state.evento.eventoStatusId = 1
-                alert('Evento aprovado')
-                console.log('status novo: ', this.state.evento.eventoStatusId)
-            }
+            if (response.status === 200) {
+                alert("Evento Aprovado")
+                window.location.replace('/PerfilAdmAprovarEventos')
+            }       // this.setState({ isLoading: false })
         })
-        console.log('EVENTO PARA APROVAR: ',this.state.evento)
+        .catch(error => console.log(error))
+        console.log('EVENTO APROVADO: ',this.state.evento)
     }
 
-    // putSetState = (input) => {
-    //     this.setState({
-    //       evento: {
-    //         ...this.state.evento, [input.target.name]: input.target.value
-    //       }
-    //     })
-    //   }
+
+
+
+    alterarEventoReprovar = (evento) => {
+        console.log('entrei no alterar', this.state.evento)
+
+        this.setState({
+            evento: {
+                ...this.state.evento, eventoStatusId : 2
+           }
+        })
+
+        setTimeout(() => {
+            console.log('saí do alterar', this.state.evento)
+            this.reprovarEvento();
+        }, 1000);
+    }
+
+    reprovarEvento = (event) =>{
+        console.log('entrei no aprovar')
+        var id = localStorage.getItem('idEventoShow')
+        fetch('https://localhost:5001/api/eventotbl/' + id, {
+            method: 'PUT',
+            body: JSON.stringify(this.state.evento),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+        // .then(response => {
+        //     console.log(response)
+
+        // })
+        .then(response => {
+            if (response.status === 200) {
+                alert("Evento Reprovado")
+                window.location.replace('/PerfilAdmAprovarEventos')
+            }       // this.setState({ isLoading: false })
+        })
+        .catch(error => console.log(error))
+        console.log('EVENTO APROVADO: ',this.state.evento)
+    }
+
+
+
+
+
+
+
 
 
     componentDidMount() {
         this.SetIdEventAndGetEventInfo()
-        this.alterarEvento()
-        // this.alterarEvento()
     }
 
     render() {
@@ -167,15 +202,18 @@ class DescriçãoEventoAdm extends Component {
                         <div className="direita_topo_descrição2">
 
                             <div className="botao-aprovar-descricao2-evento">
-                                <button onClick={this.aprovarEvento} value='1' href="#">Aprovar Evento</button>
+                                <button onClick={this.alterarEventoAprovar } value='1' href="#">Aprovar Evento</button>
                             </div>
 
                             <div className="botao-recusar-descricao2-evento">
-                                <button value='3' href="#">Recusar Evento</button>
+                                <button onClick={this.alterarEventoReprovar } value='3' href="#">Recusar Evento</button>
                             </div>
 
                             <div className="botao-editar-descricao2-evento">
-                                <button href="#">Editar Evento</button>
+                            <Link to={{
+                                pathname: "/EditarEventoUsuario",
+                                id: this.state.evento.eventoId
+                              }}>Editar Evento</Link>
                             </div>
 
 

@@ -120,7 +120,12 @@ class CriarEvento4 extends Component {
             }
         })
         .then(resposta => resposta.json())
-        
+        // .then(response => {
+        //     if (response.status === 200) {
+        //         alert("Evento Editado")
+        //         window.location.replace('/PerfilUsuario')
+        //     }       // this.setState({ isLoading: false })
+        // })
         .catch(erro => console.log(erro))
     } 
 

@@ -57,9 +57,6 @@ class CriarEvento4 extends Component {
         console.log('coffe: ',this.state.eventoCoffe)
         event.preventDefault();
 
-
-
-
         setTimeout(() => {
 
             this.setState({ isLoading: true })
@@ -105,9 +102,9 @@ class CriarEvento4 extends Component {
           this.cadastrarEvento()
       }
 
-    atualizaSatetCampo(event) {
-        this.setState({ [event.target.name]: event.target.value })
-    }
+    // atualizaSatetCampo(event) {
+    //     this.setState({ [event.target.name]: event.target.value })
+    // }
 
     buscarCategorias() {
         console.log('Entrei')

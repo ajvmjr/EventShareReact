@@ -47,6 +47,9 @@ class Home extends Component {
 
   toggleFiltro(event) {
     let id = event.target.value
+    if(id == 0){
+      return this.state.listaFiltradaDeEventos
+    }
     this.filtrarCategorias(id)
   }
 
@@ -54,11 +57,13 @@ class Home extends Component {
     console.log('Entramos em filtrar categoria o id é: ' + id)
     var listaEventos = this.state.listaEventos
 
-    var listaFiltrada = listaEventos.filter((value, index, arr) => {
-      if (listaEventos[index].eventoCategoriaId == id) {
-        return listaEventos[index]
-      }
-    })
+      var listaFiltrada = listaEventos.filter((value, index, arr) => {
+        if (listaEventos[index].eventoCategoriaId == id) {
+          return listaEventos[index]
+        }
+      })
+    
+    
 
     this.setState({
       listaFiltradaDeEventos: listaFiltrada
@@ -144,7 +149,8 @@ class Home extends Component {
                 <div className="filtro-categorias-data-home">
 
                   <select onChange={this.toggleFiltro.bind(this)} value='value-select' id='id-select' className="filtro-categorias-home" >
-                    <option id="" selected>Selecione uma categoria</option>
+                    <option value='0' id={0} selected>Selecione uma categoria</option>
+                    <option value='0' id={0} selected>Todos os eventos</option>
                     {
                       this.state.listaCategorias.map(function (categoria) {
                         return <option value={categoria.categoriaId} key={categoria.categoriaId} name="teste">{categoria.categoriaNome}</option>

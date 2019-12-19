@@ -38,10 +38,10 @@ a, h1, h2, h3, h4, p{
 
 .main-perfilU{
     /* background: #11AA58; */
-    margin-top: 40px;
     display: flex;
     justify-content: center;
     height: auto;
+    margin: 4em auto;
 }
 
 .container-perfilU{
@@ -224,80 +224,112 @@ a, h1, h2, h3, h4, p{
     background: var(--rosa);
 }
 
+
+
+
 @media screen and (max-width: 768px){
 
-.capa-perfilU {
-    width: 100vw;
-    height: 15vh;
-}
+    .capa-perfilU {
+        width: 100vw;
+        height: 15vh;
+    }
+        
+    .nome-perfilU {
+        width: 30vw;
+        height: 5.6vh;
+        margin-left: unset;
+        position: relative; top: 63.8px; left: 200px;
+    }
+        
+    .menu-perfilU {
+        width: 50vw;
+        margin-left: 200px;
+        margin-top: 0px;
+    }
+        
+    .container-perfilU {
+        width: 90vw;
+    }
+
+    .painel-perfilU {
+        width: 90vw;
+        padding: 20px 10px;
+    }
+
+    .esquerda-perfilU {
+        /* background: #3CBACE; */
+        width: 45vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 9px;
     
-.nome-perfilU {
-    width: 30vw;
-    height: 5.6vh;
-    margin-left: unset;
-    position: relative; top: 63.8px; left: 200px;
-}
+    }
+
+    .esquerda-perfilU img {
+        width: 45vw;
+    }
+
+    .direita-perfilU {
+        /* background: #ED312F; */
+        height: 40vh;
+        width: 36vw;
+        margin-right: 12px;
+    }
+
+    .legendaSt-perfilU {
+        /* background: #ED312F; */
+        width: 90vw;
+    }
+
+    .padrao-perfilU {
+        height: 2.7vh;
+        width: 2.3vw; 
+    }
     
-.menu-perfilU {
-    width: 50vw;
-    margin-left: 200px;
-    margin-top: 0px;
-}
+    .esquerda-perfilU h3 {
+        font-weight: normal;
+        text-transform: uppercase;
+        font-size: 1.3em;
+        width: 10em;
+    }
+
+    .circulo-perfilU {
+        width: 2vw;
+        height: 2.5vh;
+    }
+    .fotoperfil-perfilU img {
+        width: 14vw;
+        height: 15vh;
+        margin: 17px 65px;
+    }
+
+    .editar-perfilU a{
+        height: 6.20vh;
+        width: 17vw;
+    }
+
+    .excluir-perfilU button{
+        height: 6.20vh;
+        width: 17vw;
+    }
+
+    .editar-perfilU{
+        height: 6.20vh;
+        /* background: #3CBACE; */
+    }
+
+    .box-perfilU h3{
+        font-size: 1.10em;
+    }
     
-.container-perfilU {
-    width: 90vw;
+    .box-perfilU p{
+        font-size: 1.10em;
+    }
 }
 
-.painel-perfilU {
-    width: 90vw;
-    padding: 20px 10px;
-}
 
-.esquerda-perfilU {
-    /* background: #3CBACE; */
-    width: 45vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  
-}
 
-.esquerda-perfilU img {
-    width: 45vw;
-}
-
-.direita-perfilU {
-    /* background: #ED312F; */
-    width: 30vw;
-}
-
-.legendaSt-perfilU {
-    /* background: #ED312F; */
-    width: 90vw;
-}
-
-.padrao-perfilU {
-    height: 2.7vh;
-    width: 2.3vw; 
-}
-   
-.esquerda-perfilU h3 {
-    font-weight: normal;
-    text-transform: uppercase;
-    font-size: 1.7em;
-    width: 10em;
-}
-
-.circulo-perfilU {
-    width: 2vw;
-    height: 2.5vh;
-}
-.fotoperfil-perfilU img {
-    width: 14vw;
-    height: 15vh;
-    margin: 17px 65px;
-
-}
 
 @media screen and (max-width: 375px) {
 
@@ -334,7 +366,7 @@ a, h1, h2, h3, h4, p{
     }
     
     .esquerda-perfilU {
-        justify-content: flex-start;
+        justify-content: center;
     }
         
     body {
@@ -342,19 +374,16 @@ a, h1, h2, h3, h4, p{
     }
     
     .esquerda-perfilU h3 {
-        /* font-weight: normal;
-        text-transform: uppercase;
-        font-size: 1.7em; */
         width: 11em;
-        /* height: 14em; */
     }
     
     .direita-perfilU {
+        /* background: blue; */
         justify-content: flex-end;
         display: flex;
         flex-direction: column;
-        height: 38em;
-        width: 79vw;
+        height: 31em;
+        width: 80vw;
     }
     
     .esquerda-perfilU img {
@@ -363,7 +392,7 @@ a, h1, h2, h3, h4, p{
     
     .esquerda-perfilU {
         height: 14em;
-        /* background: #3CBACE; */
+        background: #3CBACE;
         width: 45vw;
         display: flex;
         flex-direction: column;
@@ -371,14 +400,15 @@ a, h1, h2, h3, h4, p{
     }
     
     .esquerda-perfilU {
-        /* background: #94399E; */
+        background: #94399E;
         width: 0vw;
         margin-left: 20px;
     }
     
+    
     .editar-perfilU a {
         width: 35vw;
-        margin-bottom: 20px;
+        margin-bottom: 24px;
     }
     
     .legendaSt-perfilU {
@@ -409,6 +439,10 @@ a, h1, h2, h3, h4, p{
         color: var(--cinza);
         font-size: 1em;
     }
-}
-   
+
+    .excluir-perfilU button{
+        height: 6.20vh;
+        width: 35vw;
+        margin-bottom: 24px;
+    }
 }

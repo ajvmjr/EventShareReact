@@ -10,24 +10,30 @@ import instagram from '../assets/imagens/iconeInstagram.png'
 class Rodape extends Component {
     render() {
         return (
-            <div className='Rodape'>
+            <div className='rodape-padrao'>
 
                 <footer>
+
                     <section id="rodape-padrao">
+
                         <div className="itens-rodape-padrao">
 
                             <div className="lado-esquerdo-rodape-padrao">
+
                                 <div className="logo-tw-rodape-padrao">
                                     <a href="https://www.thoughtworks.com/pt">
                                         <img src={LogoTW} alt="" />
                                     </a>
                                 </div>
+
                                 <div className="logo-eventshare-rodape-padrao">
                                     <img src={LogoES} alt="" />
                                 </div>
+
                                 <div className="email-contato-rodape-padrao">
-                                    <p>Contato: info-br@thoughtworks.com</p>
+                                    <p>Contato: eventos-sp@thoughtworks.com</p>
                                 </div>
+
                             </div>
 
                             <div className="lado-direito-rodape-padrao">
@@ -39,19 +45,19 @@ class Rodape extends Component {
                                 <div className="logos-redes-sociais-rodape-padrao">
 
                                     <div className="logo-facebook">
-                                        <a href="#">
+                                        <a href="https://www.facebook.com/ThoughtWorks">
                                             <img src={facebook} alt="Logo da rede social Facebook" />
                                         </a>
                                     </div>
 
                                     <div className="logo-youtube">
-                                        <a href="#">
+                                        <a href="https://www.youtube.com/user/thoughtworks">
                                             <img src={youtube} alt="Logo da plataforma de vídeos Youtube" />
                                         </a>
                                     </div>
 
                                     <div className="logo-instagram">
-                                        <a href="#">
+                                        <a href="https://www.instagram.com/thoughtworks/">
                                             <img src={instagram} alt="Logo da rede social Instagram " />
                                         </a>
                                     </div>
@@ -61,9 +67,10 @@ class Rodape extends Component {
                             </div>
 
                         </div>
-                    </section>
-                </footer>
 
+                    </section>
+
+                </footer>
 
             </div>
         )

@@ -33,6 +33,10 @@ a, h1, h2, h3, h4, p{
 /*Fim definição de cores*/
 
 /* Começo do Footer */
+.lado-esquerdo-rodape-padrao{
+    margin-top: 1.80em;
+}
+
 #rodape-padrao{
     background: var(--cinza-sombra);
     display: flex;
@@ -68,7 +72,7 @@ a, h1, h2, h3, h4, p{
 .email-contato-rodape-padrao{
     align-items: flex-end;
     display: flex;
-    height: 5vh;
+    height: 7vh;
 }
 
 .email-contato-rodape-padrao p{

@@ -33,6 +33,10 @@ a, h1, h2, h3, h4, p{
 /*Fim definição de cores*/
 
 /* Começo do Footer */
+.lado-esquerdo-rodape-home{
+    margin-top: 1.80em;
+}
+
 #rodape-home{
     background: var(--branco);
     display: flex;
@@ -66,9 +70,10 @@ a, h1, h2, h3, h4, p{
 }
 
 .email-contato-rodape-home{
+    /* background: blue; */
     align-items: flex-end;
     display: flex;
-    height: 5vh;
+    height: 7vh;
 }
 
 .email-contato-rodape-home p{

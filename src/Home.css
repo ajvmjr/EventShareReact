@@ -45,7 +45,6 @@ p {
 
 
 /*COMEÇO WEB - HOME*/
-
 #banner-home {
     align-items: center;
     background: linear-gradient(rgba(70, 26, 121, 0.40), rgba(70, 26, 121, 0.40)), url("./assets/imagens/BannerHome.jpeg") center;
@@ -120,7 +119,7 @@ p {
     display: flex;
     height: 5.20vh;
     justify-content: space-between;
-    width: 52.80vw;
+    width: 52.70vw;
 }
 
 .filtro-categorias-home {
@@ -128,7 +127,7 @@ p {
     color: var(--cinza_input);
     font-size: 0.90em;
     height: 5.20vh;
-    width: 49.90%;
+    width: 100%;
 }
 
 .filtro-data-home {
@@ -167,7 +166,6 @@ p {
 .eventos-home {
     /* background: yellowgreen; */
     display: flex;
-    /* height: 50vh; */
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 6em;
@@ -183,7 +181,7 @@ p {
     /* background: coral; */
     height: 43vh;
     width: 28vw;
-    /* background: #ED312F; */
+
 }
 
 .evento-1-home:hover {
@@ -196,7 +194,7 @@ p {
 }
 
 .evento-imagem-home {
-    border: 1px solid var(--cinza);
+    border: 0.50px solid var(--cinza);
     height: 33vh;
     width: 28vw;
 }
@@ -212,17 +210,20 @@ p {
 }
 
 .evento-dois-home {
+    /* background: crimson; */
     height: 30vh;
-    width: 17.7vw;
+    width: 28vw;
+    padding-right: 20em;
 }
 
 .evento-dois-home img {
-    border: 1px solid var(--cinza);
+    border: 0.10px solid var(--cinza);
     height: 33vh;
     width: 28vw;
 }
 
 .evento-nome-data-hora-local-home {
+    /* background: darkblue; */
     display: flex;
     flex-direction: column;
     height: 2.50vh;
@@ -236,7 +237,6 @@ p {
     display: flex;
     width: 9vw;
     height: 3vh;
-    /* align-items: center; */
 }
 
 .data-evento-home p {
@@ -251,6 +251,7 @@ time.data-formato-home {
 
 .hora-evento-home {
     display: flex;
+    padding-right: 2em;
 }
 
 .horario-bold-home {
@@ -260,7 +261,10 @@ time.data-formato-home {
 
 .evento-nome-home {
     /* background: #5a155a; */
-    width: 28vw;
+    height: 4vh;
+    width: 30vw;
+    padding-top: 0.20em;
+    padding-left: 0.10em;
 }
 
 .evento-nome-home p {
@@ -274,6 +278,7 @@ time.data-formato-home {
     display: flex;
     justify-content: space-between;
     width: 25vw;
+    padding-left: 0.10em;
     /* background: #5a155a; */
 }
 
@@ -286,12 +291,12 @@ time.data-formato-home {
 .espaco-evento-home {
     /* background: #11AA58; */
     display: flex;
-    /* width: 7vw; */
 }
 
 .espaco-home {
     font-weight: bold;
     margin-right: 2px;
+    
 }
 
 #secao-botao-ver-mais-home {
@@ -377,6 +382,20 @@ time.data-formato-home {
 /* COMEÇO TABLET - HOME */
 
 @media screen and (max-width: 768px) {
+    .filtro-botão-home button {
+        height: 100%;
+    }
+
+    .evento-nome-home p {
+        font-size: 0.80em;
+    }
+
+    .evento-imagem-home {
+        border: 0.50px solid var(--cinza);
+        height: 31vh;
+        width: 39vw;
+    }
+
     #banner-home {
         height: 50vh;
     }
@@ -392,6 +411,11 @@ time.data-formato-home {
         color: var(--branco);
         font-size: 2.50em;
     }
+    
+    .botaoPublicar{
+        padding: 0.80em 1.5em;
+    }
+    
     .botaoPublicar a {
         padding: 0.90em 1.5em;
         top: 48%;
@@ -421,7 +445,7 @@ time.data-formato-home {
     }
     .filtro-categorias-home {
         height: 5.80vh;
-        width: 49.90%;
+        width: 100%;
     }
     .filtro-data-home {
         height: 5.80vh;
@@ -542,6 +566,11 @@ time.data-formato-home {
     .banner-texto-home p {
         font-size: 1.80em;
     }
+    
+    .botaoPublicar {
+        padding: 0.80em 1.3em;
+    }
+
     .botaoPublicar a {
         top: 45%;
     }
@@ -689,6 +718,12 @@ time.data-formato-home {
     .hora-evento-home {
         display: flex;
         width: 1em;
+    }
+    
+    .evento-imagem-home {
+        border: 0.50px solid var(--cinza);
+        height: 31vh;
+        width: 80vw;
     }
 }
 

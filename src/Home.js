@@ -124,9 +124,6 @@ class Home extends Component {
     }
   }
 
-
-
-
   render() {
 
     return (
@@ -157,8 +154,6 @@ class Home extends Component {
                       })
                     }
                   </select>
-
-                  <input onChange={this.updateStateData} value={this.state.data} id='data' className="filtro-data-home" type="date" />
                 </div>
               </div>
               <div className="filtro-botão-home">
@@ -177,12 +172,8 @@ class Home extends Component {
                         <Link to={{
                           pathname: '/DescricaoEvento',
                           id: evento.eventoId}}> 
-                          {/* <button onClick={
-                              () => {
-                              window.location.href = '/DescricaoEvento/' + evento.eventoId
-                                }
-                          }>Teste</button> */}
-                          <div className="evento-um-home m-5 p-5">
+
+                          <div className="evento-um-home-m-5-p-5">
                             <img src={require("./assets/imagens/Evento1.jpeg")} alt="" className="evento-imagem-home" />
                             <div className="evento-nome-data-hora-local-home">
                               <div className="evento-nome-home">

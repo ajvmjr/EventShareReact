@@ -17,26 +17,30 @@ class RodapeHome extends Component {
                         <div className="itens-rodape-home">
 
                             <div className="lado-esquerdo-rodape-home">
+
                                 <div className="logo-tw-rodape-home">
                                     <a href="https://www.thoughtworks.com/pt">
                                         <img src={LogoTW} alt="" />
                                     </a>
                                 </div>
-                                    <div className="logo-eventshare-rodape-home">
-                                        <img src={LogoES} alt="" />
-                                    </div>
-                                    <div className="email-contato-rodape-home">
-                                        <p>Contato: info-br@thoughtworks.com</p>
-                                    </div>
+
+                                <div className="logo-eventshare-rodape-home">
+                                    <img src={LogoES} alt="" />
                                 </div>
 
-                                <div className="lado-direito-rodape-home">
+                                <div className="email-contato-rodape-home">
+                                    <p>Contato: eventos-sp@thoughtworks.com</p>
+                                </div>
 
-                                    <div className="seguir-rodape-home">
-                                        <p>Siga-nos</p>
-                                    </div>
+                            </div>
 
-                                    <div className="logos-redes-sociais-rodape-home">
+                            <div className="lado-direito-rodape-home">
+
+                                <div className="seguir-rodape-home">
+                                    <p>Siga-nos</p>
+                                </div>
+
+                                <div className="logos-redes-sociais-rodape-home">
 
                                         <div className="logo-facebook">
                                             <a href="https://www.facebook.com/ThoughtWorks">
@@ -56,15 +60,15 @@ class RodapeHome extends Component {
                                             </a>
                                         </div>
 
-                                    </div>
-
                                 </div>
 
                             </div>
+                            
+                        </div>
+                        
                     </section>
+
                 </footer>
-
-
             </div>
                 )
             }

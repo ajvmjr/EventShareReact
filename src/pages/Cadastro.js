@@ -2,8 +2,8 @@ import React, { Component } from 'react'; //importando objeto React
 import CabecalhoLogin from '../components/CabecalhoLogin'
 import { css } from '@emotion/core';
 import { SyncLoader } from 'react-spinners';
+import Rodape from '../components/Rodape';
 import '../assets/CSS/Cadastro.css';
-import Rodape from '../components/Rodape'
 
 const override = css`
     display: block;
@@ -50,8 +50,8 @@ class Cadastro extends Component {
         })
         .then(response => {
           if (response.status == 200) {
-            alert("Usuario Cadastrado")
-          }       // this.setState({ isLoading: false })
+            window.location.replace('/')
+          }       
         })
         .catch(error => console.log(error))
 
@@ -100,7 +100,7 @@ class Cadastro extends Component {
                 <input className="cadastro-input" type="password" name="UsuarioSenha" id="" placeholder="Senha" value={this.state.UsuarioSenha} onChange={event => this.setState({ UsuarioSenha: event.target.value })} />
                 <span className="cadastro-span">*Mínimo de 8 caracteres</span>
               </div>
-              <input className="cadastro-input" type="password" name="Confirmar senha" id="" placeholder="Confirmar senha" value={this.state.UsuarioSenha} onChange={event => this.setState({ UsuarioSenha: event.target.value })} />
+              {/* <input className="cadastro-input" type="password" name="Confirmar senha" id="" placeholder="Confirmar senha" value={this.state.UsuarioSenha} onChange={event => this.setState({ UsuarioSenha: event.target.value })} /> */}
               {/* <input ref={this.state.fileInput} type="file"></input> */}
               <button className="cadastro-botao" type='submit'
                 disabled={this.state.isLoading}
@@ -119,7 +119,7 @@ class Cadastro extends Component {
             </section>
           </form>
         </main>
-        <Rodape/>
+        <Rodape />
       </div>
     );
   }

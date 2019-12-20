@@ -21,21 +21,18 @@ class DescricaoEvento extends Component {
         eventoDescricao: '',
         eventoCategoriaId: '',
         eventoEspacoId: '',
-        // criadorUsuario: '',
-        // criadorUsuarioId: '',
-        usuarioId: '',
-        usuarioNome: '' ,
         eventoImagem: '',
         eventoLinkInscricao: '',
+        criadorUsuarioId: '',
+        usuario: '',
+        usuarioId: '',
+        usuarioNome: '',
         listaUsuarios: [],
-        criadorUsuario: {
-          usuarioId: '',
-          usuarioNome: '',
-        }
       }
     }
-    
+
     this.buscarEvento = this.buscarEvento.bind(this)
+    this.buscarUsuario = this.buscarUsuario.bind(this)
     // this.teste = this.teste.bind(this)
   }
 
@@ -43,7 +40,18 @@ class DescricaoEvento extends Component {
   //   console.log(this.state.eventoId)
   // }
 
-  
+  buscarUsuario() {
+    fetch('https://localhost:5001/api/usuariotbl/' + this.state.usuarioId)
+      .then(resposta => resposta.json())
+      .then(data => {
+        this.setState({ usuario: data })
+      })
+      .catch((erro) => {
+        console.log(erro)
+      })
+  }
+
+
   buscarEvento() {
     fetch('http://localhost:5000/api/eventotbl/evento/' + this.state.eventoIdProps)
       .then(resposta => resposta.json())
@@ -54,25 +62,32 @@ class DescricaoEvento extends Component {
       .catch((erro) => console.log(erro))
   }
 
-  
+  putSetState = (input) => {
+    this.setState({
+      evento: {
+        ...this.state.evento, [input.target.name]: input.target.value
+      }
+    })
+  }
 
   componentDidMount() {
     // this.teste()
-    this.buscarEvento()
-    this.setState({ token: usuarioAutenticado() })
+    this.buscarEvento();
+    this.buscarUsuario();
+    this.setState({ token: usuarioAutenticado() });
 
-        if (usuarioAutenticado()) {
+    if (usuarioAutenticado()) {
 
-            this.setState({ acesso: parseJwt().Roles })
-            console.log("acesso " + parseJwt().Roles);
-        }
+      this.setState({ acesso: parseJwt().Roles });
+      console.log("acesso " + parseJwt().Roles);
+    }
   }
 
   render() {
 
     return (
       <div>
-        {this.state.token === false ? (<CabecalhoSemBotao />) : (<CabecalhoLogado/>)}
+        {this.state.token === false ? (<CabecalhoSemBotao />) : (<CabecalhoLogado />)}
         <main className="main-descricao">
           <section className="secao-geral-descricao">
             <section className="container_descrição">
@@ -84,12 +99,12 @@ class DescricaoEvento extends Component {
                   <img src={require("../assets/imagens/ÍconeUsuário.png")} alt="" />
                 </div>
                 <div className="nome-usuario-descrição-evento">
-                  <p></p>
+                  <p>{this.state.evento.usuarioNome}</p>
                 </div>
               </div>
               <div className="descrição_descrição">
                 <div className="imagem-evento">
-                  <img src={require("../assets/imagens/Evento1.jpeg")} alt="" />
+                  <img src={require("../assets/imagens/Evento1.png")} alt="" />
                 </div>
                 <div className="descricao-evento">
                   <p className="titulo-descrição">Detalhes</p>
@@ -101,11 +116,11 @@ class DescricaoEvento extends Component {
               <div className="direita_topo_descrição">
                 <div className="botao-inscrever-descricao-evento">
                   {/* <button onClick={() => window.location.replace></button> */}
-                  
-                {/* <Link to={this.state.evento.eventoLinkInscricao} target="_blank">Me inscrever</Link> */}
-                 <a href={'https://' + this.state.evento.eventoLinkInscricao} target="_blank">Me Inscrever</a>
+
+                  {/* <Link to={this.state.evento.eventoLinkInscricao} target="_blank">Me inscrever</Link> */}
+                  <a href={'https://' + this.state.evento.eventoLinkInscricao} target="_blank">Me Inscrever</a>
                 </div>
-                
+
               </div>
               <div className="info_descrição">
                 <div className="textoinfo_descrição">
@@ -117,7 +132,7 @@ class DescricaoEvento extends Component {
                       </div>
                       <div className="data-horario-descrição">
                         <Moment className='data-formato-home' format="DD/MM/YYYY">
-                        {this.state.evento.eventoData}
+                          {this.state.evento.eventoData}
                         </Moment>
                         <p>Das {this.state.evento.eventoHorarioComeco} as {this.state.evento.eventoHorarioFim}</p>
                       </div>
@@ -140,6 +155,7 @@ class DescricaoEvento extends Component {
                 <div className="parte3_descrição">
                   {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.3279061044573!2d-46.66348088502224!3d-23.5566638846853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59cd6d0340c1%3A0xb82b9c6071314983!2sThoughtWorks!5e0!3m2!1spt-BR!2sbr!4v1574946138238!5m2!1spt-BR!2sbr"
                 width="381.3" height="218" frameborder="0" style="border:0;" allowfullscreen=""/> */}
+                  <img src={require("../assets/imagens/maps.png")} alt="" />
                 </div>
               </div>
             </section>

@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+/*Configurações gerais*/
+*{
+    box-sizing: border-box;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+a, h1, h2, h3, h4, p{
+    font-family: 'Open Sans', sans-serif;
+}
+/*Fim configurações gerais*/
+
+/*Definição de cores*/
+:root{
+    --cinza: #808285;
+    --verde: #11AA58;
+    --azul: #3CBACE;
+    --roxo: #94399E;
+    --rosa: #EF5BA1;
+    --vermelho: #ED312F;
+    --laranja: #F68934;
+    --amarelo: #F5C10D;
+    --preto: #000000;
+    --branco: #FFFFFF;
+    --cinza_sombra: #E6E6E6;
+}
+/*Fim definição de cores*/
+
+.capa-TopoPerfil1{
+    background: url('../imagens/Banner-Perfil-Usuário.jpg') center center;
+    background-size: 100% ;
+    background-size: cover ;
+    background-repeat: no-repeat;
+    height: 20vh;
+}
+
+.fotoperfil-TopoPerfil1 {
+    width: 60%;
+}
+
+.fotoperfil-TopoPerfil1 img{
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50%;
+    margin: 50px 50px 0 145px;
+}
+
+.menu-TopoPerfil1 {
+    background: #11AA58;
+    width: 60%;
+}
+
+.nome-TopoPerfil1{
+    margin-left: 5em;
+    height: 5vh;
+    width: 17vw;
+    background: var(--rosa);
+    position: relative; top: 106px; left: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nome-TopoPerfil1 p{
+    text-transform: uppercase;
+    color: var(--branco);
+    font-size: 1.2em;;
+    text-align: center;
+    font-family:'Open Sans';
+    margin-top: 0.80em;
+}
+
+.fotoperfil-TopoPerfil1 img{
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50%;
+    margin: 64px 50px 0 145px;
+    
+}
+
+.menu-TopoPerfil1{
+    background: var(--branco);
+    width: 22vw;
+    height: 5.10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: var(--cinza_sombra) 1px solid;
+    box-shadow: 2px 2px 15px var(--cinza_sombra);
+    margin-left: 17.5em;
+}
+
+.menu-TopoPerfil1 a{
+    text-decoration: none;
+    font-family: 'Open Sans';
+    color: var(--cinza);
+    font-size: 1.2em;
+}
+
+.menu-TopoPerfil1 a:hover{
+    color: var(--rosa)
+}
+
+
+
+
+@media screen and (max-width: 768px){
+    .capa-TopoPerfil1 {
+        width: 100vw;
+        height: 15vh;
+    }
+    .nome-TopoPerfil1 {
+        width: 34vw;
+        height: 5.6vh;
+        margin-left: unset;
+        position: relative; top: 57.8px; left: 157px;
+    }
+    .menu-TopoPerfil1 {
+        height: 6vh;
+        width: 45vw;
+        margin-left: 156px;
+        margin-top: 0px;
+    }    
+
+    .menu-TopoPerfil1 a {
+        text-decoration: none;
+        font-family: 'Open Sans';
+        color: var(--cinza);
+        font-size: 1.1em;
+    }
+
+    .fotoperfil-TopoPerfil1 img {
+        width: 12.4vw;
+        height: 15vh;
+        margin: 11px 38px;
+    
+    }
+}
+
+
+
+
+@media screen and (max-width: 375px) {
+
+    .capa-TopoPerfil1{
+        width: 110vw;
+        height: 15vh;
+    }
+
+    .nome-TopoPerfil1 p {
+        font-size: 1.1em;
+    }
+
+    .nome-TopoPerfil1 {
+        width: 58vw;
+        height: 5.6vh;
+        margin-right: 5px;
+        position: relative;
+        top: 113px;
+        left: 136px;
+    }
+
+    .menu-TopoPerfil1 {
+        height: 5em;
+        width: 58.50vw;
+        margin-left: 135px;
+        flex-direction: column;
+    }
+
+    .fotoperfil-TopoPerfil1 img {
+        width: 22vw;
+        height: 13vh;
+        margin: 19px 35px;
+    }
+    .menu-TopoPerfil1 a {
+        text-decoration: none;
+        font-family: 'Open Sans';
+        color: var(--cinza);
+        font-size: 1em;
+    }
+}

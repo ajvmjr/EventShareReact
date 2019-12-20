@@ -174,7 +174,7 @@ class Home extends Component {
                           id: evento.eventoId}}> 
 
                           <div className="evento-um-home-m-5-p-5">
-                            <img src={require("./assets/imagens/Evento1.jpeg")} alt="" className="evento-imagem-home" />
+                            <img src={require("./assets/imagens/Evento1.png")} alt="" className="evento-imagem-home" />
                             <div className="evento-nome-data-hora-local-home">
                               <div className="evento-nome-home">
                                 <p>{evento.eventoNome}</p>

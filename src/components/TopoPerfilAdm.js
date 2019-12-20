@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../assets/CSS/TopoPerfil.css'
+import '../assets/CSS/TopoPerfilAdm.css'
 import {
     BrowserRouter as Router,
     Switch,
@@ -38,20 +38,19 @@ class TopoPerfilAdm extends Component {
     render() {
         return (
             <div className="">
-                <div className="pai-TopoPerfil">
-                    <div className="capa-TopoPerfil">
-                        <div key={this.state.usuario.usuarioId} className="nome-TopoPerfil">
+                <div className="pai-TopoPerfil1">
+                    <div className="capa-TopoPerfil1">
+                        <div key={this.state.usuario.usuarioId} className="nome-TopoPerfil1">
                             <p>{this.state.usuario.usuarioNome}</p>
                         </div>
-                        <div className="fotoperfil-TopoPerfil">
+                        <div className="fotoperfil-TopoPerfil1">
                             <img src={require("../assets/imagens/iconeUsuario.png")} alt="" />
                         </div>
                         {/* <!--fim textor--> */}
                     </div>
-                    <nav className="menu-TopoPerfil">
-                        <Link to={"/PerfilUsuarioAdm"} >Painel de Eventos</Link>
+                    {/* <nav className="menu-TopoPerfil">
                         <Link to={"/PerfilAdmAprovarEventos"} >Aprovar Eventos</Link>
-                    </nav>
+                    </nav> */}
                 </div>
             </div>
         )

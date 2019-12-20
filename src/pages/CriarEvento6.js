@@ -24,7 +24,7 @@ class CriarEvento6 extends Component {
               </div>
 
               <div className="botao-pai-criar-evento-6">
-                <a href="/" className="botao-criar-evento-6">Continuar</a>
+                <a href="#" className="botao-criar-evento-6">Continuar</a>
               </div>
 
             </section>

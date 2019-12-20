@@ -170,12 +170,12 @@ class DescriçãoEventoAdm extends Component {
                         <div className="usuario_descrição2">
 
                             <div className="imagem-usuario2">
-                                <img src={require("../assets/imagens/perfil1.png")}
+                                <img src={require("../assets/imagens/iconeUsuario.png")}
                                     alt="Logo da comunidade Nerdzão, um desenho de um cérebro rosa com um ocúlos de armação preta" />
                             </div>
 
                             <div className="nome-usuario-descrição2-evento">
-                                <p>Thais Siqueira</p>
+                                {/* <p>Thais Siqueira</p> */}
                             </div>
 
                         </div>
@@ -183,7 +183,7 @@ class DescriçãoEventoAdm extends Component {
                         <div className="descrição2_descrição2">
 
                             <div className="imagem-evento2">
-                                <img src={require("../assets/imagens/Evento1.jpeg")}
+                                <img src={require("../assets/imagens/Evento1.png")}
                                     alt="Banner do evento Nerdgirlz #22 - Panic! at the LINUX, com um fundo roxo." />
                             </div>
 
@@ -261,12 +261,9 @@ class DescriçãoEventoAdm extends Component {
 
                             </div>
 
-                            {/* <div className="parte3_descrição2">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.3279061044573!2d-46.66348088502224!3d-23.5566638846853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59cd6d0340c1%3A0xb82b9c6071314983!2sThoughtWorks!5e0!3m2!1spt-BR!2sbr!4v1574946138238!5m2!1spt-BR!2sbr"
-                        width="381.3" height="218" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-                </div> */}
-
+                             <div className="parte3_descrição2">
+                                 <img src={require("../assets/imagens/maps.png")}></img>
+                                 </div>
                         </div>
 
                     </section>

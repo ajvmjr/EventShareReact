@@ -207,7 +207,7 @@ p {
     box-shadow: 2px 2px 15px var(--cinza_sombra);
     display: flex;
     justify-content: space-between;
-    height: 71vh;
+    height: 65vh;
     flex-direction: column;
 }
 
@@ -222,6 +222,8 @@ p {
 .parte1_descrição{
     /* background: cornflowerblue; */
     padding: 0 1em;
+    padding-top: 2em;
+    /* padding-left: 4em; */
 }
 
 .data_descrição{
@@ -239,6 +241,7 @@ p {
 .data_img-descrição img{
     height: 2.90vh;
     width: 1.40vw;
+    margin-bottom: 0.9em;
 }
 
 .data_img-descrição p{
@@ -259,6 +262,7 @@ p {
 .local_descrição{
     /* background: coral; */
     padding: 0 1em;
+    /* padding-left: 4em; */
 }
 
 .nome_local_img-descrição{
@@ -271,6 +275,7 @@ p {
 .nome_local_img-descrição img{
     height: 3vh;
     width: 1.50vw;
+    margin-bottom: 1em;
 }
 
 .nome_local_img-descrição p{
@@ -288,7 +293,7 @@ p {
     font-weight: 100;
 }
 
-.parte3_descrição iframe{
+.parte3_descrição img{
     width: 20vw;
     margin-top: 5em 0;
 }
@@ -495,10 +500,11 @@ p {
     
     .endereco_local_img-descrição p{
         font-size: 0.70em;
+        margin-bottom: 1em;
     }
 
-    .parte3_descrição iframe{
-        height: 30vh;
+    .parte3_descrição img{
+        height: 25vh;
         width: 30vw;
     }
 }
@@ -558,9 +564,9 @@ p {
         font-size: 1em;
     }
 
-    .descrição_descrição{
+    .descrição_descrição {
         /* background: lightblue; */
-        height: 150vh;
+        height: 80vh;
         width: 80vw;
     }
 
@@ -641,7 +647,7 @@ p {
     .parte1_descrição{
         /* background: cornflowerblue; */
         padding: 0 1em;
-        width: 70vw;
+        width: 80vw;
     }
 
     .data_descrição{
@@ -671,6 +677,7 @@ p {
     .local_descrição{
         /* background: coral; */
         padding: 0 1em;
+        width: 80vw;
     }
     
     .nome_local_img-descrição{
@@ -698,9 +705,10 @@ p {
     
     .endereco_local_img-descrição p{
         font-size: 0.85em;
+        margin-bottom: 0.9em;
     }
 
-    .parte3_descrição iframe{
+    .parte3_descrição img{
         width: 80vw;
     }
 }

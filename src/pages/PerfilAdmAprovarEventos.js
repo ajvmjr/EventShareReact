@@ -104,7 +104,7 @@ class PerfilAdmAprovarEvento extends Component {
                                 id: evento.eventoId}}>
                         <div key={evento.eventoId} className="evento-1-aprovar">
                           <div className="evento-um-aprovar">
-                            <img src={require("../assets/imagens/Evento1.jpeg")} alt="" className="evento-imagem-aprovar" />
+                            <img src={require("../assets/imagens/Evento1.png")} alt="" className="evento-imagem-aprovar" />
                             <div className="evento-nome-data-hora-local-aprovar">
                               <div className="evento-nome-aprovar">
                                 <p>{evento.eventoNome}</p>

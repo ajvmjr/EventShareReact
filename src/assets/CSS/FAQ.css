@@ -91,7 +91,7 @@ p {
 .container-faq {
     /* background: red; */
     display: flex;
-    height: 257vh;
+    height: 240vh;
     justify-content: center;
 }
 
@@ -161,7 +161,7 @@ p {
     }
     .container-faq {
         /* background: red; */
-        height: 362vh;
+        height: 335vh;
     }
     .indice-faq {
         width: 30vw;
@@ -182,7 +182,7 @@ p {
 @media screen and (max-width: 375px) {
     .container-faq {
         /* background: red; */
-        height: 438vh;
+        height: 400vh;
     }
     .texto-faq h1 {
         font-size: 2.60em;

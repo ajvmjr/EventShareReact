@@ -122,6 +122,23 @@ a, h1, h2, h3, h4, p{
     height: auto;
 }
 
+/* .filtro-categorias-home {
+    border: 1px solid var(--cinza_input);
+    color: var(--cinza_input);
+    font-size: 0.90em;
+    height: 5.20vh;
+    width: 100%;
+    border-radius: 2px;
+    height: 5.30vh;
+    margin: 8px 0;
+    width: 50vw;
+    padding: 0.5em;
+    border: var(--cinza_sombra) solid 1px;
+    box-shadow: 2px 2px 15px var(--cinza_sombra);
+    font-size: 0.9em;
+    background: var(--branco);;
+} */
+
 .inputs-sub6 {
     /* background: #94399E; */
     display: flex;
@@ -142,6 +159,19 @@ a, h1, h2, h3, h4, p{
     border: var(--cinza_sombra) solid 1px;
     box-shadow: 2px 2px 15px var(--cinza_sombra);
     width: 60vw;
+}
+input[type=date], input[type=datetime-local], input[type=month], input[type=time] {
+    -webkit-appearance: listbox;
+    width: 100%;
+    border-radius: 2px;
+    height: 5.30vh;
+    margin: 8px 0;
+    width: 50vw;
+    padding: 0.5em;
+    border: var(--cinza_sombra) solid 1px;
+    box-shadow: 2px 2px 15px var(--cinza_sombra);
+    font-size: 0.9em;
+    background: var(--branco);
 }
 
 .radiogeral-sub6 {
@@ -173,10 +203,20 @@ a, h1, h2, h3, h4, p{
 }
 
 .categorias-sub6 select {
-    /* -webkit-appearance: none; */
-    padding: 5px;
-    width: 29vw;
-    border: var(--cinza_sombra) 1px solid;
+    border: 1px solid var(--cinza_input);
+    color: var(--cinza_input);
+    font-size: 0.90em;
+    height: 5.20vh;
+    width: 100%;
+    border-radius: 2px;
+    height: 5.30vh;
+    margin: 8px 0;
+    width: 50vw;
+    padding: 0.5em;
+    border: var(--cinza_sombra) solid 1px;
+    box-shadow: 2px 2px 15px var(--cinza_sombra);
+    font-size: 0.9em;
+    background: var(--branco);
 }
 
 .diversidade-sub6 {
@@ -268,6 +308,23 @@ a, h1, h2, h3, h4, p{
     opacity: 0.7;
     transition: 0.6s;
 }
+select {
+    word-wrap: normal;
+    border: 1px solid var(--cinza_input);
+    color: var(--cinza_input);
+    font-size: 0.90em;
+    height: 5.20vh;
+    width: 100%;
+    border-radius: 2px;
+    height: 5.30vh;
+    /* margin: 8px 0; */
+    width: 50vw;
+    padding: 0.5em;
+    border: var(--cinza_sombra) solid 1px;
+    box-shadow: 2px 2px 15px var(--cinza_sombra);
+    font-size: 0.9em;
+    background: var(--branco);
+}
 /* FIM WEB - CRIAR EVENTO 4 */
 
 
@@ -279,6 +336,40 @@ a, h1, h2, h3, h4, p{
         /* background: #11AA58; */
         width: 80vw;
     }
+
+    /* .filtro-categorias-home {
+        border: 1px solid var(--cinza_input);
+        color: var(--cinza_input);
+        font-size: 0.90em;
+        height: 5.20vh;
+        width: 100%;
+        border-radius: 2px;
+        height: 5.30vh;
+        margin: 8px 0;
+        width: 80vw;
+        padding: 0.5em;
+        border: var(--cinza_sombra) solid 1px;
+        box-shadow: 2px 2px 15px var(--cinza_sombra);
+        font-size: 0.9em;
+        background: var(--branco);
+    } */
+
+    /* .filtro-categorias-home {
+        border: 1px solid var(--cinza_input);
+        color: var(--cinza_input);
+        font-size: 0.90em;
+        height: 5.20vh;
+        width: 100%;
+        border-radius: 2px;
+        height: 5.30vh;
+        margin: 8px 0;
+        width: 80vw;
+        padding: 0.5em;
+        border: var(--cinza_sombra) solid 1px;
+        box-shadow: 2px 2px 15px var(--cinza_sombra);
+        font-size: 0.9em;
+        background: var(--branco);
+    } */
 
     .obs p {
         font-size: 0.70em;
@@ -312,6 +403,12 @@ a, h1, h2, h3, h4, p{
         width: 80vw;
     } 
 
+    .radiogeral-sub6 {
+        /* background: yellow; */
+        /* padding-bottom: 2em; */
+        width: 50vw;
+    }
+
     .categorias-sub6 select {
         width: 80vw;
     }
@@ -331,6 +428,37 @@ a, h1, h2, h3, h4, p{
         opacity: 1;
         transition: none;
     }
+    input[type=date], input[type=datetime-local], input[type=month], input[type=time] {
+        -webkit-appearance: listbox;
+        width: 100%;
+        border-radius: 2px;
+        height: 5.30vh;
+        margin: 8px 0;
+        width: 80vw;
+        padding: 0.5em;
+        border: var(--cinza_sombra) solid 1px;
+        box-shadow: 2px 2px 15px var(--cinza_sombra);
+        font-size: 0.9em;
+        background: var(--branco);
+    }
+    select {
+        word-wrap: normal;
+        border: 1px solid var(--cinza_input);
+        color: var(--cinza_input);
+        font-size: 0.90em;
+        height: 5.20vh;
+        width: 100%;
+        border-radius: 2px;
+        height: 5.30vh;
+        margin: 8px 0;
+        width: 80vw;
+        padding: 0.5em;
+        border: var(--cinza_sombra) solid 1px;
+        box-shadow: 2px 2px 15px var(--cinza_sombra);
+        font-size: 0.9em;
+        background: var(--branco);
+    }
+
 }
 /* FIM TABLET - CRIAR EVENTO 4 */
 

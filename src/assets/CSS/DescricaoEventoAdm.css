@@ -47,7 +47,7 @@ p {
 .secao-geral-descricao2 {
     /* background: lightblue; */
     display: flex;
-    height: 125vh;
+    height: 140vh;
     margin: auto;
     width: 60vw;
 }
@@ -57,7 +57,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 115vh;
+    height: 70vh;
     margin-top: 2.55em;
     width: 40vw;
 }
@@ -75,7 +75,7 @@ p {
     height: 18vh;
     justify-content: space-between;
     width: 35vw;
-    margin-bottom: 9em;
+    /* margin-bottom: 9em; */
 }
 
 .imagem-usuario2 {
@@ -158,7 +158,7 @@ p {
     width: 14vw;
 }
 
-.botao-aprovar-descricao2-evento a {
+.botao-aprovar-descricao2-evento button {
     align-items: center;
     background: var(--verde);
     color: var(--branco);
@@ -169,6 +169,7 @@ p {
     justify-content: center;
     text-decoration: none;
     width: 14vw;
+    border: none;
 }
 
 .botao-aprovar-descricao2-evento:hover {
@@ -187,6 +188,19 @@ p {
 
 .botao-recusar-descricao2-evento a {
     align-items: center;
+    background: var(--laranja);
+    color: var(--branco);
+    display: flex;
+    font-size: 1em;
+    font-weight: 800;
+    height: 5vh;
+    justify-content: center;
+    text-decoration: none;
+    width: 14vw;
+}
+
+.botao-recusar-descricao2-evento button {
+    align-items: center;
     background: var(--vermelho);
     color: var(--branco);
     display: flex;
@@ -196,6 +210,7 @@ p {
     justify-content: center;
     text-decoration: none;
     width: 14vw;
+    border: none;
 }
 
 .botao-recusar-descricao2-evento:hover {
@@ -250,7 +265,7 @@ p {
     box-shadow: 2px 2px 15px var(--cinza_sombra);
     display: flex;
     justify-content: space-between;
-    height: 60vh;
+    height: 69vh;
     flex-direction: column;
 }
 
@@ -265,11 +280,15 @@ p {
 .parte1_descrição2 {
     /* background: cornflowerblue; */
     padding: 0 1em;
+    padding-left: 3em;
+}
+.parte2_descrição2{
+    height: 15vh;
 }
 
 .data_descrição2 {
     /* background: magenta; */
-    width: 15vw;
+    width: 20vw;
 }
 
 .data_img-descrição2 {
@@ -282,6 +301,7 @@ p {
 .data_img-descrição2 img {
     height: 2.90vh;
     width: 1.40vw;
+    margin-bottom: 1em;
 }
 
 .data_img-descrição2 p {
@@ -302,6 +322,7 @@ p {
 .local_descrição2 {
     /* background: coral; */
     padding: 0 1em;
+    padding-left: 3em;
 }
 
 .nome_local_img-descrição2 {
@@ -314,6 +335,7 @@ p {
 .nome_local_img-descrição2 img {
     height: 3vh;
     width: 1.50vw;
+    margin-bottom: 0.9em;
 }
 
 .nome_local_img-descrição2 p {
@@ -331,7 +353,7 @@ p {
     font-weight: 100;
 }
 
-.parte3_descrição2 iframe {
+.parte3_descrição2 img {
     width: 20vw;
     margin-top: 5em 0;
 }
@@ -345,12 +367,12 @@ p {
 @media screen and (max-width: 768px) {
     .secao-geral-descricao2 {
         /* background: lightblue; */
-        height: 130vh;
+        height: 138vh;
         width: 80vw;
     }
     .container_descrição2 {
         /* background: lightcoral; */
-        height: 120vh;
+        height: 65vh;
         margin-top: 2.55em;
         width: 50vw;
     }
@@ -362,6 +384,15 @@ p {
         /* background: blueviolet; */
         height: 30vh;
         width: 45vw;
+    }
+    .usuario_descrição2 {
+        align-items: center;
+        /* background: blueviolet; */
+        display: flex;
+        height: 18vh;
+        justify-content: space-between;
+        width: 35vw;
+        margin-bottom: 1em;
     }
     .imagem-usuario2 {
         /* background: red; */
@@ -408,6 +439,19 @@ p {
         /* background: aqua; */
         width: 25vw;
     }
+    .botao-aprovar-descricao2-evento button {
+        align-items: center;
+        background: var(--verde);
+        color: var(--branco);
+        display: flex;
+        font-size: 1em;
+        font-weight: 800;
+        height: 5vh;
+        justify-content: center;
+        text-decoration: none;
+        width: 25vw;
+        border: none;
+    }
     .botao-aprovar-descricao2-evento a {
         color: var(--branco);
         text-align: center;
@@ -422,6 +466,19 @@ p {
     .botao-recusar-descricao2-evento {
         /* background: aqua; */
         width: 25vw;
+    }
+    .botao-recusar-descricao2-evento button {
+        align-items: center;
+        background: var(--vermelho);
+        color: var(--branco);
+        display: flex;
+        font-size: 1em;
+        font-weight: 800;
+        height: 5vh;
+        justify-content: center;
+        text-decoration: none;
+        width: 25vw;
+        border: none;
     }
     .botao-recusar-descricao2-evento a {
         color: var(--branco);
@@ -522,6 +579,7 @@ p {
     .nome_local_img-descrição2 {
         /* background: crimson; */
         width: 25vw;
+        height: 3em;
     }
     .nome_local_img-descrição2 img {
         height: 3vh;
@@ -541,8 +599,8 @@ p {
     .endereco_local_img-descrição2 p {
         font-size: 0.70em;
     }
-    .parte3_descrição2 iframe {
-        height: 30vh;
+    .parte3_descrição2 img {
+        height: 25vh;
         width: 30vw;
     }
 }
@@ -565,7 +623,7 @@ p {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 115vh;
+        height: 65vh;
         margin-top: 2.55em;
         width: 80vw;
     }
@@ -629,6 +687,21 @@ p {
         height: 25vh;
         padding: 1.50em 0;
     }
+
+
+    .botao-aprovar-descricao2-evento button {
+        align-items: center;
+        background: var(--verde);
+        color: var(--branco);
+        display: flex;
+        font-size: 1em;
+        font-weight: 800;
+        height: 5vh;
+        justify-content: center;
+        text-decoration: none;
+        width: 55vw;
+        border: none;
+    }
     .botao-aprovar-descricao2-evento {
         /* background: aqua; */
         padding-bottom: 0.20em;
@@ -647,6 +720,19 @@ p {
         /* background: aqua; */
         padding-bottom: 0.20em;
         width: 55vw;
+    }
+    .botao-recusar-descricao2-evento button {
+        align-items: center;
+        background: var(--vermelho);
+        color: var(--branco);
+        display: flex;
+        font-size: 1em;
+        font-weight: 800;
+        height: 5vh;
+        justify-content: center;
+        text-decoration: none;
+        width: 55vw;
+        border: none;
     }
     .botao-recusar-descricao2-evento a {
         height: 5.50vh;
@@ -680,7 +766,7 @@ p {
     }
     .info_descrição2 {
         /* background: lightslategrey; */
-        height: 60vh;
+        height: 65vh;
     }
     .textoinfo_descrição2 {
         /* background: blue; */
@@ -694,6 +780,7 @@ p {
         /* background: cornflowerblue; */
         padding: 0 1em;
         width: 70vw;
+        padding-left: 4em;
     }
     .data_descrição2 {
         /* background: magenta; */
@@ -718,11 +805,22 @@ p {
         /* background: coral; */
         padding: 0 1em;
     }
+    .local_descrição2 {
+        align-items: center;
+        /* background: coral; */
+        display: flex;
+        flex-direction: column;
+        height: 20vh;
+        justify-content: center;
+        padding: 0 1em;
+        padding-left: 4em;
+    }
     .nome_local_img-descrição2 {
         align-items: center;
         /* background: crimson; */
         display: flex;
         width: 70vw;
+        height: 4em;
     }
     .nome_local_img-descrição2 img {
         height: 2.90vh;
@@ -740,7 +838,10 @@ p {
     .endereco_local_img-descrição2 p {
         font-size: 0.85em;
     }
-    .parte3_descrição2 iframe {
+    .parte3_descrição2 img {
         width: 80vw;
     }
 }
+
+
+/* FIM MOBILE - PERFIL ADM DESCRIÇÃO APROVAR DO EVENTO */

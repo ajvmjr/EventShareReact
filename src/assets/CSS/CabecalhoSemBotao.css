@@ -59,7 +59,7 @@ p {
     display: flex;
     height: 15vh;
     justify-content: space-between;
-    width: 90vw;
+    width: 80vw;
 }
 
 .logo-eventshare-cabecalho-padrao1 img {
@@ -70,6 +70,7 @@ p {
 .menu-cabecalho-padrao1 {
     /* background: yellow; */
     width: 10vw;
+    padding-top: 1em;
 }
 
 .menu-cabecalho-padrao1 ul {

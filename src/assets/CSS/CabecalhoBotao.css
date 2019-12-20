@@ -95,6 +95,7 @@ p {
     display: flex;
     justify-content: space-between;
     width: 30vw;
+    padding-top: 1em;
 }
 
 #btns-menu-cabecalho-padrao2 {
@@ -207,3 +208,4 @@ p {
         padding: 1em;
     }
 }
+

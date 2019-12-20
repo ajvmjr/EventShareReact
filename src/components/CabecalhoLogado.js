@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import '../assets/CSS/CabecalhoBotao.css'
+import '../assets/CSS/CabecalhoLogado.css'
 import Logo from '../assets/imagens/LogoEventShare.png'
 
-class CabecalhoBotao extends Component {
+class CabecalhoLogado extends Component {
 
     
     
@@ -49,4 +49,5 @@ class CabecalhoBotao extends Component {
     }
 }
 
-export default CabecalhoBotao
+export default CabecalhoLogado
+

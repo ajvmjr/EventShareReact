@@ -55,7 +55,8 @@ a, h1, h2, h3, h4, p{
 
 .menu-cabecalho-CriarConta1{
     /* background: yellow; */
-    width: 10vw;
+    width: 5vw;
+    padding-top: 1em;
 }
 
 .menu-cabecalho-CriarConta1 ul{
@@ -168,3 +169,4 @@ a, h1, h2, h3, h4, p{
     }
 
 }
+/* Fim do Header - Mobile Media Query 375px */

@@ -31,7 +31,7 @@ a, h1, h2, h3, h4, p{
 /*Fim definição de cores*/
 
 /* Configurações do header */
-#cabecalho-CriarConta5{
+#cabecalho-padrao{
     /* background: green; */
     box-shadow: 0.05em 0.05em #cccccc;
     display: flex;
@@ -39,134 +39,160 @@ a, h1, h2, h3, h4, p{
     justify-content: center;
 }
 
-.itens-cabecalho-CriarConta5{
+.itens-cabecalho-padrao{
     align-items: center;
     /* background: red; */
     display: flex;
     height: 15vh;
     justify-content: space-between;
-    width: 80vw;
+    width: 70vw;
 }
 
-.logo-eventshare-cabecalho-CriarConta5 img{
+.logo-eventshare-cabecalho-padrao img{
     height: 5.8vh;
     width: 13.50vw;
+    margin-left: -3em;
 }
 
-.menu-cabecalho-CriarConta5{
+.menu-cabecalho-padrao{
     /* background: yellow; */
-    width: 3vw;
-    padding-top: 1.10em;
+    width: 10vw;
 }
 
-.menu-cabecalho-CriarConta5 ul{
+.menu-cabecalho-padrao ul{
     display: flex;
     justify-content: space-between;
     list-style-type: none;
 }
 
-.menu-cabecalho-CriarConta5 ul a{
+.menu-cabecalho-padrao ul a{
     color: var(--preto);
     font-size: 0.90em;
     font-weight: 900;
     text-decoration: none;
 }
 
-.menu-cabecalho-CriarConta5 ul a:hover{
+.menu-cabecalho-padrao ul a:hover{
     color: var(--rosa);
     border-bottom: 0.2em  solid var(--rosa);
     padding: 0.70em 0;
+}
+
+#btns-menu-cabecalho-padrao {
+    background-color: var(--rosa);
+    border: none;
+    color: white;
+    font-size: 0.90em;
+    font-weight: bold;
+    padding: 1em 1.50em;
+    margin-right: 4em;
+}
+
+.menu{
+    display: flex;
+    width: 18em;
+    padding-top: 1em;
 }
 /* Fim do header */
 
 
 
 
-/* Começo do Header - Tablet Media Query 768px */
-@media screen and (max-width: 768px){
-    
-    .itens-cabecalho-CriarConta5{
+@media screen and (max-width: 768px) {
+    .itens-cabecalho-padrao {
         /* background: red; */
-        width: 90vw;
+        width: 80vw;
     }
-
-    .logo-eventshare-cabecalho-CriarConta5 img{
+    .logo-eventshare-cabecalho-padrao img {
         width: 23vw;
     }
-
-    .menu-cabecalho-CriarConta5{
+    .menu-cabecalho-padrao {
         /* background: yellow; */
-        display: flex;
-        justify-content: flex-end;
-        width: 19.50vw;
+        width: 27vw;
+    }
+    .menu-cabecalho-padrao ul a:hover {
+        border-bottom: none;
+        color: var(--preto);
+    }
+    .menu {
+        /* background: red; */
+        width: 27vw;
+    }
+    #btns-menu-cabecalho-padrao:hover {
+        background: var(--rosa);
+        box-shadow: none;
+        opacity: 1;
+        transition: none;
     }
     
-    .menu-cabecalho-CriarConta5 ul a:hover{
-        border-bottom: none;
-        color: var(--preto)
-    }
-
-    .menu5{
-        /* background: blue; */
-        width: 20vw;
-    }
-
 }
+
+
 /* Fim do Header - Tablet Media Query 768px */
 
 
-
-
 /* Começo do Header - Mobile Media Query 375px */
-@media screen and (max-width: 375px){
-    
-    #cabecalho-CriarConta5{
+
+@media screen and (max-width: 375px) {
+    #cabecalho-padrao {
         align-items: center;
         /* background: green; */
         height: 20vh;
+        /* width: 100vw; */
     }
-
-    .itens-cabecalho-CriarConta5{
+    .itens-cabecalho-padrao {
         /* background: blue; */
-        height: 25vh;
+        height: 20vh;
         width: 85vw;
     }
-
-    .logo-eventshare-cabecalho-CriarConta5 img{
+    .logo-eventshare-cabecalho-padrao img {
         /* background: purple; */
         height: 4.8vh;
         width: 40vw;
     }
-
-    .menu-cabecalho-CriarConta5{
-        align-items: flex-start;
+    .menu-cabecalho-padrao {
+        align-items: center;
         /* background: yellow; */
         height: 12vh;
-        width: 39vw;
+        width: 40vw;
     }
-
-    .menu-cabecalho-CriarConta5 ul{
+    .menu-cabecalho-padrao ul {
         align-items: center;
         /* background: greenyellow; */
         display: flex;
         flex-wrap: wrap;
-        height: 9vh;
-        justify-content: center;
-        width: 21vw;
+        height: 7vh;
+        /* justify-content: center; */
+        width: 35vw;
     }
-    
-    .menu-cabecalho-CriarConta5 ul a:hover{
+    .menu-cabecalho-padrao ul a {
+        /* background: greenyellow; */
+        display: flex;
+        justify-content: center;
+        width: 37vw;
+    }
+    .menu-cabecalho-padrao ul a:hover {
         border-bottom: none;
     }
-    
-    .menu5{
+    .menu {
         align-items: center;
         /* background: red; */
         display: flex;
-        height: 12vh;
+        flex-wrap: wrap;
+        height: 15vh;
         justify-content: flex-end;
-        width: 39vw;
+        width: 40vw;
+    }
+    #btns-menu-cabecalho-padrao {
+        padding: 1em;
     }
 
+    .menu li {
+        width: 10px;
+    }
+
+    .logo-eventshare-cabecalho-padrao {
+        margin-left: 1em;
+    }
 }
-/* Fim do Header - Mobile Media Query 375px */
+
